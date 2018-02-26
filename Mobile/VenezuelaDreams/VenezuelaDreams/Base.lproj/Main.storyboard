@@ -62,6 +62,22 @@
             </objects>
             <point key="canvasLocation" x="-1052" y="-555.47226386806597"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="usr-By-jYq">
+            <objects>
+                <viewController id="jih-cl-F8O" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qE6-fK-R3t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="671"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aBG-iA-ccR"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="671"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRA-u7-gMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1172" y="33"/>
+        </scene>
         <!--Welcome Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -157,6 +173,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="G20-II-E2r"/>
                     <connections>
                         <outlet property="continueButton" destination="Lkj-2h-EmT" id="fjq-Nq-dvy"/>
                         <outlet property="loginButton" destination="Vfb-7W-bcr" id="0GW-qV-qRK"/>
@@ -263,6 +280,21 @@
             </objects>
             <point key="canvasLocation" x="49" y="-807"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="qny-qK-aKx">
+            <objects>
+                <viewController id="LyU-VM-EOW" customClass="Settings" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jcj-gf-f2W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QmP-OR-GXA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhB-Ru-opK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="873"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="EWL-ft-BWm">
             <objects>
@@ -271,32 +303,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="angel-falls" translatesAutoresizingMaskIntoConstraints="NO" id="lti-wq-rr1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="angel-falls" translatesAutoresizingMaskIntoConstraints="NO" id="lti-wq-rr1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GG0-u1-nwU">
-                                <rect key="frame" x="0.0" y="58" width="375" height="511"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="Ytg-Av-3Mn"/>
-                                    <constraint firstAttribute="height" constant="511" id="lIz-vS-FGg"/>
-                                </constraints>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZT-OT-jab">
-                                <rect key="frame" x="16" y="20" width="38" height="30"/>
-                                <color key="backgroundColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="38" id="FJB-ZH-dse"/>
-                                    <constraint firstAttribute="height" constant="30" id="fzF-3l-SIu"/>
-                                </constraints>
-                                <state key="normal" title="&lt;--">
-                                    <color key="titleColor" red="1" green="0.97793266386864763" blue="0.99945050072942665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="Back:" destination="VdJ-DT-2q5" eventType="touchUpInside" id="rcC-cr-QuF"/>
-                                    <action selector="sendBack:" destination="VdJ-DT-2q5" eventType="touchUpInside" id="tjd-K1-lsA"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-6v-O3c">
                                 <rect key="frame" x="0.0" y="577" width="375" height="90"/>
                                 <color key="backgroundColor" red="0.98424340165128577" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -309,28 +318,56 @@
                                     <color key="titleColor" red="0.041681021149214459" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwN-vb-zEq">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goToWelcome:" destination="VdJ-DT-2q5" eventType="touchUpInside" id="LQG-Ym-I5E"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eZ-sy-ON3">
+                                <rect key="frame" x="0.0" y="66" width="375" height="444"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-4T-mtO">
+                                <rect key="frame" x="286" y="20" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <action selector="goToSettings:" destination="VdJ-DT-2q5" eventType="touchUpInside" id="SsM-Mk-ChZ"/>
+                                    <segue destination="LyU-VM-EOW" kind="show" identifier="toSettings" id="S4F-df-EFc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GG0-u1-nwU" firstAttribute="top" secondItem="GZT-OT-jab" secondAttribute="bottom" constant="8" id="5QC-39-sax"/>
+                            <constraint firstItem="g8T-6v-O3c" firstAttribute="top" secondItem="0eZ-sy-ON3" secondAttribute="bottom" constant="68" id="45s-cu-qnw"/>
                             <constraint firstItem="g8T-6v-O3c" firstAttribute="leading" secondItem="8mG-BY-TgH" secondAttribute="leading" id="7Wu-5K-luo"/>
-                            <constraint firstItem="GZT-OT-jab" firstAttribute="leading" secondItem="8mG-BY-TgH" secondAttribute="leading" constant="16" id="EX6-lW-nEF"/>
-                            <constraint firstItem="GZT-OT-jab" firstAttribute="top" secondItem="8mG-BY-TgH" secondAttribute="top" id="GOF-Ov-gXl"/>
-                            <constraint firstItem="GG0-u1-nwU" firstAttribute="leading" secondItem="8mG-BY-TgH" secondAttribute="leading" id="XNb-Kk-RYp"/>
+                            <constraint firstItem="0eZ-sy-ON3" firstAttribute="leading" secondItem="8mG-BY-TgH" secondAttribute="leading" id="99w-a4-XTl"/>
+                            <constraint firstItem="0eZ-sy-ON3" firstAttribute="top" secondItem="2ND-ru-J5p" secondAttribute="top" constant="66" id="9zJ-uG-Z2R"/>
+                            <constraint firstItem="0eZ-sy-ON3" firstAttribute="leading" secondItem="lti-wq-rr1" secondAttribute="leading" id="D4x-iA-uFy"/>
+                            <constraint firstItem="0eZ-sy-ON3" firstAttribute="trailing" secondItem="lti-wq-rr1" secondAttribute="trailing" id="Mf1-aa-EmN"/>
+                            <constraint firstItem="0eZ-sy-ON3" firstAttribute="trailing" secondItem="8mG-BY-TgH" secondAttribute="trailing" id="RY3-Mc-hWO"/>
+                            <constraint firstItem="0eZ-sy-ON3" firstAttribute="top" secondItem="fwN-vb-zEq" secondAttribute="bottom" constant="16" id="caY-ZK-5JE"/>
                             <constraint firstItem="g8T-6v-O3c" firstAttribute="trailing" secondItem="8mG-BY-TgH" secondAttribute="trailing" id="gFR-R9-pg1"/>
-                            <constraint firstItem="GG0-u1-nwU" firstAttribute="trailing" secondItem="8mG-BY-TgH" secondAttribute="trailing" id="rOI-pA-Ccl"/>
+                            <constraint firstItem="g8T-6v-O3c" firstAttribute="top" secondItem="0eZ-sy-ON3" secondAttribute="bottom" constant="68" id="lgI-pk-QZI"/>
+                            <constraint firstItem="0eZ-sy-ON3" firstAttribute="top" secondItem="fwN-vb-zEq" secondAttribute="bottom" constant="16" id="ohc-I1-FVr"/>
                             <constraint firstItem="g8T-6v-O3c" firstAttribute="bottom" secondItem="8mG-BY-TgH" secondAttribute="bottom" id="sKy-XZ-UU5"/>
+                            <constraint firstItem="0eZ-sy-ON3" firstAttribute="leading" secondItem="g8T-6v-O3c" secondAttribute="leading" id="sNb-fZ-erN"/>
+                            <constraint firstItem="0eZ-sy-ON3" firstAttribute="trailing" secondItem="g8T-6v-O3c" secondAttribute="trailing" id="uAL-E3-Til"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8mG-BY-TgH"/>
                     </view>
                     <connections>
+                        <outlet property="back" destination="fwN-vb-zEq" id="OYH-wd-Hdt"/>
                         <outlet property="donateButton" destination="g8T-6v-O3c" id="GCI-Ba-QQo"/>
-                        <outlet property="scrollView" destination="GG0-u1-nwU" id="PEY-vg-vgI"/>
+                        <outlet property="scrollView" destination="0eZ-sy-ON3" id="sWh-Ox-Vji"/>
+                        <outlet property="settings" destination="l2c-4T-mtO" id="v5T-Pj-D4J"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToWelcome" id="Kxd-fQ-Bhc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEs-Ab-V0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765.60000000000002" y="147.97601199400302"/>
+            <point key="canvasLocation" x="728.79999999999995" y="185.75712143928038"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="kMM-01-HzL">
@@ -356,7 +393,7 @@
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEA-pz-Tqd" userLabel="View - login contents">
                                                 <rect key="frame" x="20" y="142" width="290" height="219"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81U-6N-AfO" userLabel="Input View - email" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81U-6N-AfO" userLabel="Input View - email" customClass="AMInputView" customModule="VenezuelaDreams" customModuleProvider="target">
                                                         <rect key="frame" x="40" y="8" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -370,7 +407,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRn-Ob-w9m" userLabel="Input View - password" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRn-Ob-w9m" userLabel="Input View - password" customClass="AMInputView" customModule="VenezuelaDreams" customModuleProvider="target">
                                                         <rect key="frame" x="40" y="84" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -430,7 +467,7 @@
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxG-Mt-kKv" userLabel="View - signup contents">
                                                 <rect key="frame" x="-123" y="142" width="290" height="372"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJu-YO-WVI" userLabel="Input View - first" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJu-YO-WVI" userLabel="Input View - first" customClass="AMInputView" customModule="VenezuelaDreams" customModuleProvider="target">
                                                         <rect key="frame" x="40" y="8" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -444,7 +481,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKM-cQ-eg0" userLabel="Input View - email" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKM-cQ-eg0" userLabel="Input View - email" customClass="AMInputView" customModule="VenezuelaDreams" customModuleProvider="target">
                                                         <rect key="frame" x="40" y="160" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -458,7 +495,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmr-Wh-7i7" userLabel="Input View - password" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fmr-Wh-7i7" userLabel="Input View - password" customClass="AMInputView" customModule="VenezuelaDreams" customModuleProvider="target">
                                                         <rect key="frame" x="40" y="236" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -469,7 +506,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFd-N2-fQl" userLabel="Input View - password" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFd-N2-fQl" userLabel="Input View - password" customClass="AMInputView" customModule="VenezuelaDreams" customModuleProvider="target">
                                                         <rect key="frame" x="40" y="312" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -480,7 +517,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSecureTextEntry" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRY-Kq-j1W" userLabel="Input View - last" customClass="AMInputView" customModule="AMLS" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRY-Kq-j1W" userLabel="Input View - last" customClass="AMInputView" customModule="VenezuelaDreams" customModuleProvider="target">
                                                         <rect key="frame" x="40" y="84" width="210" height="52"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -676,6 +713,7 @@
         <image name="logo" width="975" height="975"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2O0-hB-Br2"/>
+        <segue reference="smz-5l-MXI"/>
+        <segue reference="Kxd-fQ-Bhc"/>
     </inferredMetricsTieBreakers>
 </document>

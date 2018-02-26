@@ -20,6 +20,8 @@
 		508639F9201A9CE800582920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508639F7201A9CE800582920 /* LaunchScreen.storyboard */; };
 		50863A04201A9CE800582920 /* VenezuelaDreamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50863A03201A9CE800582920 /* VenezuelaDreamsTests.swift */; };
 		50863A0F201A9CE800582920 /* VenezuelaDreamsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50863A0E201A9CE800582920 /* VenezuelaDreamsUITests.swift */; };
+		508E05FD203B9D0700266AE1 /* MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E05FC203B9D0700266AE1 /* MainCard.swift */; };
+		50AB0D6E203CA53E008EC37E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 50AB0D6D203CA53E008EC37E /* Settings.bundle */; };
 		50C4C8062033B97700969019 /* AMInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4C8042033B97600969019 /* AMInputView.xib */; };
 		50C4C8072033B97700969019 /* AMInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4C8052033B97700969019 /* AMInputView.swift */; };
 		50C4C80B2033BAA000969019 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4C80A2033BAA000969019 /* LoginViewController.swift */; };
@@ -77,6 +79,8 @@
 		50863A0A201A9CE800582920 /* VenezuelaDreamsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenezuelaDreamsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50863A0E201A9CE800582920 /* VenezuelaDreamsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenezuelaDreamsUITests.swift; sourceTree = "<group>"; };
 		50863A10201A9CE800582920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		508E05FC203B9D0700266AE1 /* MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCard.swift; sourceTree = "<group>"; };
+		50AB0D6D203CA53E008EC37E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		50C4C8042033B97600969019 /* AMInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMInputView.xib; sourceTree = "<group>"; };
 		50C4C8052033B97700969019 /* AMInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMInputView.swift; sourceTree = "<group>"; };
 		50C4C80A2033BAA000969019 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				50F215112027A33A0027BE44 /* DetailViewController.swift */,
 				50F2150E2027A3380027BE44 /* LayoutHelper.swift */,
 				50F215132027A33B0027BE44 /* Player_by_Patric_Piemonte.swift */,
+				508E05FC203B9D0700266AE1 /* MainCard.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				508639F7201A9CE800582920 /* LaunchScreen.storyboard */,
 				50135627201D04540047EBF4 /* GoogleService-Info.plist */,
 				508639FA201A9CE800582920 /* Info.plist */,
+				50AB0D6D203CA53E008EC37E /* Settings.bundle */,
 			);
 			path = VenezuelaDreams;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50AB0D6E203CA53E008EC37E /* Settings.bundle in Resources */,
 				508639F9201A9CE800582920 /* LaunchScreen.storyboard in Resources */,
 				50135628201D04550047EBF4 /* GoogleService-Info.plist in Resources */,
 				5026031A201EABB80070B5A7 /* Pages.xib in Resources */,
@@ -539,6 +546,7 @@
 				50C4C80B2033BAA000969019 /* LoginViewController.swift in Sources */,
 				50F215192027A33C0027BE44 /* Animator.swift in Sources */,
 				50F2151C2027A33C0027BE44 /* CardArticle.swift in Sources */,
+				508E05FD203B9D0700266AE1 /* MainCard.swift in Sources */,
 				50135625201A9FA80047EBF4 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
