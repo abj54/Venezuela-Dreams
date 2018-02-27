@@ -70,11 +70,12 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         scrollView.contentSize = CGSize(width: self.view.bounds.width * CGFloat(array_pages.count), height: self.scrollView.bounds.height)
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
+ 
     }
     
     func loadPages(){
         for (index, page) in array_pages.enumerated(){
-            let card = MainCard(frame: CGRect(x: 0, y: 58, width: self.scrollView.bounds.width , height: self.scrollView.bounds.height))
+            let card = MainCard(frame: CGRect(x: 0, y: 58, width: self.scrollView.bounds.width-40 , height: self.scrollView.bounds.height))
             card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
             //card.icon = UIImage(named: "flappy")
             //card.category = page["name"]!
@@ -95,9 +96,9 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
             
             //set origin of x coordinate for the card
             if (index == 0){
-                card.frame.origin.x = (self.view.bounds.width - self.scrollView.bounds.width) / 2
+                card.frame.origin.x = ((self.view.bounds.width - self.scrollView.bounds.width) / 2)+20
             } else {
-                card.frame.origin.x = (CGFloat(index) * self.scrollView.bounds.width) + ((self.view.bounds.width - self.scrollView.bounds.width) / 2)
+                card.frame.origin.x = ((CGFloat(index) * self.scrollView.bounds.width) + ((self.view.bounds.width - self.scrollView.bounds.width) / 2))+20
             }
             //set origin of the y coordinate for the card
             
