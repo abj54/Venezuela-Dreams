@@ -552,26 +552,6 @@
                                             <constraint firstItem="7ee-8M-tJZ" firstAttribute="centerX" secondItem="RZI-v7-JQz" secondAttribute="centerX" id="MCp-ej-aNw"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGJ-tz-1ld" userLabel="View - socials">
-                                        <rect key="frame" x="60" y="573" width="210" height="64"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Cs0-Ku-SYB">
-                                                <rect key="frame" x="8" y="2" width="256" height="60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="256" id="OHu-Hb-xDj"/>
-                                                    <constraint firstAttribute="height" constant="60" id="peE-R8-4uS"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="Cs0-Ku-SYB" firstAttribute="top" secondItem="zGJ-tz-1ld" secondAttribute="top" constant="2" id="IGr-el-I7M"/>
-                                            <constraint firstAttribute="height" constant="64" id="KXC-DC-XMZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="Cs0-Ku-SYB" secondAttribute="trailing" constant="-54" id="U73-Ej-c1t"/>
-                                            <constraint firstAttribute="bottom" secondItem="Cs0-Ku-SYB" secondAttribute="bottom" constant="2" id="kCZ-Gx-8ET"/>
-                                            <constraint firstAttribute="width" constant="210" id="wNf-kH-sWw"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LD8-6s-YCJ" userLabel="View - logo">
                                         <rect key="frame" x="135" y="50" width="100" height="100"/>
                                         <subviews>
@@ -589,6 +569,23 @@
                                             <constraint firstItem="O0W-4T-1Ji" firstAttribute="height" secondItem="LD8-6s-YCJ" secondAttribute="height" id="ycU-Ma-1VH"/>
                                         </constraints>
                                     </view>
+                                    <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGJ-tz-1ld" userLabel="View - socials">
+                                        <rect key="frame" x="80" y="573" width="210" height="64"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Cs0-Ku-SYB">
+                                                <rect key="frame" x="52" y="2" width="106" height="60"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Cs0-Ku-SYB" secondAttribute="trailing" constant="52" id="GX0-oq-HlC"/>
+                                            <constraint firstAttribute="height" constant="64" id="KXC-DC-XMZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cs0-Ku-SYB" secondAttribute="bottom" constant="2" id="Oz6-jg-a9L"/>
+                                            <constraint firstItem="Cs0-Ku-SYB" firstAttribute="leading" secondItem="zGJ-tz-1ld" secondAttribute="leading" constant="52" id="a87-Y6-GPa"/>
+                                            <constraint firstItem="Cs0-Ku-SYB" firstAttribute="top" secondItem="zGJ-tz-1ld" secondAttribute="top" constant="2" id="vks-Dc-IhB"/>
+                                            <constraint firstAttribute="width" constant="210" id="wNf-kH-sWw"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -596,7 +593,7 @@
                                     <constraint firstItem="LD8-6s-YCJ" firstAttribute="centerX" secondItem="SC6-WK-TK1" secondAttribute="centerX" constant="-2.5" id="5mU-0n-fcM"/>
                                     <constraint firstAttribute="trailing" secondItem="RZI-v7-JQz" secondAttribute="trailing" id="9TW-Dx-LdH"/>
                                     <constraint firstItem="wEA-pz-Tqd" firstAttribute="top" secondItem="LD8-6s-YCJ" secondAttribute="bottom" constant="-8" id="BjS-eU-3re"/>
-                                    <constraint firstItem="zGJ-tz-1ld" firstAttribute="centerX" secondItem="LD8-6s-YCJ" secondAttribute="centerX" constant="-20" id="CzQ-cX-N3s"/>
+                                    <constraint firstItem="zGJ-tz-1ld" firstAttribute="centerX" secondItem="LD8-6s-YCJ" secondAttribute="centerX" id="CzQ-cX-N3s"/>
                                     <constraint firstItem="RZI-v7-JQz" firstAttribute="top" secondItem="SC6-WK-TK1" secondAttribute="top" id="IzR-q7-Sot"/>
                                     <constraint firstItem="LD8-6s-YCJ" firstAttribute="top" secondItem="SC6-WK-TK1" secondAttribute="top" constant="50" id="PMj-cP-zag"/>
                                     <constraint firstItem="yxG-Mt-kKv" firstAttribute="width" secondItem="SC6-WK-TK1" secondAttribute="width" multiplier="0.88" constant="-40" id="RAK-uA-B2I"/>
@@ -690,7 +687,7 @@
         <image name="logo" width="975" height="975"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="smz-5l-MXI"/>
-        <segue reference="Kxd-fQ-Bhc"/>
+        <segue reference="2O0-hB-Br2"/>
+        <segue reference="FBQ-54-qhl"/>
     </inferredMetricsTieBreakers>
 </document>
