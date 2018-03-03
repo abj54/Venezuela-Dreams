@@ -7,11 +7,11 @@ target 'VenezuelaDreams' do
 
   pod 'Firebase'
   pod 'Firebase/Auth'
-  pod â€˜Firebase/Storageâ€™
-  pod â€˜Firebase/Coreâ€™
-  pod â€˜Firebase/Databaseâ€™
-  pod â€˜Firebase/RemoteConfigâ€™
-  pod â€˜FirebaseUIâ€™
+  pod œôòøFirebase/Storageœôòù
+  pod œôòøFirebase/Coreœôòù
+  pod œôòøFirebase/Databaseœôòù
+  pod œôòøFirebase/RemoteConfigœôòù
+  pod œôòøFirebaseUIœôòù
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
