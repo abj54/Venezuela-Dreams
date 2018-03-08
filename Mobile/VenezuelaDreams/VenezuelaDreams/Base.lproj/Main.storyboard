@@ -570,19 +570,25 @@
                                         </constraints>
                                     </view>
                                     <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zGJ-tz-1ld" userLabel="View - socials">
-                                        <rect key="frame" x="80" y="573" width="210" height="64"/>
+                                        <rect key="frame" x="80" y="593" width="210" height="64"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Cs0-Ku-SYB">
-                                                <rect key="frame" x="52" y="2" width="106" height="60"/>
-                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBC-cM-ZOW" userLabel="FB Button">
+                                                <rect key="frame" x="75" y="0.0" width="60" height="64"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="umV-WM-zDu"/>
+                                                </constraints>
+                                                <state key="normal" image="facebook"/>
+                                                <connections>
+                                                    <action selector="fbButtonLogin:" destination="jE7-QJ-ggD" eventType="touchUpInside" id="9lI-R9-J42"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Cs0-Ku-SYB" secondAttribute="trailing" constant="52" id="GX0-oq-HlC"/>
                                             <constraint firstAttribute="height" constant="64" id="KXC-DC-XMZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="Cs0-Ku-SYB" secondAttribute="bottom" constant="2" id="Oz6-jg-a9L"/>
-                                            <constraint firstItem="Cs0-Ku-SYB" firstAttribute="leading" secondItem="zGJ-tz-1ld" secondAttribute="leading" constant="52" id="a87-Y6-GPa"/>
-                                            <constraint firstItem="Cs0-Ku-SYB" firstAttribute="top" secondItem="zGJ-tz-1ld" secondAttribute="top" constant="2" id="vks-Dc-IhB"/>
+                                            <constraint firstAttribute="bottom" secondItem="fBC-cM-ZOW" secondAttribute="bottom" id="Mkl-2I-d0o"/>
+                                            <constraint firstItem="fBC-cM-ZOW" firstAttribute="centerX" secondItem="zGJ-tz-1ld" secondAttribute="centerX" id="e0R-bW-fsP"/>
+                                            <constraint firstItem="fBC-cM-ZOW" firstAttribute="top" secondItem="zGJ-tz-1ld" secondAttribute="top" id="mDn-b2-rME"/>
                                             <constraint firstAttribute="width" constant="210" id="wNf-kH-sWw"/>
                                         </constraints>
                                     </view>
@@ -600,7 +606,7 @@
                                     <constraint firstItem="sw9-q3-Uew" firstAttribute="width" secondItem="SC6-WK-TK1" secondAttribute="width" multiplier="0.88" id="SEu-sR-ABP"/>
                                     <constraint firstItem="sw9-q3-Uew" firstAttribute="top" secondItem="SC6-WK-TK1" secondAttribute="top" id="Thg-6F-aDo"/>
                                     <constraint firstAttribute="bottom" secondItem="sw9-q3-Uew" secondAttribute="bottom" id="WsS-eM-Fl3"/>
-                                    <constraint firstAttribute="bottom" secondItem="zGJ-tz-1ld" secondAttribute="bottom" constant="30" id="fgf-Gf-7er"/>
+                                    <constraint firstAttribute="bottom" secondItem="zGJ-tz-1ld" secondAttribute="bottom" constant="10" id="fgf-Gf-7er"/>
                                     <constraint firstAttribute="bottom" secondItem="RZI-v7-JQz" secondAttribute="bottom" id="jVW-Et-Qds"/>
                                     <constraint firstItem="wEA-pz-Tqd" firstAttribute="width" secondItem="SC6-WK-TK1" secondAttribute="width" multiplier="0.88" constant="-40" id="kq3-iN-aEz"/>
                                     <constraint firstItem="RZI-v7-JQz" firstAttribute="leading" secondItem="sw9-q3-Uew" secondAttribute="trailing" id="lcN-EC-DsQ"/>
