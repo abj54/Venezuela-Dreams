@@ -116,6 +116,7 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
         print("Did logout of FB")
     }
     
+    //Sign up/Login with Facebook
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
         //print error

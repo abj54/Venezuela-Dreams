@@ -32,6 +32,8 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         images = [UIImage(named: "pascal")!,UIImage(named: "jeff")!,UIImage(named: "andres")!]
         array_pages = getInitialImages()
         setUpScroll()
+        
+        print(FIRAuth.auth()?.currentUser!.uid as Any)
 
     }
     
