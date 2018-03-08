@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
 enum AMLoginSignupViewMode {
     case login
@@ -63,6 +64,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signupPasswordConfirmInputView: AMInputView!
     @IBOutlet weak var signupLastNameInputView: AMInputView!
     @IBOutlet weak var signupFirstNameInputView: AMInputView!
+
     //MARK: - controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -222,7 +224,7 @@ class LoginViewController: UIViewController {
                         self.present(alertController, animated: true, completion: nil)
                     //otherwise return the error
                     default:
-                        print("Error creating user \(error)")
+                        print("Error creating user \(String(describing: error))")
                     }
                     
                     
@@ -323,7 +325,7 @@ class LoginViewController: UIViewController {
         forgotPassTopConstraint.constant = keyboardShow ? 30:45
         
         loginButtonTopConstraint.constant = keyboardShow ? 25:30
-        signupButtonTopConstraint.constant = keyboardShow ? 23:35
+        //signupButtonTopConstraint.constant = keyboardShow ? 23:35
         
         loginButton.alpha = keyboardShow ? 1:0.7
         signupButton.alpha = keyboardShow ? 1:0.7
@@ -340,6 +342,27 @@ class LoginViewController: UIViewController {
         UIView.commitAnimations()
     }
     
+    //MARK: FB Button handling
+    //
+    //
+    // TODO
+    @IBAction func fbButtonLogin(_ sender: Any) {
+        
+        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) -> Void in
+            if (error == nil){
+                //create credentials for Firebase Auth and create the user in the Auth
+                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                if(fbloginresult.grantedPermissions.contains("email"))
+                {
+                    //self.getFBUserData()
+                }
+            }
+        }
+        
+    }
+ 
     //MARK: - hide status bar in swift3
     override var prefersStatusBarHidden: Bool {
         return true
