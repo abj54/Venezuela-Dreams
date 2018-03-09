@@ -25,6 +25,11 @@
 		50C4C8062033B97700969019 /* AMInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4C8042033B97600969019 /* AMInputView.xib */; };
 		50C4C8072033B97700969019 /* AMInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4C8052033B97700969019 /* AMInputView.swift */; };
 		50C4C80B2033BAA000969019 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4C80A2033BAA000969019 /* LoginViewController.swift */; };
+		50C7F8BD20523440003EDC73 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8BC2052343F003EDC73 /* Buttons.swift */; };
+		50C7F8BF2052357C003EDC73 /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8BE2052357C003EDC73 /* DonationViewController.swift */; };
+		50C7F8C3205258AC003EDC73 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8C0205258A6003EDC73 /* UIView+Constraints.swift */; };
+		50C7F8C4205258AC003EDC73 /* SJFluidSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8C1205258A9003EDC73 /* SJFluidSegmentedControl.swift */; };
+		50C7F8C5205258AC003EDC73 /* SJGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8C2205258AC003EDC73 /* SJGradientView.swift */; };
 		50F03F9E201FA29300E85CA2 /* Child.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50F03F9D201FA29300E85CA2 /* Child.xib */; };
 		50F215152027A33C0027BE44 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2150B2027A3360027BE44 /* Card.swift */; };
 		50F215162027A33C0027BE44 /* CardHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2150C2027A3370027BE44 /* CardHighlight.swift */; };
@@ -84,6 +89,11 @@
 		50C4C8042033B97600969019 /* AMInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMInputView.xib; sourceTree = "<group>"; };
 		50C4C8052033B97700969019 /* AMInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMInputView.swift; sourceTree = "<group>"; };
 		50C4C80A2033BAA000969019 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		50C7F8BC2052343F003EDC73 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		50C7F8BE2052357C003EDC73 /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
+		50C7F8C0205258A6003EDC73 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		50C7F8C1205258A9003EDC73 /* SJFluidSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJFluidSegmentedControl.swift; sourceTree = "<group>"; };
+		50C7F8C2205258AC003EDC73 /* SJGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJGradientView.swift; sourceTree = "<group>"; };
 		50F03F9D201FA29300E85CA2 /* Child.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Child.xib; sourceTree = "<group>"; };
 		50F2150B2027A3360027BE44 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		50F2150C2027A3370027BE44 /* CardHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHighlight.swift; sourceTree = "<group>"; };
@@ -173,16 +183,22 @@
 		508639ED201A9CE800582920 /* VenezuelaDreams */ = {
 			isa = PBXGroup;
 			children = (
+				50C7F8C7205258C7003EDC73 /* FluidSegmentedControl */,
 				50C4C8032033B96700969019 /* AMLogin */,
 				503C506E2031F6570078C929 /* Cards */,
 				508639EE201A9CE800582920 /* AppDelegate.swift */,
+				50C7F8C1205258A9003EDC73 /* SJFluidSegmentedControl.swift */,
+				50C7F8C2205258AC003EDC73 /* SJGradientView.swift */,
+				50C7F8C0205258A6003EDC73 /* UIView+Constraints.swift */,
 				508639F0201A9CE800582920 /* WelcomePageViewController.swift */,
 				50260319201EABB80070B5A7 /* Pages.xib */,
 				50F03F9D201FA29300E85CA2 /* Child.xib */,
 				5026031B201EAE870070B5A7 /* PagesView.swift */,
 				508639F2201A9CE800582920 /* Main.storyboard */,
+				50C7F8BE2052357C003EDC73 /* DonationViewController.swift */,
 				50135624201A9FA80047EBF4 /* MainViewController.swift */,
 				50C4C80A2033BAA000969019 /* LoginViewController.swift */,
+				50C7F8BC2052343F003EDC73 /* Buttons.swift */,
 				50135622201A9F610047EBF4 /* LoginPageViewController.swift */,
 				50F2150F2027A3390027BE44 /* Animator.swift */,
 				508639F5201A9CE800582920 /* Assets.xcassets */,
@@ -219,6 +235,13 @@
 				50C4C8042033B97600969019 /* AMInputView.xib */,
 			);
 			path = AMLogin;
+			sourceTree = "<group>";
+		};
+		50C7F8C7205258C7003EDC73 /* FluidSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FluidSegmentedControl;
 			sourceTree = "<group>";
 		};
 		C8167432AB9B47220E2C774A /* Frameworks */ = {
@@ -596,10 +619,13 @@
 				50F2151B2027A33C0027BE44 /* DetailViewController.swift in Sources */,
 				50F215172027A33C0027BE44 /* CardPlayer.swift in Sources */,
 				50F2151E2027A33C0027BE44 /* CardGroupSliding.swift in Sources */,
+				50C7F8C3205258AC003EDC73 /* UIView+Constraints.swift in Sources */,
+				50C7F8C4205258AC003EDC73 /* SJFluidSegmentedControl.swift in Sources */,
 				50F2151D2027A33C0027BE44 /* Player_by_Patric_Piemonte.swift in Sources */,
 				50F2151A2027A33C0027BE44 /* CardGroup.swift in Sources */,
 				50C4C8072033B97700969019 /* AMInputView.swift in Sources */,
 				50F215182027A33C0027BE44 /* LayoutHelper.swift in Sources */,
+				50C7F8C5205258AC003EDC73 /* SJGradientView.swift in Sources */,
 				50F215162027A33C0027BE44 /* CardHighlight.swift in Sources */,
 				50135623201A9F610047EBF4 /* LoginPageViewController.swift in Sources */,
 				50F215152027A33C0027BE44 /* Card.swift in Sources */,
@@ -609,7 +635,9 @@
 				50C4C80B2033BAA000969019 /* LoginViewController.swift in Sources */,
 				50F215192027A33C0027BE44 /* Animator.swift in Sources */,
 				50F2151C2027A33C0027BE44 /* CardArticle.swift in Sources */,
+				50C7F8BD20523440003EDC73 /* Buttons.swift in Sources */,
 				508E05FD203B9D0700266AE1 /* MainCard.swift in Sources */,
+				50C7F8BF2052357C003EDC73 /* DonationViewController.swift in Sources */,
 				50135625201A9FA80047EBF4 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

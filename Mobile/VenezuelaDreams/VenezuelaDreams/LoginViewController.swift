@@ -178,8 +178,8 @@ class LoginViewController: UIViewController {
                 return
             }
             let ref = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
-            let values = ["name": name, "lastname": lastname, "email": email, "gender": gender]
-            let usersReference = ref.child("user").child("email_users").child(uid)
+            let values = ["name": name, "lastname": lastname, "email": email, "gender": gender, "registration_type": "email"]
+            let usersReference = ref.child("user").child(uid)
             usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
                 
                 if (err != nil){

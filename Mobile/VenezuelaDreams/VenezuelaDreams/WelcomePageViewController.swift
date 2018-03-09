@@ -165,8 +165,8 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
     //add user's info to database
     func addToDbFacebookUser(name: String, lastname: String, email: String, gender: String, uid: String){
         let ref = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
-        let values = ["name": name, "lastname": lastname, "email": email, "gender": gender]
-        let usersReference = ref.child("user").child("facebook_users").child(uid)
+        let values = ["name": name, "lastname": lastname, "email": email, "gender": gender, "registration_type": "fb"]
+        let usersReference = ref.child("user").child(uid)
         usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
             
             if (err != nil){
@@ -180,6 +180,7 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
     @IBAction func continueWithoutSignIn(_ sender: Any) {
         doSegue()
     }
+    
     func doSegue(){
         self.performSegue(withIdentifier: "redirectAfterLoginFB", sender: self)
     }
