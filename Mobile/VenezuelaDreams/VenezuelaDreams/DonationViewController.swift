@@ -17,6 +17,7 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
     @IBOutlet weak var donateButton: UIButton!
     
     var paymentTextField = STPPaymentCardTextField()
+    var childToDonateToID: String? 
     //var theme = STPTheme.default()
 
     let theme: STPTheme = {
@@ -43,6 +44,8 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Child to donate to ID:")
+        print(childToDonateToID)
         setUp()
         // Do any additional setup after loading the view.
     }

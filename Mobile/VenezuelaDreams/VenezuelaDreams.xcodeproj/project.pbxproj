@@ -22,6 +22,7 @@
 		50863A0F201A9CE800582920 /* VenezuelaDreamsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50863A0E201A9CE800582920 /* VenezuelaDreamsUITests.swift */; };
 		508E05FD203B9D0700266AE1 /* MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E05FC203B9D0700266AE1 /* MainCard.swift */; };
 		50A282AA20547BE30003B9E6 /* DatabaseChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A282A920547BE30003B9E6 /* DatabaseChild.swift */; };
+		50A282AE205635C90003B9E6 /* DonateButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */; };
 		50AB0D6E203CA53E008EC37E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 50AB0D6D203CA53E008EC37E /* Settings.bundle */; };
 		50C4C8062033B97700969019 /* AMInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4C8042033B97600969019 /* AMInputView.xib */; };
 		50C4C8072033B97700969019 /* AMInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4C8052033B97700969019 /* AMInputView.swift */; };
@@ -87,6 +88,7 @@
 		50863A10201A9CE800582920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		508E05FC203B9D0700266AE1 /* MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCard.swift; sourceTree = "<group>"; };
 		50A282A920547BE30003B9E6 /* DatabaseChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseChild.swift; sourceTree = "<group>"; };
+		50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateButtonViewController.swift; sourceTree = "<group>"; };
 		50AB0D6D203CA53E008EC37E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		50C4C8042033B97600969019 /* AMInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMInputView.xib; sourceTree = "<group>"; };
 		50C4C8052033B97700969019 /* AMInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMInputView.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				50A282A920547BE30003B9E6 /* DatabaseChild.swift */,
 				508639F2201A9CE800582920 /* Main.storyboard */,
 				50C7F8BE2052357C003EDC73 /* DonationViewController.swift */,
+				50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */,
 				50135624201A9FA80047EBF4 /* MainViewController.swift */,
 				50C4C80A2033BAA000969019 /* LoginViewController.swift */,
 				50C7F8BC2052343F003EDC73 /* Buttons.swift */,
@@ -627,6 +630,7 @@
 				50F2151D2027A33C0027BE44 /* Player_by_Patric_Piemonte.swift in Sources */,
 				50F2151A2027A33C0027BE44 /* CardGroup.swift in Sources */,
 				50C4C8072033B97700969019 /* AMInputView.swift in Sources */,
+				50A282AE205635C90003B9E6 /* DonateButtonViewController.swift in Sources */,
 				50F215182027A33C0027BE44 /* LayoutHelper.swift in Sources */,
 				50C7F8C5205258AC003EDC73 /* SJGradientView.swift in Sources */,
 				50F215162027A33C0027BE44 /* CardHighlight.swift in Sources */,

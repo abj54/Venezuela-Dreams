@@ -13,17 +13,11 @@ import Firebase
 
 class MainViewController: UIViewController,UIScrollViewDelegate  {
     
-    
-    @IBOutlet weak var rightButton: UIButton!
-    @IBOutlet weak var leftButton: UIButton!
+
     @IBOutlet weak var donateButton: UIButton!
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var settings: UIButton!
-    
-    
-    
     @IBOutlet weak var scrollView: UIScrollView!
-    var image: UIImage!
 
     var refChild: FIRDatabaseReference!
     var array_pages = [DatabaseChild]()
@@ -32,13 +26,11 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
     //Main method for View
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //Get all the children from firebase
         refChild = FIRDatabase.database().reference().child("child")
         refChild.observe(FIRDataEventType.value, with: {(snapshot) in
             if(snapshot.childrenCount > 0){
                 self.array_pages.removeAll()
-                
                 for databasechildren in snapshot.children.allObjects as![FIRDataSnapshot]{
                     let childObject = databasechildren.value as? [String: AnyObject]
                     let childName = childObject?["first_name"]
@@ -72,19 +64,15 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
     
     //Loads scroll view with cards of the children
     func loadPages(){
-
         for (index,childObject) in array_pages.enumerated(){
             let card = MainCard(frame: CGRect(x: 0, y: 0, width: 355 , height: self.scrollView.bounds.height))
             card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
-            //card.icon = UIImage(named: "flappy")
-            //card.category = page["name"]!
+
             card.categoryLbl.textColor = UIColor.white
             card.title = childObject.name! //Name
             card.subtitle = childObject.description! //Bio
             card.blurEffect = .light
-            //card.itemTitle = page["name"]!
-            //card.itemSubtitle = "Flap That !"
-            //loadImage(childID: childObject.id!)
+
             //GET IMAGE
             let imageUrlString = childObject.childUrl
             let imageUrl:URL = URL(string: imageUrlString!)!
@@ -102,23 +90,24 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     card.backgroundImage = image
                 }
             }
-            
-            
             //card.backgroundColor = UIColor.clear
             card.textColor = UIColor.white
             card.hasParallax = true
-            let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContent")
+            //INITIALIZE VIEW CONTROLLER
+            let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "DonateButtonViewController") as! DonateButtonViewController
+            //TRANSFER CHILD ID TO DONATE VIEW CONTROLLER
+            cardContentVC.transferChildID = childObject.id as? String
+            
             card.shouldPresent(cardContentVC, from: self, fullscreen: false)
-            
-            scrollView.addSubview(card)
-            
-            //set origin of x coordinate for the card
+            //set origin of x and y coordinates for the card
             if (index == 0){
                 card.frame.origin.x = (self.view.bounds.width - 355) / 2
             } else {
                 card.frame.origin.x = (CGFloat(index) * self.scrollView.bounds.width) + ((self.view.bounds.width - 355) / 2)
             }
             card.frame.origin.y = 0
+            scrollView.addSubview(card)
+
         }
     }
 

@@ -148,7 +148,7 @@ import UIKit
                                 height: gimme.Y(17))
         
         subtitleLbl.frame = CGRect(x: insets,
-                                   y: gimme.RevY(0, height: gimme.Y(14)) - insets+40,
+                                   y: gimme.RevY(0, height: gimme.Y(14)) - insets+20,
                                    width: gimme.X(90),
                                    height: gimme.Y(14))
         
