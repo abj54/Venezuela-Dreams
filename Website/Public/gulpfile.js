@@ -68,7 +68,7 @@ gulp.task('css:compile', function() {
 });
 
 // Minify CSS
-gulp.task('css:minify', ['css:compile'], function() {
+gulp.task('cleanCSS', function() {
   return gulp.src([
       './css/*.css',
       '!./css/*.min.css'
@@ -82,7 +82,7 @@ gulp.task('css:minify', ['css:compile'], function() {
 });
 
 // CSS
-gulp.task('css', ['css:compile', 'css:minify']);
+gulp.task('css', ['css:compile', 'cleanCSS']);
 
 // Minify JavaScript
 gulp.task('js:minify', function() {
