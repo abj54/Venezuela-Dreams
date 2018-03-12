@@ -27,6 +27,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Get all the children from firebase
+        
         refChild = FIRDatabase.database().reference().child("child")
         refChild.observe(FIRDataEventType.value, with: {(snapshot) in
             if(snapshot.childrenCount > 0){
@@ -131,6 +132,11 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
 
     @IBAction func goToSettings(_ sender: Any) {
         doSegueSettings()
+    }
+    @IBAction func goToDonate(_ sender: Any) {
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "DonationViewController") as! DonationViewController
+        myVC.childToDonateToID = "1"
+        self.present(myVC, animated:true, completion:nil)
     }
     func doSegueSettings(){
         self.performSegue(withIdentifier: "toSettings", sender: self)

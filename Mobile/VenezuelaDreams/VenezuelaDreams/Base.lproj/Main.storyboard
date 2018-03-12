@@ -384,6 +384,9 @@
                                 <state key="normal" title="Donate">
                                     <color key="titleColor" red="0.96956669169999998" green="1" blue="0.98786879719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="goToDonate:" destination="VdJ-DT-2q5" eventType="touchUpInside" id="WJ5-UN-ubu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8mG-BY-TgH"/>
@@ -786,6 +789,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="smz-5l-MXI"/>
-        <segue reference="FBQ-54-qhl"/>
+        <segue reference="Kxd-fQ-Bhc"/>
     </inferredMetricsTieBreakers>
 </document>

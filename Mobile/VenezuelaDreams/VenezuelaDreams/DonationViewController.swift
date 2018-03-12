@@ -15,7 +15,7 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
     @IBOutlet var inputsView: UIView!
     @IBOutlet weak var childToDonateView: UIView!
     @IBOutlet weak var donateButton: UIButton!
-    
+    var childToDonateTo : DatabaseChild?
     var paymentTextField = STPPaymentCardTextField()
     var childToDonateToID: String? 
     //var theme = STPTheme.default()
@@ -42,16 +42,38 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
         return sc
         }()
     
+    
+    func getChildData(childIdTransfer: String){
+        var refChild: FIRDatabaseReference!
+        var childFromDatabase: DatabaseChild?
+        refChild = FIRDatabase.database().reference(withPath: "child").child(childIdTransfer)
+        refChild.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let childName = value?["first_name"]
+            let childDescription = value?["description"]
+            let childID = refChild.key as! String
+            let imageUrl = value?["imageurl"]
+            childFromDatabase = DatabaseChild(id: childID, name: childName as! String, description: childDescription as? String, childUrl: imageUrl  as? String)
+            self.childToDonateTo = childFromDatabase
+            self.loadChild()
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Child to donate to ID:")
         print(childToDonateToID)
+        getChildData(childIdTransfer: childToDonateToID!)
         setUp()
         // Do any additional setup after loading the view.
     }
     
     func setUp(){
-        loadChild()
+        //loadChild()
         
         donateButton.backgroundColor = #colorLiteral(red: 0.1149113253, green: 0.3041413426, blue: 0.4084678888, alpha: 1)
         donateButton.setTitle("Donate", for: .normal)
@@ -142,12 +164,29 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
     func loadChild(){
         let card = CardArticle(frame: CGRect(x: 10, y: 30, width: self.donateButton.bounds.width , height: self.childToDonateView.bounds.height))
         card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
-        card.category = "Andres"
+        card.category = (childToDonateTo?.name)!
         card.categoryLbl.textColor = UIColor.white
         card.title = ""
-        card.subtitle = "Tests of short description!"
+        card.subtitle = (childToDonateTo?.description)!
         card.blurEffect = .light
-        card.backgroundImage = UIImage(named: "delta1")
+        //SET IMAGE
+        let imageUrlString = childToDonateTo?.childUrl
+        let imageUrl:URL = URL(string: imageUrlString!)!
+        
+        // Start background thread so that image loading does not make app unresponsive
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            let imageView = UIImageView(frame: CGRect(x:0, y:0, width:200, height:200))
+            imageView.center = self.view.center
+            
+            // When from background thread, UI needs to be updated on main_queue
+            DispatchQueue.main.async {
+                let image = UIImage(data: imageData as Data)
+                card.backgroundImage = image
+            }
+        }
+        
         card.textColor = UIColor.white
         card.hasParallax = true
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContent")
