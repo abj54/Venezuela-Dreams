@@ -337,17 +337,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="angel-falls" translatesAutoresizingMaskIntoConstraints="NO" id="lti-wq-rr1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background7" translatesAutoresizingMaskIntoConstraints="NO" id="Vqx-W7-vFC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.30466015289999998" green="0.46919073220000002" blue="0.63479536800000003" alpha="0.79284674659999999" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-6v-O3c">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-6v-O3c">
                                 <rect key="frame" x="0.0" y="577" width="375" height="90"/>
-                                <color key="backgroundColor" red="0.16896239654308004" green="0.70213325777202074" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="GyX-fj-ejL"/>
-                                    <constraint firstAttribute="height" constant="90" id="hhr-1Q-vU0"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.13484977590659242" green="0.27834997375676523" blue="0.59836206882380794" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="65"/>
                                 <state key="normal" title="Donate">
                                     <color key="titleColor" red="0.96956669165321274" green="1" blue="0.98786879720883691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -356,29 +354,10 @@
                                     <segue destination="c1t-Gv-rhB" kind="show" id="DFm-0J-RT5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwN-vb-zEq">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5dP-zs-vDH"/>
-                                    <constraint firstAttribute="width" constant="46" id="Z3b-Xq-DfA"/>
-                                </constraints>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToWelcome:" destination="VdJ-DT-2q5" eventType="touchUpInside" id="LQG-Ym-I5E"/>
-                                </connections>
-                            </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eZ-sy-ON3">
-                                <rect key="frame" x="0.0" y="66" width="375" height="475"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="VTE-Df-9Nb"/>
-                                    <constraint firstAttribute="height" constant="475" id="Wjk-Lp-oIP"/>
-                                </constraints>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-4T-mtO">
-                                <rect key="frame" x="286" y="20" width="57" height="30"/>
-                                <state key="normal" title="Settings">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-4T-mtO">
+                                <rect key="frame" x="320" y="27" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Tools">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -386,18 +365,29 @@
                                     <segue destination="LyU-VM-EOW" kind="show" identifier="toSettings" id="S4F-df-EFc"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eZ-sy-ON3">
+                                <rect key="frame" x="0.0" y="72" width="375" height="508"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="OFl-pF-dJE"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Venezuela Dreams" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESf-HH-b0j">
+                                <rect key="frame" x="103" y="27" width="169" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwN-vb-zEq">
+                                <rect key="frame" x="16" y="27" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToWelcome:" destination="VdJ-DT-2q5" eventType="touchUpInside" id="LQG-Ym-I5E"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="g8T-6v-O3c" firstAttribute="leading" secondItem="8mG-BY-TgH" secondAttribute="leading" id="7Wu-5K-luo"/>
-                            <constraint firstItem="0eZ-sy-ON3" firstAttribute="top" secondItem="fwN-vb-zEq" secondAttribute="bottom" constant="16" id="ItN-dq-bcl"/>
-                            <constraint firstItem="g8T-6v-O3c" firstAttribute="trailing" secondItem="8mG-BY-TgH" secondAttribute="trailing" id="gFR-R9-pg1"/>
-                            <constraint firstItem="g8T-6v-O3c" firstAttribute="top" secondItem="0eZ-sy-ON3" secondAttribute="bottom" constant="36" id="pXD-HH-Ple"/>
-                            <constraint firstItem="g8T-6v-O3c" firstAttribute="bottom" secondItem="8mG-BY-TgH" secondAttribute="bottom" id="sKy-XZ-UU5"/>
-                            <constraint firstItem="l2c-4T-mtO" firstAttribute="leading" secondItem="fwN-vb-zEq" secondAttribute="trailing" constant="224" id="tYJ-Cg-OV5"/>
-                            <constraint firstItem="fwN-vb-zEq" firstAttribute="top" secondItem="8mG-BY-TgH" secondAttribute="top" id="tj7-bu-q6A"/>
-                            <constraint firstItem="fwN-vb-zEq" firstAttribute="leading" secondItem="8mG-BY-TgH" secondAttribute="leading" constant="16" id="z94-Gh-4Rx"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8mG-BY-TgH"/>
                     </view>
                     <connections>
@@ -752,7 +742,8 @@
     </scenes>
     <resources>
         <image name="Salto-Angel" width="1920" height="1080"/>
-        <image name="angel-falls" width="1920" height="1920"/>
+        <image name="Tools" width="512" height="512"/>
+        <image name="back" width="540" height="540"/>
         <image name="background7" width="940" height="627"/>
         <image name="delta2" width="960" height="642"/>
         <image name="delta3" width="960" height="642"/>
@@ -760,7 +751,7 @@
         <image name="logo" width="975" height="975"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2O0-hB-Br2"/>
+        <segue reference="smz-5l-MXI"/>
         <segue reference="Kxd-fQ-Bhc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@ target 'VenezuelaDreams' do
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
   pod 'Stripe'
+  pod 'ContextMenu.iOS', '~> 1.1.0'
 
   # Pods for VenezuelaDreams
 
