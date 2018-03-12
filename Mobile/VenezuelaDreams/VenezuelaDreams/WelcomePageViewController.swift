@@ -77,7 +77,6 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
             let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContent")
             card.shouldPresent(cardContentVC, from: self, fullscreen: false)
             
-            scrollView.addSubview(card)
             
             //set origin of x coordinate for the card
             if (index == 0){
@@ -88,6 +87,8 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
             //set origin of the y coordinate for the card
             
             card.frame.origin.y = 0
+            scrollView.addSubview(card)
+
         }
     }
     

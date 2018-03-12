@@ -269,6 +269,19 @@
                     <view key="view" contentMode="scaleToFill" id="jcj-gf-f2W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POq-Sc-lv6">
+                                <rect key="frame" x="16" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToWelcome:" destination="VdJ-DT-2q5" eventType="touchUpInside" id="3KL-cw-SkJ"/>
+                                    <segue destination="VdJ-DT-2q5" kind="show" id="NYh-26-uxc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QmP-OR-GXA"/>
                     </view>
@@ -788,7 +801,7 @@
         <image name="logo" width="975" height="975"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="smz-5l-MXI"/>
+        <segue reference="NYh-26-uxc"/>
         <segue reference="Kxd-fQ-Bhc"/>
     </inferredMetricsTieBreakers>
 </document>
