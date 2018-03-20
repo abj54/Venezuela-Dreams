@@ -11,7 +11,6 @@
 		50135623201A9F610047EBF4 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50135622201A9F610047EBF4 /* LoginPageViewController.swift */; };
 		50135625201A9FA80047EBF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50135624201A9FA80047EBF4 /* MainViewController.swift */; };
 		50135628201D04550047EBF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50135627201D04540047EBF4 /* GoogleService-Info.plist */; };
-		5026031A201EABB80070B5A7 /* Pages.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50260319201EABB80070B5A7 /* Pages.xib */; };
 		5026031C201EAE870070B5A7 /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026031B201EAE870070B5A7 /* PagesView.swift */; };
 		508639EF201A9CE800582920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508639EE201A9CE800582920 /* AppDelegate.swift */; };
 		508639F1201A9CE800582920 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508639F0201A9CE800582920 /* WelcomePageViewController.swift */; };
@@ -32,7 +31,6 @@
 		50C7F8C3205258AC003EDC73 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8C0205258A6003EDC73 /* UIView+Constraints.swift */; };
 		50C7F8C4205258AC003EDC73 /* SJFluidSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8C1205258A9003EDC73 /* SJFluidSegmentedControl.swift */; };
 		50C7F8C5205258AC003EDC73 /* SJGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8C2205258AC003EDC73 /* SJGradientView.swift */; };
-		50F03F9E201FA29300E85CA2 /* Child.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50F03F9D201FA29300E85CA2 /* Child.xib */; };
 		50F215152027A33C0027BE44 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2150B2027A3360027BE44 /* Card.swift */; };
 		50F215162027A33C0027BE44 /* CardHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2150C2027A3370027BE44 /* CardHighlight.swift */; };
 		50F215172027A33C0027BE44 /* CardPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2150D2027A3370027BE44 /* CardPlayer.swift */; };
@@ -71,7 +69,6 @@
 		50135622201A9F610047EBF4 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		50135624201A9FA80047EBF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50135627201D04540047EBF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		50260319201EABB80070B5A7 /* Pages.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Pages.xib; sourceTree = "<group>"; };
 		5026031B201EAE870070B5A7 /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
 		508639EB201A9CE800582920 /* VenezuelaDreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenezuelaDreams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508639EE201A9CE800582920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,7 +95,6 @@
 		50C7F8C0205258A6003EDC73 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		50C7F8C1205258A9003EDC73 /* SJFluidSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJFluidSegmentedControl.swift; sourceTree = "<group>"; };
 		50C7F8C2205258AC003EDC73 /* SJGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJGradientView.swift; sourceTree = "<group>"; };
-		50F03F9D201FA29300E85CA2 /* Child.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Child.xib; sourceTree = "<group>"; };
 		50F2150B2027A3360027BE44 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		50F2150C2027A3370027BE44 /* CardHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHighlight.swift; sourceTree = "<group>"; };
 		50F2150D2027A3370027BE44 /* CardPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlayer.swift; sourceTree = "<group>"; };
@@ -148,6 +144,7 @@
 		503C506E2031F6570078C929 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				50F2150F2027A3390027BE44 /* Animator.swift */,
 				50F2150B2027A3360027BE44 /* Card.swift */,
 				50F215122027A33B0027BE44 /* CardArticle.swift */,
 				50F215142027A33C0027BE44 /* CardGroupSliding.swift */,
@@ -187,16 +184,10 @@
 		508639ED201A9CE800582920 /* VenezuelaDreams */ = {
 			isa = PBXGroup;
 			children = (
-				50C7F8C7205258C7003EDC73 /* FluidSegmentedControl */,
 				50C4C8032033B96700969019 /* AMLogin */,
 				503C506E2031F6570078C929 /* Cards */,
 				508639EE201A9CE800582920 /* AppDelegate.swift */,
-				50C7F8C1205258A9003EDC73 /* SJFluidSegmentedControl.swift */,
-				50C7F8C2205258AC003EDC73 /* SJGradientView.swift */,
-				50C7F8C0205258A6003EDC73 /* UIView+Constraints.swift */,
 				508639F0201A9CE800582920 /* WelcomePageViewController.swift */,
-				50260319201EABB80070B5A7 /* Pages.xib */,
-				50F03F9D201FA29300E85CA2 /* Child.xib */,
 				5026031B201EAE870070B5A7 /* PagesView.swift */,
 				50A282A920547BE30003B9E6 /* DatabaseChild.swift */,
 				508639F2201A9CE800582920 /* Main.storyboard */,
@@ -206,7 +197,6 @@
 				50C4C80A2033BAA000969019 /* LoginViewController.swift */,
 				50C7F8BC2052343F003EDC73 /* Buttons.swift */,
 				50135622201A9F610047EBF4 /* LoginPageViewController.swift */,
-				50F2150F2027A3390027BE44 /* Animator.swift */,
 				508639F5201A9CE800582920 /* Assets.xcassets */,
 				508639F7201A9CE800582920 /* LaunchScreen.storyboard */,
 				50135627201D04540047EBF4 /* GoogleService-Info.plist */,
@@ -237,17 +227,13 @@
 		50C4C8032033B96700969019 /* AMLogin */ = {
 			isa = PBXGroup;
 			children = (
+				50C7F8C0205258A6003EDC73 /* UIView+Constraints.swift */,
+				50C7F8C1205258A9003EDC73 /* SJFluidSegmentedControl.swift */,
+				50C7F8C2205258AC003EDC73 /* SJGradientView.swift */,
 				50C4C8052033B97700969019 /* AMInputView.swift */,
 				50C4C8042033B97600969019 /* AMInputView.xib */,
 			);
 			path = AMLogin;
-			sourceTree = "<group>";
-		};
-		50C7F8C7205258C7003EDC73 /* FluidSegmentedControl */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FluidSegmentedControl;
 			sourceTree = "<group>";
 		};
 		C8167432AB9B47220E2C774A /* Frameworks */ = {
@@ -392,9 +378,7 @@
 				50AB0D6E203CA53E008EC37E /* Settings.bundle in Resources */,
 				508639F9201A9CE800582920 /* LaunchScreen.storyboard in Resources */,
 				50135628201D04550047EBF4 /* GoogleService-Info.plist in Resources */,
-				5026031A201EABB80070B5A7 /* Pages.xib in Resources */,
 				508639F6201A9CE800582920 /* Assets.xcassets in Resources */,
-				50F03F9E201FA29300E85CA2 /* Child.xib in Resources */,
 				508639F4201A9CE800582920 /* Main.storyboard in Resources */,
 				50C4C8062033B97700969019 /* AMInputView.xib in Resources */,
 			);
