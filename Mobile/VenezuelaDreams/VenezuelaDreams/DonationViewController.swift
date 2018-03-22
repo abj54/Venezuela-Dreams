@@ -52,9 +52,9 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
             let value = snapshot.value as? NSDictionary
             let childName = value?["first_name"]
             let childDescription = value?["description"]
-            let childID = refChild.key
+            let childID = refChild.key as! String
             let imageUrl = value?["imageurl"]
-            childFromDatabase = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
+            childFromDatabase = DatabaseChild(id: childID, name: childName as! String, description: childDescription as? String, childUrl: imageUrl  as? String)
             self.childToDonateTo = childFromDatabase
             self.loadChild()
             // ...
@@ -66,7 +66,7 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Child to donate to ID:")
-        print(childToDonateToID!)
+        print(childToDonateToID)
         getChildData(childIdTransfer: childToDonateToID!)
         setUp()
         // Do any additional setup after loading the view.
@@ -77,7 +77,7 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
         
         donateButton.backgroundColor = #colorLiteral(red: 0.1149113253, green: 0.3041413426, blue: 0.4084678888, alpha: 1)
         donateButton.setTitle("Donate", for: .normal)
-        donateButton.layer.cornerRadius = 20
+        donateButton.layer.cornerRadius = 25
 
         //inputsView.backgroundColor = #colorLiteral(red: 0.1149113253, green: 0.3041413426, blue: 0.4084678888, alpha: 1)
         //childToDonateView.backgroundColor = #colorLiteral(red: 0.1149113253, green: 0.3041413426, blue: 0.4084678888, alpha: 1)
@@ -94,37 +94,20 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
         paymentTextField.leftAnchor.constraint(equalTo: inputsView.leftAnchor, constant: 16).isActive = true
         paymentTextField.rightAnchor.constraint(equalTo: inputsView.rightAnchor, constant: -16).isActive = true
         paymentTextField.topAnchor.constraint(equalTo: childToDonateView.bottomAnchor, constant: 16).isActive = true
-        paymentTextField.translatesAutoresizingMaskIntoConstraints = false
-
+    
         donateButton.isEnabled = false
         donateButton.addTarget(self, action: #selector(self.submitCard(_:)), for: .touchUpInside)
         
+        paymentTextField.translatesAutoresizingMaskIntoConstraints = false
         
         inputsView.addSubview(segmentedControl)
         segmentedControl.leftAnchor.constraint(equalTo: inputsView.leftAnchor, constant: 16).isActive = true
         segmentedControl.rightAnchor.constraint(equalTo: inputsView.rightAnchor, constant: -16).isActive = true
-        segmentedControl.topAnchor.constraint(equalTo: paymentTextField.bottomAnchor, constant: 10).isActive = true
+        segmentedControl.topAnchor.constraint(equalTo: paymentTextField.bottomAnchor, constant: 8).isActive = true
         segmentedControl.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        
-        inputsView.addSubview(otherAmountTextField)
-        otherAmountTextField.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 10).isActive = true
-        otherAmountTextField.leftAnchor.constraint(equalTo: inputsView.leftAnchor, constant: 16).isActive = true
-        otherAmountTextField.rightAnchor.constraint(equalTo: inputsView.rightAnchor, constant: -16).isActive = true
-        otherAmountTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
+
     }
 
-    let otherAmountTextField: UITextField = {
-        let tf = UITextField()
-        tf.attributedPlaceholder = NSAttributedString(string: "Other: ", attributes: [NSAttributedStringKey.foregroundColor : UIColor(red:130.0/255.0, green:147.0/255.0, blue:168.0/255.0, alpha:255.0/255.0)])
-        tf.textColor = UIColor.white
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.backgroundColor = UIColor(red:66.0/255.0, green:69.0/255.0, blue:112.0/255.0, alpha:255.0/255.0)
-        tf.layer.borderWidth = 1.0
-        tf.layer.borderColor = UIColor(red:14.0/255.0, green:211.0/255.0, blue:140.0/255.0, alpha:255.0/255.0).cgColor
-        tf.layer.cornerRadius = 5
-        return tf
-    }()
-    
     func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
         donateButton.isEnabled = textField.isValid
     }
@@ -140,6 +123,7 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
                 return
             }
             
+            // TODO: send the token to your server so it can create a charge
             let index = self.segmentedControl.currentSegment
             var amount = ""
             if (index == 0){
@@ -150,12 +134,9 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
                 amount = "1000"
             } else if (index == 3){
                 amount = "2000"
-            } else if (index == 4) {
-                amount = "5000"
             } else {
-                
+                amount = "5000"
             }
-            
             self.sendToken(token: token!, amount: amount)
             let alert = UIAlertController(title: "Welcome to Stripe", message: "Token created: \(stripeToken)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -233,7 +214,7 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
 extension DonationViewController: SJFluidSegmentedControlDataSource {
     
     func numberOfSegmentsInSegmentedControl(_ segmentedControl: SJFluidSegmentedControl) -> Int {
-        return 6
+        return 5
     }
     
     func segmentedControl(_ segmentedControl: SJFluidSegmentedControl,
@@ -246,10 +227,8 @@ extension DonationViewController: SJFluidSegmentedControlDataSource {
             return "$10.00"
         } else if index == 3 {
             return "$20.00"
-        } else if index == 4 {
-            return "$50.00"
         }
-        return "Other"
+        return "$50.00"
     }
     
     func segmentedControl(_ segmentedControl: SJFluidSegmentedControl,
