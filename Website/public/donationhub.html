@@ -22,7 +22,7 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="css/vDreams.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="css/login_form.css">
       <link rel="stylesheet" type="text/css" href="css/util.css">
       <link rel="icon" type="image/png" href="img/icons/favicon.ico"/>
@@ -365,7 +365,7 @@
             <div class="modal-dialog">
             <div class="container wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54 modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" id="form-container">
                         <span class="login100-form-title p-b-49">
                             Login
                         </span>
@@ -382,7 +382,7 @@
                         <span class="focus-input100" data-symbol="&#xf190;"></span>
                     </div>
 
-                    <div class="text-right p-t-8 p-b-31">
+                    <div class="text-right p-t-8 p-b-40">
                         <a href="#">
                             Forgot password?
                         </a>
@@ -423,28 +423,16 @@
         </div>
         </div>
 
-        <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+        <div id="messageModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="container wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54 modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <form class="login100-form validate-form">
                         <h4 class="modal-title" id="messageModalLabel">Message</h4>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="pre-auth">
-                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                            <span class="">
-                  <button type="submit" class="btn btn-primary" data-dismiss="modal" href="signup.html">Register</button>
-                  <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#form-modal">Login</button>
-                </span>
-                        </div>
-                        <div class="post-auth"></div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-
-
 
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
@@ -461,7 +449,7 @@
         <script src="js/authentication.js"></script>
 
         <!-- Custom scripts for this template -->
-        <script src="js/freelancer.min.js"></script>
+        <script src="js/vDreams.min.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
@@ -469,6 +457,7 @@
 
 
         <script>
+            var flag = 0;
             $(document).ready(function () {
 
                 // Initialize Firebase
@@ -567,9 +556,6 @@
                 //Login
                 $('#doLogin').on('click', function (e) {
                     e.preventDefault();
-                    $('#form-modal').modal('hide');
-                    $('#messageModalLabel').html(spanText('<i class="fa fa-cog fa-spin"></i>', ['center', 'info']));
-                    $('#messageModal').modal('show');
 
                     if( $('#loginEmail').val() != '' && $('#loginPassword').val() != '' ){
                         //login the user
@@ -577,20 +563,26 @@
                             email: $('#loginEmail').val(),
                             password: $('#loginPassword').val()
                         };
+
+
                         firebase.auth().signInWithEmailAndPassword(data.email, data.password)
                             .then(function(authData) {
+                                $(' <div class="text-center p-t-100 p-b-31">\n' +
+                                    '<a class="text-black">' +
+                                    'Login SuccessFul' +
+                                    '</a>' +
+                                    '</div>').appendTo('form-container');
                                 console.log("Authenticated successfully with payload:", authData);
                                 Auth = authData;
-                                $('#messageModalLabel').html(spanText('Success!', ['center', 'success']));
+                                //$('#messageModalLabel').html(spanText('Success!', ['center', 'success']));
 
                                 setTimeout(function () {
-                                    $('#messageModal').modal('hide');
+                                    $('#form-modal').modal('hide');
                                     $('.unauthenticated, .userAuth').toggleClass('unauthenticated').toggleClass('authenticated');
                                 }, 500);
 
                                 $("#navSigninUp").text("loggedin");
                                 console.log("Successfully created user account with uid:");
-                                $('#messageModalLabel').html(spanText('Successfully created user account!', ['success']))
                             })
                             .catch(function(error) {
                                 console.log("Login Failed!", error);
@@ -603,12 +595,9 @@
                     var classNames = textClasses.map(c => 'text-' + c).join(' ');
                     return '<span class="' + classNames + '">' + textStr + '</span>';
                 }
-
-
             });
 
             $(document).ready(function () {
-
                 var images = ["img/childlist/z1.jpg", "img/childlist/z2.jpg","img/childlist/z3.jpg",
                     "img/childlist/z4.jpg","img/childlist/z5.jpg","img/childlist/z6.jpg","img/childlist/z7.jpg",
                     "img/childlist/z8.jpg","img/childlist/z9.jpg","img/childlist/z10.jpg","img/childlist/z11.jpg","img/childlist/z12.jpg"];
@@ -644,11 +633,6 @@
 
             });
         </script>
-
-
-
-
-
       </body>
 
 </html>
