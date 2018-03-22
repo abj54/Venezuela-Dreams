@@ -46,6 +46,23 @@ exports.createStripeCharge = functions.database.ref('/transactions/userId/{userI
 });
 // [END chargecustomer]]
 
+// Add a payment source (card) for a user by writing a stripe payment source token to Realtime database
+exports.addPaymentSource = functions.database.ref('/transactions/userId/{userId}/transactionId/{transactionId}').onWrite((event) => {
+  const source = event.data.val();
+  if (source === null) return null;
+  return admin.database().ref(`/user/${event.params.userId}/stripe_id`).once('value').then((snapshot) => {
+    return snapshot.val();
+  }).then((customer) => {
+    return stripe.customers.createSource(customer, {source});
+  }).then((response) => {
+    return event.data.adminRef.parent.set(response);
+  }, (error) => {
+    return event.data.adminRef.parent.child('error').set(userFacingMessage(error));
+  }).then(() => {
+    return reportError(error, {user: event.params.userId});
+  });
+});
+
 // When a user is created, register them with Stripe
 exports.createStripeCustomer = functions.auth.user().onCreate((event) => {
   const data = event.data;
