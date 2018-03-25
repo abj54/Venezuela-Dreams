@@ -10,77 +10,33 @@ import UIKit
 import Firebase
 import Stripe
 
-class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate {
+class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate, UITextFieldDelegate {
 
     @IBOutlet var inputsView: UIView!
     @IBOutlet weak var childToDonateView: UIView!
     @IBOutlet weak var donateButton: UIButton!
     var childToDonateTo : DatabaseChild?
     var paymentTextField = STPPaymentCardTextField()
-    var childToDonateToID: String? 
-    //var theme = STPTheme.default()
+    var childToDonateToID: String?
 
-    let theme: STPTheme = {
-        let th = STPTheme.default()
-        th.primaryBackgroundColor = UIColor(red:66.0/255.0, green:69.0/255.0, blue:112.0/255.0, alpha:255.0/255.0)
-        th.secondaryBackgroundColor = th.primaryBackgroundColor
-        th.primaryForegroundColor = UIColor.white
-        th.secondaryForegroundColor = UIColor(red:130.0/255.0, green:147.0/255.0, blue:168.0/255.0, alpha:255.0/255.0)
-        th.accentColor = UIColor(red:14.0/255.0, green:211.0/255.0, blue:140.0/255.0, alpha:255.0/255.0)
-        th.errorColor = UIColor(red:237.0/255.0, green:83.0/255.0, blue:69.0/255.0, alpha:255.0/255.0)
-    return th
-    }()
-    // Define a lazy var
-    lazy var segmentedControl: SJFluidSegmentedControl = {
-        
-        // Setup the frame per your needs
-        let sc = SJFluidSegmentedControl(frame: CGRect(x: 0, y: 0, width: donateButton.frame.width, height: donateButton.frame.height))
-        sc.cornerRadius = 25
-        sc.dataSource = self
-        sc.backgroundColor = #colorLiteral(red: 0, green: 0.2705698013, blue: 0.3583087921, alpha: 1)
-        sc.translatesAutoresizingMaskIntoConstraints = false
-        return sc
-        }()
-    
-    
-    func getChildData(childIdTransfer: String){
-        var refChild: FIRDatabaseReference!
-        var childFromDatabase: DatabaseChild?
-        refChild = FIRDatabase.database().reference(withPath: "child").child(childIdTransfer)
-        refChild.observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            let childName = value?["first_name"]
-            let childDescription = value?["description"]
-            let childID = refChild.key as! String
-            let imageUrl = value?["imageurl"]
-            childFromDatabase = DatabaseChild(id: childID, name: childName as! String, description: childDescription as? String, childUrl: imageUrl  as? String)
-            self.childToDonateTo = childFromDatabase
-            self.loadChild()
-            // ...
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Child to donate to ID:")
-        print(childToDonateToID)
+        self.amountTextField.delegate = self
+        print("Child to donate to ID: \(childToDonateToID!)")
         getChildData(childIdTransfer: childToDonateToID!)
         setUp()
         // Do any additional setup after loading the view.
     }
     
     func setUp(){
-        //loadChild()
-        
+        let user_id = getUserId()
+        print("THIS IS THE USERID: \(user_id)")
+    }
+    
+    func setUpForUser(){
         donateButton.backgroundColor = #colorLiteral(red: 0.1149113253, green: 0.3041413426, blue: 0.4084678888, alpha: 1)
         donateButton.setTitle("Donate", for: .normal)
         donateButton.layer.cornerRadius = 25
-
-        //inputsView.backgroundColor = #colorLiteral(red: 0.1149113253, green: 0.3041413426, blue: 0.4084678888, alpha: 1)
-        //childToDonateView.backgroundColor = #colorLiteral(red: 0.1149113253, green: 0.3041413426, blue: 0.4084678888, alpha: 1)
         
         paymentTextField.delegate = self
         paymentTextField.backgroundColor = theme.secondaryBackgroundColor
@@ -105,7 +61,50 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
         segmentedControl.rightAnchor.constraint(equalTo: inputsView.rightAnchor, constant: -16).isActive = true
         segmentedControl.topAnchor.constraint(equalTo: paymentTextField.bottomAnchor, constant: 8).isActive = true
         segmentedControl.heightAnchor.constraint(equalToConstant: 44).isActive = true
-
+        segmentedControl.textColor = .white
+        
+        inputsView.addSubview(amountTextField)
+        amountTextField.leftAnchor.constraint(equalTo: inputsView.leftAnchor, constant: 16).isActive = true
+        amountTextField.rightAnchor.constraint(equalTo: inputsView.rightAnchor, constant: -16).isActive = true
+        amountTextField.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 8).isActive = true
+        amountTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
+    }
+    
+    func setUpForGuest(){
+        donateButton.backgroundColor = #colorLiteral(red: 0.1149113253, green: 0.3041413426, blue: 0.4084678888, alpha: 1)
+        donateButton.setTitle("Donate", for: .normal)
+        donateButton.layer.cornerRadius = 25
+        
+        paymentTextField.delegate = self
+        paymentTextField.backgroundColor = theme.secondaryBackgroundColor
+        paymentTextField.textColor = theme.primaryForegroundColor
+        paymentTextField.placeholderColor = theme.secondaryForegroundColor
+        paymentTextField.borderColor = theme.accentColor
+        paymentTextField.borderWidth = 1.0
+        paymentTextField.textErrorColor = theme.errorColor
+        paymentTextField.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(paymentTextField)
+        paymentTextField.leftAnchor.constraint(equalTo: inputsView.leftAnchor, constant: 16).isActive = true
+        paymentTextField.rightAnchor.constraint(equalTo: inputsView.rightAnchor, constant: -16).isActive = true
+        paymentTextField.topAnchor.constraint(equalTo: childToDonateView.bottomAnchor, constant: 16).isActive = true
+        
+        donateButton.isEnabled = false
+        donateButton.addTarget(self, action: #selector(self.submitCard(_:)), for: .touchUpInside)
+        
+        paymentTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        inputsView.addSubview(segmentedControl)
+        segmentedControl.leftAnchor.constraint(equalTo: inputsView.leftAnchor, constant: 16).isActive = true
+        segmentedControl.rightAnchor.constraint(equalTo: inputsView.rightAnchor, constant: -16).isActive = true
+        segmentedControl.topAnchor.constraint(equalTo: paymentTextField.bottomAnchor, constant: 8).isActive = true
+        segmentedControl.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        segmentedControl.textColor = .white
+        
+        inputsView.addSubview(amountTextField)
+        amountTextField.leftAnchor.constraint(equalTo: inputsView.leftAnchor, constant: 16).isActive = true
+        amountTextField.rightAnchor.constraint(equalTo: inputsView.rightAnchor, constant: -16).isActive = true
+        amountTextField.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 8).isActive = true
+        amountTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
     }
 
     func paymentCardTextFieldDidChange(_ textField: STPPaymentCardTextField) {
@@ -113,8 +112,6 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
     }
     
     @IBAction func submitCard(_ sender: AnyObject?) {
-        // If you have your own form for getting credit card information, you can construct
-        // your own STPCardParams from number, month, year, and CVV.
         let cardParams = paymentTextField.cardParams
         
         STPAPIClient.shared().createToken(withCard: cardParams) { token, error in
@@ -148,17 +145,42 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
         let ref = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
         let userId = FIRAuth.auth()?.currentUser!.uid
     
-        let values = ["amount": amount, "token": String(describing: token)]
+        let values = ["amount": amount, "token": String(describing: token), "child_id": childToDonateToID]
         ///transactions/userId/{userId}/transactionId/{transactionId}
         let usersReference = ref.child("transactions").child("userId").child(userId!).child("transactionId").childByAutoId()
-        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+        usersReference.updateChildValues(values as Any as! [AnyHashable : Any], withCompletionBlock: { (err, ref) in
             if (err != nil){
-                print(err ?? "")
+                print(err ?? "ERROR!!")
                 return
             }
-            print("Saved user succesfully into db")
+            print("Saved token succesfnully")
         })
     }
+
+    func getUserId() -> String{
+        return (FIRAuth.auth()?.currentUser!.uid)!
+    }
+    
+    func getChildData(childIdTransfer: String){
+        var refChild: FIRDatabaseReference!
+        var childFromDatabase: DatabaseChild?
+        refChild = FIRDatabase.database().reference(withPath: "child").child(childIdTransfer)
+        refChild.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let childName = value?["first_name"]
+            let childDescription = value?["description"]
+            let childID = refChild.key
+            let imageUrl = value?["imageurl"]
+            childFromDatabase = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
+            self.childToDonateTo = childFromDatabase
+            self.loadChild()
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     
     //Load child to donate
     func loadChild(){
@@ -196,9 +218,72 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
 
         //set origin of x coordinate for the card
         card.frame.origin.x = (self.view.bounds.width - self.donateButton.bounds.width) / 2
-
         //set origin of the y coordinate for the card
         card.frame.origin.y = 0
+    }
+    
+    let theme: STPTheme = {
+        let th = STPTheme.default()
+        th.primaryBackgroundColor = UIColor(red:66.0/255.0, green:69.0/255.0, blue:112.0/255.0, alpha:255.0/255.0)
+        th.secondaryBackgroundColor = th.primaryBackgroundColor
+        th.primaryForegroundColor = UIColor.white
+        th.secondaryForegroundColor = UIColor(red:130.0/255.0, green:147.0/255.0, blue:168.0/255.0, alpha:255.0/255.0)
+        th.accentColor = UIColor(red:14.0/255.0, green:211.0/255.0, blue:140.0/255.0, alpha:255.0/255.0)
+        th.errorColor = UIColor(red:237.0/255.0, green:83.0/255.0, blue:69.0/255.0, alpha:255.0/255.0)
+        return th
+    }()
+    
+    // Define a lazy var
+    lazy var segmentedControl: SJFluidSegmentedControl = {
+        // Setup the frame per your needs
+        let sc = SJFluidSegmentedControl(frame: CGRect(x: 0, y: 0, width: donateButton.frame.width, height: donateButton.frame.height))
+        sc.cornerRadius = 25
+        sc.dataSource = self
+        sc.backgroundColor = UIColor(red:66.0/255.0, green:69.0/255.0, blue:112.0/255.0, alpha:255.0/255.0)//#colorLiteral(red: 0, green: 0.2705698013, blue: 0.3583087921, alpha: 1)
+        sc.translatesAutoresizingMaskIntoConstraints = false
+        return sc
+    }()
+    
+    let amountTextField: UITextField = {
+        let tf = UITextField()
+        tf.attributedPlaceholder = NSAttributedString(string: "Amount: $0.00", attributes: [NSAttributedStringKey.foregroundColor : UIColor.lightText])
+        tf.textColor = UIColor.white
+        tf.backgroundColor = UIColor(red:66.0/255.0, green:69.0/255.0, blue:112.0/255.0, alpha:255.0/255.0)
+        tf.layer.borderWidth = 1.0
+        tf.layer.cornerRadius = 5
+        tf.layer.borderColor = UIColor(red:14.0/255.0, green:211.0/255.0, blue:140.0/255.0, alpha:255.0/255.0).cgColor
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.clipsToBounds = true
+        tf.keyboardType = .decimalPad
+        return tf
+    }()
+    
+    //Textfield delegates
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { // return NO to not change text
+        
+        switch string {
+        case "0","1","2","3","4","5","6","7","8","9":
+            return true
+        case ".":
+            let array = Array(textField.text!)
+            var decimalCount = 0
+            for character in array {
+                if character == "." {
+                    decimalCount = decimalCount + 1
+                }
+            }
+            if decimalCount == 1 {
+                return false
+            } else {
+                return true
+            }
+        default:
+            let array = Array(string)
+            if array.count == 0 {
+                return true
+            }
+            return false
+        }
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -214,7 +299,7 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
 extension DonationViewController: SJFluidSegmentedControlDataSource {
     
     func numberOfSegmentsInSegmentedControl(_ segmentedControl: SJFluidSegmentedControl) -> Int {
-        return 5
+        return 6
     }
     
     func segmentedControl(_ segmentedControl: SJFluidSegmentedControl,
@@ -227,8 +312,11 @@ extension DonationViewController: SJFluidSegmentedControlDataSource {
             return "$10.00"
         } else if index == 3 {
             return "$20.00"
+        } else if index == 4 {
+            return "$50.00"
+        } else {
+            return "Other"
         }
-        return "$50.00"
     }
     
     func segmentedControl(_ segmentedControl: SJFluidSegmentedControl,

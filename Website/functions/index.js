@@ -23,13 +23,14 @@ exports.createStripeCharge = functions.database.ref('/transactions/userId/{userI
   // noop if the charge was deleted, errored out, or the Stripe API returned a result (id exists)
   if (val === null || val.transactionId || val.error) return null;
   // Look up the Stripe userId and transactionId
-  return admin.database().ref(`/transactions/userId/${event.params.userId}/transactionId/${event.params.transactionId}`).once('value').then((snapshot) => {
+  return admin.database().ref(`/user/${event.params.userId}/stripe_id`).once('value').then((snapshot) => {
     return snapshot.val();
   }).then((customer) => {
     // Create a charge using the transactionId as the idempotency key, protecting against double charges
     const amount = val.amount;
     const idempotency_key = event.params.transactionId;
     const source = val.token;
+      
     let charge = {amount, currency, source};
     //if (val.source !== null) charge.source = val.source;
     return stripe.charges.create(charge, {idempotency_key});

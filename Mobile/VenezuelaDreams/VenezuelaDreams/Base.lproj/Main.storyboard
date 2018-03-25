@@ -346,7 +346,7 @@
         <!--Main View Controller-->
         <scene sceneID="EWL-ft-BWm">
             <objects>
-                <viewController id="VdJ-DT-2q5" customClass="MainViewController" customModule="VenezuelaDreams" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainViewController" id="VdJ-DT-2q5" customClass="MainViewController" customModule="VenezuelaDreams" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ND-ru-J5p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -801,7 +801,7 @@
         <image name="logo" width="975" height="975"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYh-26-uxc"/>
+        <segue reference="smz-5l-MXI"/>
         <segue reference="Kxd-fQ-Bhc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -36,11 +36,11 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     let childObject = databasechildren.value as? [String: AnyObject]
                     let childName = childObject?["first_name"]
                     let childDescription = childObject?["description"]
-                    let childID = databasechildren.key as! String
+                    let childID = databasechildren.key
                     let imageUrl = childObject?["imageurl"]
                     
                     //FIX IT
-                    let child = DatabaseChild(id: childID, name: childName as! String, description: childDescription as? String, childUrl: imageUrl  as? String)
+                    let child = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
                     self.array_pages.append(child)
                 }
             }
