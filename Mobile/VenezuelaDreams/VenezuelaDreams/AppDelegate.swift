@@ -25,14 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //STPAPIClient.self
         Stripe.setDefaultPublishableKey("sk_test_Jam7dbGCczWnfWmyjY8tInMc")
 
-        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
-        if let accessToken = FBSDKAccessToken.current(){
-            print(accessToken)
-        }else{
-            print("Not logged In with FB.")
+        
+        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+            if user != nil {
+                // User is signed in.
+            } else {
+                // No user is signed in.
+            }
         }
+        
         return true
     }
 
