@@ -454,149 +454,151 @@
         <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
 
 
+      <script>
+              // Initialize Firebase
+              var config = {
+                  apiKey: "AIzaSyAxRzq1PB3KqksVmnbuUDtwdoQepUKUXjs",
+                  authDomain: "vzladreams.firebaseapp.com",
+                  databaseURL: "https://vzladreams.firebaseio.com",
+                  projectId: "vzladreams",
+                  storageBucket: "vzladreams.appspot.com",
+                  messagingSenderId: "149344227690"
+              };
+              firebase.initializeApp(config);
 
-        <script>
-            var flag = 0;
+              //Initialize Facebook Authentication
+              window.fbAsyncInit = function() {
+                  FB.init({
+                      appId      : '2025988837670124',
+                      cookie     : true,
+                      xfbml      : true,
+                      version    : '{latest-api-version}'
+                  });
+                  FB.AppEvents.logPageView();
+              };
+
+              (function(d, s, id){
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) {return;}
+                  js = d.createElement(s); js.id = id;
+                  js.src = "https://connect.facebook.net/en_US/sdk.js";
+                  fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+
+
+              //declear refrences
+              var auth = firebase.auth();
+              var provider = new firebase.auth.FacebookAuthProvider();
+              var database = firebase.database();
+              var usersRef = database.ref('user');
+
+              //facebook sign in
+              function facebookSignin() {
+                  firebase.auth().signInWithPopup(provider)
+                      .then(function(result) {
+                          var token = result.credential.accessToken;
+                          var user = result.user;
+
+                          console.log(token);
+                          console.log(user);
+                          $('#form-modal').modal('hide');
+                          $('#messageModalLabel').html(spanText('<i class="fa fa-cog fa-spin"></i>', ['center', 'info']));
+                          $('#messageModal').modal('show');
+
+                          var data = {
+                              email: user.email, //get the email from Form
+                              firstName: user.displayName, // get firstName
+                              lastName: user.displayName, // get lastName
+                              registration_type : "fb"
+                          };
+                          console.log(data);
+                          usersRef
+                              .child(user.uid)
+                              .set(data)
+                              .then(function () {
+                                  console.log("User Information Saved:", user.uid);
+                              });
+                          setTimeout(function () {
+                              $('#messageModal').modal('hide');
+                              $('.unauthenticated, .userAuth').toggleClass('unauthenticated').toggleClass('authenticated');
+                          }, 500);
+
+                          $("#navSigninUp").text("loggedin");
+
+
+                      }).catch(function(error) {
+                      console.log(error.code);
+                      console.log(error.message);
+                  });
+              }
+
+              function facebookSignout() {
+                  firebase.auth().signOut()
+
+                      .then(function() {
+                          console.log('Signout successful!')
+                      }, function(error) {
+                          console.log('Signout failed')
+                      });
+              }
+
+
+
+              //click events during signin
+              $('#sign-fb').on('click', function (e) {
+                  facebookSignin();
+              });
+
+              //signin on click events
+              //Login
+              $('#doLogin').on('click', function (e) {
+                  e.preventDefault();
+
+                  if( $('#loginEmail').val() != '' && $('#loginPassword').val() != '' ){
+                      //login the user
+                      var data = {
+                          email: $('#loginEmail').val(),
+                          password: $('#loginPassword').val()
+                      };
+                      firebase.auth().signInWithEmailAndPassword(data.email, data.password)
+                          .then(function(authData) {
+
+                              $(' <div class="text-center p-t-100 p-b-31">\n' +
+                                  '<a class="text-black">' +
+                                  'Login SuccessFul' +
+                                  '</a>' +
+                                  '</div>').appendTo('form-container');
+                              console.log("Authenticated successfully with payload:", authData);
+                              var Auth = authData;
+                              //$('#messageModalLabel').html(spanText('Success!', ['center', 'success']));
+
+                              setTimeout(function () {
+                                  $('#form-modal').modal('hide');
+                                  $('.unauthenticated, .userAuth').toggleClass('unauthenticated').toggleClass('authenticated');
+                              }, 500);
+
+                              $("#navSigninUp").text("loggedin");
+                              console.log("Successfully created user account with uid:");
+                          })
+                          .catch(function(error) {
+                              console.log("Login Failed!", error);
+                              $('#messageModalLabel').html(spanText('ERROR: '+error.code, ['danger']))
+                          });
+                  }
+              });
+
+
+              function spanText(textStr, textClasses) {
+                  var classNames = textClasses.map(c => 'text-' + c).join(' ');
+                  return '<span class="' + classNames + '">' + textStr + '</span>';
+              }
+
+
             $(document).ready(function () {
-
-                // Initialize Firebase
-                var config = {
-                    apiKey: "AIzaSyAxRzq1PB3KqksVmnbuUDtwdoQepUKUXjs",
-                    authDomain: "vzladreams.firebaseapp.com",
-                    databaseURL: "https://vzladreams.firebaseio.com",
-                    projectId: "vzladreams",
-                    storageBucket: "vzladreams.appspot.com",
-                    messagingSenderId: "149344227690"
-                };
-                firebase.initializeApp(config);
-
-                //Initialize Facebook Authentication
-                window.fbAsyncInit = function() {
-                    FB.init({
-                        appId      : '2025988837670124',
-                        cookie     : true,
-                        xfbml      : true,
-                        version    : '{latest-api-version}'
-                    });
-                    FB.AppEvents.logPageView();
-                };
-
-                (function(d, s, id){
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) {return;}
-                    js = d.createElement(s); js.id = id;
-                    js.src = "https://connect.facebook.net/en_US/sdk.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));
-
-                //declear refrences
-                var auth = firebase.auth();
-                var provider = new firebase.auth.FacebookAuthProvider();
-                var database = firebase.database();
-                var usersRef = database.ref('user');
-
-                function facebookSignin() {
-                    firebase.auth().signInWithPopup(provider)
-                        .then(function(result) {
-                            var token = result.credential.accessToken;
-                            var user = result.user;
-
-                            console.log(token);
-                            console.log(user);
-                            $('#form-modal').modal('hide');
-                            $('#messageModalLabel').html(spanText('<i class="fa fa-cog fa-spin"></i>', ['center', 'info']));
-                            $('#messageModal').modal('show');
-
-                            var data = {
-                                email: user.email, //get the email from Form
-                                firstName: user.displayName, // get firstName
-                                lastName: user.displayName, // get lastName
-                                registration_type : "fb"
-                            };
-                            console.log(data);
-                            usersRef
-                                .child(user.uid)
-                                .set(data)
-                                .then(function () {
-                                    console.log("User Information Saved:", user.uid);
-                                });
-
-
-                            setTimeout(function () {
-                                $('#messageModal').modal('hide');
-                                $('.unauthenticated, .userAuth').toggleClass('unauthenticated').toggleClass('authenticated');
-
-
-
-                            }, 500);
-
-                            $("#navSigninUp").text("loggedin");
-
-
-                        }).catch(function(error) {
-                        console.log(error.code);
-                        console.log(error.message);
-                    });
-                }
-
-                function facebookSignout() {
-                    firebase.auth().signOut()
-
-                        .then(function() {
-                            console.log('Signout successful!')
-                        }, function(error) {
-                            console.log('Signout failed')
-                        });
-                }
-
-                $('#sign-fb').on('click', function (e) {
-                    facebookSignin();
-                });
-                //Login
-                $('#doLogin').on('click', function (e) {
-                    e.preventDefault();
-
-                    if( $('#loginEmail').val() != '' && $('#loginPassword').val() != '' ){
-                        //login the user
-                        var data = {
-                            email: $('#loginEmail').val(),
-                            password: $('#loginPassword').val()
-                        };
-
-
-                        firebase.auth().signInWithEmailAndPassword(data.email, data.password)
-                            .then(function(authData) {
-                                $(' <div class="text-center p-t-100 p-b-31">\n' +
-                                    '<a class="text-black">' +
-                                    'Login SuccessFul' +
-                                    '</a>' +
-                                    '</div>').appendTo('form-container');
-                                console.log("Authenticated successfully with payload:", authData);
-                                Auth = authData;
-                                //$('#messageModalLabel').html(spanText('Success!', ['center', 'success']));
-
-                                setTimeout(function () {
-                                    $('#form-modal').modal('hide');
-                                    $('.unauthenticated, .userAuth').toggleClass('unauthenticated').toggleClass('authenticated');
-                                }, 500);
-
-                                $("#navSigninUp").text("loggedin");
-                                console.log("Successfully created user account with uid:");
-                            })
-                            .catch(function(error) {
-                                console.log("Login Failed!", error);
-                                $('#messageModalLabel').html(spanText('ERROR: '+error.code, ['danger']))
-                            });
-                    }
-                });
-
-                function spanText(textStr, textClasses) {
-                    var classNames = textClasses.map(c => 'text-' + c).join(' ');
-                    return '<span class="' + classNames + '">' + textStr + '</span>';
-                }
+                loadScrollChildCarousel();
             });
-
-            $(document).ready(function () {
+              var childListRefrence = database.ref();
+            var loadScrollChildCarousel = function(){
                 var images = ["img/childlist/z1.jpg", "img/childlist/z2.jpg","img/childlist/z3.jpg",
                     "img/childlist/z4.jpg","img/childlist/z5.jpg","img/childlist/z6.jpg","img/childlist/z7.jpg",
                     "img/childlist/z8.jpg","img/childlist/z9.jpg","img/childlist/z10.jpg","img/childlist/z11.jpg","img/childlist/z12.jpg"];
@@ -630,7 +632,7 @@
                 $('.carousel-item').first().addClass('active');
                 $('#multi-item-example').carousel();
 
-            });
+            }
         </script>
       </body>
 
