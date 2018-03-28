@@ -2,198 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd4d11c4-3ebe-466e-8179-48721f19ddd2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/.travis.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/404.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/login_form.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/login_form.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/util.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/util.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/vDreams.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/vDreams.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/css/font-awesome.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/animated.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/bordered-pulled.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/core.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/fixed-width.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/font-awesome.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/icons.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/larger.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/list.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/mixins.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/path.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/rotated-flipped.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/screen-reader.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/stacked.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/variables.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_animated.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_core.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_icons.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_larger.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_list.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_mixins.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_path.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_stacked.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_variables.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/font-awesome.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/css/material-design-iconic-font.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/css/material-design-iconic-font.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/fonts/Material-Design-Iconic-Font.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/fonts/Material-Design-Iconic-Font.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/fonts/Material-Design-Iconic-Font.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Black.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-BlackItalic.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Bold.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-BoldItalic.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-ExtraBold.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-ExtraBoldItalic.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-ExtraLight.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-ExtraLightItalic.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Italic.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Light.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-LightItalic.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Medium.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-MediumItalic.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-SemiBold.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-SemiBoldItalic.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Thin.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-ThinItalic.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/gulpfile.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/bg-01.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/child-labour.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z10.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z11.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z12.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z13.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z14.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z15.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z4.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z5.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z6.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z7.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z8.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z9.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/icons/favicon.ico" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/cabin.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/cake.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/circus.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/game.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/safe.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/submarine.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/profile.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/authentication.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/authentication.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/carousel_loader.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/carousel_loader.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/contact_me.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/contact_me.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/jqBootstrapValidation.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/jqBootstrapValidation.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/login_form.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/login_form.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/signup_form.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/signup_form.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/vDreams.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/vDreams.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/mail/contact_me.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_bootstrap-overrides.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_childScroller.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_contact.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_footer.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_global.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_masthead.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_mixins.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_navbar.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_portfolio.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_variables.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/vDreams.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/signup.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap-grid.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap-grid.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap-reboot.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap-reboot.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap.min.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.bundle.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.bundle.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.bundle.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.bundle.min.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.min.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/css/font-awesome.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/css/font-awesome.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/css/font-awesome.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/FontAwesome.otf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/animated.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/bordered-pulled.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/core.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/fixed-width.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/font-awesome.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/icons.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/larger.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/list.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/mixins.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/path.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/rotated-flipped.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/screen-reader.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/stacked.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/variables.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_animated.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_bordered-pulled.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_core.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_fixed-width.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_icons.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_larger.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_list.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_mixins.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_path.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_rotated-flipped.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_screen-reader.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_stacked.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_variables.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/font-awesome.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery-easing/jquery.easing.compatibility.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery-easing/jquery.easing.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery-easing/jquery.easing.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.min.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.slim.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.slim.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.slim.min.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/magnific-popup/jquery.magnific-popup.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/magnific-popup/jquery.magnific-popup.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/magnific-popup/magnific-popup.css" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Website/Public/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Website/Public/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Website/Public/404.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Website/Public/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Website/Public/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Website/Public/gulpfile.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Website/Public/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Website/Public/signup.html" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -206,13 +23,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="104">
-                <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+                <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -220,24 +37,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Website/Public/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="util.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Website/public/css/util.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="material-design-iconic-font.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Website/public/fonts/iconic/css/material-design-iconic-font.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_footer.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Website/public/scss/_footer.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Website/public/vendor/jquery/jquery.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Website/public/vendor/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="12" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="404.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Website/public/vendor/404.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Website/Public/index.html">
+        <entry file="file://$PROJECT_DIR$/Website/public/vendor/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1846">
-              <caret line="71" column="40" lean-forward="false" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+            <state relative-caret-position="312">
+              <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -256,7 +120,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Nischal1" />
       </map>
     </option>
   </component>
@@ -276,11 +140,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/Website/Public/node_modules" />
     <handled-path value="$PROJECT_DIR$/Website/functions/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="952" />
     <option name="width" value="976" />
     <option name="height" value="1038" />
   </component>
@@ -300,6 +163,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -310,24 +174,25 @@
             <path>
               <item name="Venezuela-Dreams" type="b2602c69:ProjectViewProjectNode" />
               <item name="Venezuela-Dreams" type="462c0819:PsiDirectoryNode" />
-              <item name="Mobile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Venezuela-Dreams" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Venezuela-Dreams" type="462c0819:PsiDirectoryNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Venezuela-Dreams" type="b2602c69:ProjectViewProjectNode" />
               <item name="Venezuela-Dreams" type="462c0819:PsiDirectoryNode" />
               <item name="Website" type="462c0819:PsiDirectoryNode" />
-              <item name="Public" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Venezuela-Dreams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venezuela-Dreams" type="462c0819:PsiDirectoryNode" />
+              <item name="Website" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -343,6 +208,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\paudyaln\WebstormProjects\Venezuela-Dreams\Website\public\vendor" />
+      <recent name="C:\Users\paudyaln\WebstormProjects\Venezuela-Dreams\Website\public" />
       <recent name="C:\Users\paudyaln\WebstormProjects\Venezuela-Dreams\Website" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -392,32 +259,33 @@
       <workItem from="1522257598920" duration="45000" />
       <workItem from="1522257653327" duration="11000" />
       <workItem from="1522257968570" duration="123000" />
-      <workItem from="1522258102908" duration="388000" />
+      <workItem from="1522258102908" duration="1433000" />
+      <workItem from="1522259546915" duration="467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15746000" />
+    <option name="totallyTimeSpent" value="17258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1401375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09529412" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09529412" sideWeight="0.49722221" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -433,7 +301,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Website/Public/index.html">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="104">
+            <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/css/util.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -441,24 +320,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/fonts/iconic/css/material-design-iconic-font.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/index.html" />
     <entry file="file://$PROJECT_DIR$/Website/public/Home.css" />
-    <entry file="file://$PROJECT_DIR$/Website/Public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/index.html" />
     <entry file="file://$PROJECT_DIR$/Website/public/Home.css" />
-    <entry file="file://$PROJECT_DIR$/Website/Public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/index.html" />
     <entry file="file://$PROJECT_DIR$/Website/public/Home.css" />
     <entry file="file://$PROJECT_DIR$/Website/firebase.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -476,7 +350,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/main.html">
+    <entry file="file://$PROJECT_DIR$/Website/main.html" />
+    <entry file="file://$PROJECT_DIR$/Website/website.md" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="104">
+            <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/index.html" />
+    <entry file="file://$PROJECT_DIR$/Website/public/README.md" />
+    <entry file="file://$PROJECT_DIR$/Website/public/signup.html" />
+    <entry file="file://$PROJECT_DIR$/Website/public/404.html" />
+    <entry file="file://$PROJECT_DIR$/Website/public/donationhub.html" />
+    <entry file="file://$PROJECT_DIR$/Website/public/LICENSE" />
+    <entry file="file://$PROJECT_DIR$/Website/public/css/util.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -484,43 +377,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Website/website.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="104">
-            <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/Public/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Website/Public/index.html">
+    <entry file="file://$PROJECT_DIR$/Website/public/fonts/iconic/css/material-design-iconic-font.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1846">
-          <caret line="71" column="40" lean-forward="false" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/scss/_footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/vendor/jquery/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/vendor/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/vendor/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Website/public/vendor/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
           <folding />
         </state>
       </provider>
