@@ -2,16 +2,198 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd4d11c4-3ebe-466e-8179-48721f19ddd2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Website/main.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Website/public/Home.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Website/public/Waterfall.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Website/public/form.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Website/public/formswitch.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Website/public/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Website/public/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Website/public/login.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Website/website.md" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/.travis.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/404.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/LICENSE" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/login_form.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/login_form.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/util.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/util.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/vDreams.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/css/vDreams.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/css/font-awesome.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/animated.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/bordered-pulled.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/core.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/fixed-width.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/font-awesome.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/icons.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/larger.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/list.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/mixins.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/path.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/rotated-flipped.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/screen-reader.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/stacked.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/less/variables.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_animated.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_core.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_icons.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_larger.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_list.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_mixins.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_path.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_stacked.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/_variables.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/font-awesome-4.7.0/scss/font-awesome.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/css/material-design-iconic-font.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/css/material-design-iconic-font.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/fonts/Material-Design-Iconic-Font.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/fonts/Material-Design-Iconic-Font.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/fonts/Material-Design-Iconic-Font.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Black.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-BlackItalic.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Bold.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-BoldItalic.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-ExtraBold.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-ExtraBoldItalic.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-ExtraLight.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-ExtraLightItalic.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Italic.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Light.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-LightItalic.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Medium.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-MediumItalic.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Regular.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-SemiBold.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-SemiBoldItalic.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-Thin.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/fonts/poppins/Poppins-ThinItalic.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/gulpfile.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/bg-01.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/child-labour.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z10.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z11.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z12.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z13.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z14.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z15.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z4.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z5.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z6.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z7.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z8.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/childlist/z9.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/icons/favicon.ico" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/cabin.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/cake.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/circus.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/game.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/safe.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/portfolio/submarine.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/img/profile.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/authentication.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/authentication.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/carousel_loader.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/carousel_loader.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/contact_me.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/contact_me.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/jqBootstrapValidation.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/jqBootstrapValidation.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/login_form.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/login_form.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/signup_form.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/signup_form.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/vDreams.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/js/vDreams.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/mail/contact_me.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_bootstrap-overrides.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_childScroller.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_contact.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_footer.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_global.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_masthead.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_mixins.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_navbar.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_portfolio.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/_variables.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/scss/vDreams.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/signup.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap-grid.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap-grid.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap-reboot.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap-reboot.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/css/bootstrap.min.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.bundle.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.bundle.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.bundle.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.bundle.min.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/bootstrap/js/bootstrap.min.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/css/font-awesome.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/css/font-awesome.css.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/css/font-awesome.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/FontAwesome.otf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/animated.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/bordered-pulled.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/core.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/fixed-width.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/font-awesome.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/icons.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/larger.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/list.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/mixins.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/path.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/rotated-flipped.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/screen-reader.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/stacked.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/less/variables.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_animated.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_bordered-pulled.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_core.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_fixed-width.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_icons.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_larger.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_list.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_mixins.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_path.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_rotated-flipped.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_screen-reader.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_stacked.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/_variables.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/font-awesome/scss/font-awesome.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery-easing/jquery.easing.compatibility.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery-easing/jquery.easing.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery-easing/jquery.easing.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.min.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.slim.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.slim.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/jquery/jquery.slim.min.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/magnific-popup/jquery.magnific-popup.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/magnific-popup/jquery.magnific-popup.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Website/Public/vendor/magnific-popup/magnific-popup.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -72,6 +254,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -205,18 +392,17 @@
       <workItem from="1522257598920" duration="45000" />
       <workItem from="1522257653327" duration="11000" />
       <workItem from="1522257968570" duration="123000" />
-      <workItem from="1522258102908" duration="114000" />
+      <workItem from="1522258102908" duration="388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15472000" />
+    <option name="totallyTimeSpent" value="15746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1401375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1401375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09529412" sideWeight="0.50277776" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
