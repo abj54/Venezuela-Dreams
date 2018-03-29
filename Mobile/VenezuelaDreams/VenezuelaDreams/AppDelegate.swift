@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import FBSDKCoreKit
 import Stripe
-import Fabric
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

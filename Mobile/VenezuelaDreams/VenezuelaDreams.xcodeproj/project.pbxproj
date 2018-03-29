@@ -19,6 +19,9 @@
 		508639F9201A9CE800582920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508639F7201A9CE800582920 /* LaunchScreen.storyboard */; };
 		50863A04201A9CE800582920 /* VenezuelaDreamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50863A03201A9CE800582920 /* VenezuelaDreamsTests.swift */; };
 		50863A0F201A9CE800582920 /* VenezuelaDreamsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50863A0E201A9CE800582920 /* VenezuelaDreamsUITests.swift */; };
+		508C3980206ADDDE001A8F0B /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C397F206ADDDE001A8F0B /* AdminViewController.swift */; };
+		508C3982206AED2C001A8F0B /* AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C3981206AED2C001A8F0B /* AddChildViewController.swift */; };
+		508C3984206D5297001A8F0B /* RemoveChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C3983206D5297001A8F0B /* RemoveChildViewController.swift */; };
 		508E05FD203B9D0700266AE1 /* MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E05FC203B9D0700266AE1 /* MainCard.swift */; };
 		50A282AA20547BE30003B9E6 /* DatabaseChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A282A920547BE30003B9E6 /* DatabaseChild.swift */; };
 		50A282AE205635C90003B9E6 /* DonateButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */; };
@@ -83,6 +86,9 @@
 		50863A0A201A9CE800582920 /* VenezuelaDreamsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenezuelaDreamsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50863A0E201A9CE800582920 /* VenezuelaDreamsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenezuelaDreamsUITests.swift; sourceTree = "<group>"; };
 		50863A10201A9CE800582920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		508C397F206ADDDE001A8F0B /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		508C3981206AED2C001A8F0B /* AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildViewController.swift; sourceTree = "<group>"; };
+		508C3983206D5297001A8F0B /* RemoveChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveChildViewController.swift; sourceTree = "<group>"; };
 		508E05FC203B9D0700266AE1 /* MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCard.swift; sourceTree = "<group>"; };
 		50A282A920547BE30003B9E6 /* DatabaseChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseChild.swift; sourceTree = "<group>"; };
 		50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateButtonViewController.swift; sourceTree = "<group>"; };
@@ -189,8 +195,11 @@
 				508639EE201A9CE800582920 /* AppDelegate.swift */,
 				508639F0201A9CE800582920 /* WelcomePageViewController.swift */,
 				5026031B201EAE870070B5A7 /* PagesView.swift */,
+				508C3983206D5297001A8F0B /* RemoveChildViewController.swift */,
 				50A282A920547BE30003B9E6 /* DatabaseChild.swift */,
 				508639F2201A9CE800582920 /* Main.storyboard */,
+				508C3981206AED2C001A8F0B /* AddChildViewController.swift */,
+				508C397F206ADDDE001A8F0B /* AdminViewController.swift */,
 				50C7F8BE2052357C003EDC73 /* DonationViewController.swift */,
 				50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */,
 				50135624201A9FA80047EBF4 /* MainViewController.swift */,
@@ -607,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50F2151B2027A33C0027BE44 /* DetailViewController.swift in Sources */,
+				508C3982206AED2C001A8F0B /* AddChildViewController.swift in Sources */,
 				50F215172027A33C0027BE44 /* CardPlayer.swift in Sources */,
 				50F2151E2027A33C0027BE44 /* CardGroupSliding.swift in Sources */,
 				50C7F8C3205258AC003EDC73 /* UIView+Constraints.swift in Sources */,
@@ -614,6 +624,7 @@
 				50F2151D2027A33C0027BE44 /* Player_by_Patric_Piemonte.swift in Sources */,
 				50F2151A2027A33C0027BE44 /* CardGroup.swift in Sources */,
 				50C4C8072033B97700969019 /* AMInputView.swift in Sources */,
+				508C3980206ADDDE001A8F0B /* AdminViewController.swift in Sources */,
 				50A282AE205635C90003B9E6 /* DonateButtonViewController.swift in Sources */,
 				50F215182027A33C0027BE44 /* LayoutHelper.swift in Sources */,
 				50C7F8C5205258AC003EDC73 /* SJGradientView.swift in Sources */,
@@ -623,6 +634,7 @@
 				508639F1201A9CE800582920 /* WelcomePageViewController.swift in Sources */,
 				508639EF201A9CE800582920 /* AppDelegate.swift in Sources */,
 				50A282AA20547BE30003B9E6 /* DatabaseChild.swift in Sources */,
+				508C3984206D5297001A8F0B /* RemoveChildViewController.swift in Sources */,
 				5026031C201EAE870070B5A7 /* PagesView.swift in Sources */,
 				50C4C80B2033BAA000969019 /* LoginViewController.swift in Sources */,
 				50F215192027A33C0027BE44 /* Animator.swift in Sources */,
