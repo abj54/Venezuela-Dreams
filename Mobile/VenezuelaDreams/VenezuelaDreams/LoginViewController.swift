@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
 
     let animationDuration = 0.25
     var mode:AMLoginSignupViewMode = .signup
+    let ref = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
     
     
     //MARK: - background image constraints
@@ -105,7 +106,6 @@ class LoginViewController: UIViewController {
             //TODO: signup by this data
             //NSLog("Email:\(signupEmailInputView.textFieldView.text) Password:\(signupPasswordInputView.textFieldView.text), PasswordConfirm:\(signupPasswordConfirmInputView.textFieldView.text)")
             handleRegister()
-
         }
     }
     
@@ -119,26 +119,6 @@ class LoginViewController: UIViewController {
         }
         
         createAndAddtoDbUser(name: name, lastname: lastname, email: email, password: password, gender: "M")
-        
-//        var gender = ""
-//        //if gender is male, create user if the male gender
-//        if (maleIsChecked){
-//            gender = "male"
-//            createAndAddtoDbUser(name: name, lastname: lastname, email: email, password: password, gender: gender)
-//
-//            //if gender is female, create user if the female gender
-//        } else if (femaleIsChecked){
-//            gender = "female"
-//            createAndAddtoDbUser(name: name, lastname: lastname, email: email, password: password, gender: gender)
-//
-//            //if gender is empty, prompt user to enter one
-//        } else if (gender == ""){
-//            print("Please specify gender")
-//            let alertController = UIAlertController(title: "Form is not valid!", message:
-//                "Please, enter gender!", preferredStyle: UIAlertControllerStyle.alert)
-//            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-//            self.present(alertController, animated: true, completion: nil)
-//        }
     }
     
     //creates the user and adds to the database
@@ -177,9 +157,9 @@ class LoginViewController: UIViewController {
             guard let uid = user?.uid else{
                 return
             }
-            let ref = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
-            let values = ["name": name, "lastname": lastname, "email": email, "gender": gender, "registration_type": "email"]
-            let usersReference = ref.child("user").child(uid)
+            
+            let values = ["name": name, "lastname": lastname, "email": email, "gender": gender, "registration_type": "email", "admin": "false"]
+            let usersReference = self.ref.child("user").child(uid)
             usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
                 
                 if (err != nil){
@@ -197,7 +177,7 @@ class LoginViewController: UIViewController {
             print("Form is not valid")
             return
         }
-        
+
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             if (error != nil){
                 
@@ -231,8 +211,25 @@ class LoginViewController: UIViewController {
                     print(error ?? "")
                     return
                 }
+            } else {
+                
+                let userID = FIRAuth.auth()?.currentUser?.uid
+                let userReference = self.ref.child("user").child(userID!)
+                var admin = Bool()
+                userReference.observeSingleEvent(of: .value, with: { (snapshot) in
+                    if !snapshot.exists() { return }
+                    print(snapshot)
+                    admin = snapshot.childSnapshot(forPath: "admin").value as! Bool
+                    print("IS USER ADMIN: \(String(describing: admin))")
+                })
+                
+                if (admin){
+                    self.performSegue(withIdentifier: "redirectAdmin", sender: self)
+                } else {
+                    self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
+                }
+                
             }
-            self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
             
         })
     }
@@ -363,7 +360,6 @@ class LoginViewController: UIViewController {
         
     }
  
-    //MARK: - hide status bar in swift3
     override var prefersStatusBarHidden: Bool {
         return true
     }

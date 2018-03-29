@@ -37,7 +37,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     let childName = childObject?["first_name"]
                     let childDescription = childObject?["description"]
                     let childID = databasechildren.key
-                    let imageUrl = childObject?["imageurl"]
+                    let imageUrl = childObject?["image_url"]
                     
                     //FIX IT
                     let child = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
