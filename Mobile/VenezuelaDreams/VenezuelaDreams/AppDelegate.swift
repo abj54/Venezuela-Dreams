@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         //STPAPIClient.self
-        Stripe.setDefaultPublishableKey("sk_test_Jam7dbGCczWnfWmyjY8tInMc")
+        Stripe.setDefaultPublishableKey("pk_test_KRFIcaczK0iWhOBl2G4JN23i")
 
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
