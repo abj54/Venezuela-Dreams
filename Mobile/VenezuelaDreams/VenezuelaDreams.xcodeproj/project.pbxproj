@@ -23,6 +23,7 @@
 		508C3982206AED2C001A8F0B /* AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C3981206AED2C001A8F0B /* AddChildViewController.swift */; };
 		508C3984206D5297001A8F0B /* RemoveChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C3983206D5297001A8F0B /* RemoveChildViewController.swift */; };
 		508E05FD203B9D0700266AE1 /* MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E05FC203B9D0700266AE1 /* MainCard.swift */; };
+		50990B312073335F0020C0C3 /* RemoveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50990B302073335F0020C0C3 /* RemoveTableViewCell.swift */; };
 		50A282AA20547BE30003B9E6 /* DatabaseChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A282A920547BE30003B9E6 /* DatabaseChild.swift */; };
 		50A282AE205635C90003B9E6 /* DonateButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */; };
 		50AB0D6E203CA53E008EC37E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 50AB0D6D203CA53E008EC37E /* Settings.bundle */; };
@@ -90,6 +91,7 @@
 		508C3981206AED2C001A8F0B /* AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildViewController.swift; sourceTree = "<group>"; };
 		508C3983206D5297001A8F0B /* RemoveChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveChildViewController.swift; sourceTree = "<group>"; };
 		508E05FC203B9D0700266AE1 /* MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCard.swift; sourceTree = "<group>"; };
+		50990B302073335F0020C0C3 /* RemoveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveTableViewCell.swift; sourceTree = "<group>"; };
 		50A282A920547BE30003B9E6 /* DatabaseChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseChild.swift; sourceTree = "<group>"; };
 		50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateButtonViewController.swift; sourceTree = "<group>"; };
 		50AB0D6D203CA53E008EC37E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -195,11 +197,9 @@
 				508639EE201A9CE800582920 /* AppDelegate.swift */,
 				508639F0201A9CE800582920 /* WelcomePageViewController.swift */,
 				5026031B201EAE870070B5A7 /* PagesView.swift */,
-				508C3983206D5297001A8F0B /* RemoveChildViewController.swift */,
 				50A282A920547BE30003B9E6 /* DatabaseChild.swift */,
 				508639F2201A9CE800582920 /* Main.storyboard */,
-				508C3981206AED2C001A8F0B /* AddChildViewController.swift */,
-				508C397F206ADDDE001A8F0B /* AdminViewController.swift */,
+				50E7B7BF206DB563008CF8FC /* Admin */,
 				50C7F8BE2052357C003EDC73 /* DonationViewController.swift */,
 				50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */,
 				50135624201A9FA80047EBF4 /* MainViewController.swift */,
@@ -243,6 +243,17 @@
 				50C4C8042033B97600969019 /* AMInputView.xib */,
 			);
 			path = AMLogin;
+			sourceTree = "<group>";
+		};
+		50E7B7BF206DB563008CF8FC /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				508C3981206AED2C001A8F0B /* AddChildViewController.swift */,
+				508C397F206ADDDE001A8F0B /* AdminViewController.swift */,
+				508C3983206D5297001A8F0B /* RemoveChildViewController.swift */,
+				50990B302073335F0020C0C3 /* RemoveTableViewCell.swift */,
+			);
+			path = Admin;
 			sourceTree = "<group>";
 		};
 		C8167432AB9B47220E2C774A /* Frameworks */ = {
@@ -617,6 +628,7 @@
 			files = (
 				50F2151B2027A33C0027BE44 /* DetailViewController.swift in Sources */,
 				508C3982206AED2C001A8F0B /* AddChildViewController.swift in Sources */,
+				50990B312073335F0020C0C3 /* RemoveTableViewCell.swift in Sources */,
 				50F215172027A33C0027BE44 /* CardPlayer.swift in Sources */,
 				50F2151E2027A33C0027BE44 /* CardGroupSliding.swift in Sources */,
 				50C7F8C3205258AC003EDC73 /* UIView+Constraints.swift in Sources */,

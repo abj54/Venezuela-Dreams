@@ -46,6 +46,7 @@ class AdminViewController: UIViewController {
         proofButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
         addChildButton.addTarget(self, action: #selector(self.addChildSegue(_:)), for: .touchUpInside)
+        removeChildButton.addTarget(self, action: #selector(self.removeChildSegue(_:)), for: .touchUpInside)
     }
     
     let addChildButton: UIButton = {
@@ -102,6 +103,10 @@ class AdminViewController: UIViewController {
     
     @objc func addChildSegue(_ sender : UIButton){
         self.performSegue(withIdentifier: "addChildSegue", sender: Any?.self)
+    }
+    
+    @objc func removeChildSegue(_ sender : UIButton){
+        self.performSegue(withIdentifier: "removeChildSegue", sender: Any?.self)
     }
 
     override func didReceiveMemoryWarning() {
