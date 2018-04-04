@@ -12,6 +12,8 @@ import Firebase
 class AddChildViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var childImage: UIImageView!
+    let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView();
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
@@ -100,6 +102,7 @@ class AddChildViewController: UIViewController, UIImagePickerControllerDelegate,
     
     //creates the user and adds to the database
     func addtoDbChild(first_name:String, last_name:String, date_of_birth:String, image:UIImage, description:String){
+        startLoading()
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YYYY"
@@ -141,6 +144,7 @@ class AddChildViewController: UIViewController, UIImagePickerControllerDelegate,
                     return
                 }
                 print("Saved picture of child succesfully into db")
+                self.stopLoading()
                 let alertController = UIAlertController(title: "Success!!", message:
                     "Child was added succesfully!", preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: {_ in
@@ -229,6 +233,7 @@ class AddChildViewController: UIViewController, UIImagePickerControllerDelegate,
         bt.layer.borderColor = UIColor(red:14.0/255.0, green:211.0/255.0, blue:140.0/255.0, alpha:255.0/255.0).cgColor
         bt.translatesAutoresizingMaskIntoConstraints = false
         bt.clipsToBounds = true
+        bt.showsTouchWhenHighlighted = true
         return bt
     }()
     
@@ -275,6 +280,23 @@ class AddChildViewController: UIViewController, UIImagePickerControllerDelegate,
         datePickerView.datePickerMode = UIDatePickerMode.date
         textField.inputView = datePickerView
         datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    func startLoading(){
+        activityIndicator.center = self.view.center;
+        activityIndicator.hidesWhenStopped = true;
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray;
+        view.addSubview(activityIndicator);
+        
+        activityIndicator.startAnimating();
+        UIApplication.shared.beginIgnoringInteractionEvents();
+        
+    }
+    
+    func stopLoading(){
+        activityIndicator.stopAnimating();
+        UIApplication.shared.endIgnoringInteractionEvents();
+        
     }
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {
