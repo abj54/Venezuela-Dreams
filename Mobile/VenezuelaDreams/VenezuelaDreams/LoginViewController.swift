@@ -158,7 +158,7 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            let values = ["name": name, "lastname": lastname, "email": email, "gender": gender, "registration_type": "email", "admin": "false"]
+            let values = ["name": name, "lastname": lastname, "email": email, "gender": gender, "registration_type": "email", "admin": false] as [String : Any]
             let usersReference = self.ref.child("user").child(uid)
             usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
                 
@@ -220,15 +220,13 @@ class LoginViewController: UIViewController {
                     if !snapshot.exists() { return }
                     print(snapshot)
                     admin = snapshot.childSnapshot(forPath: "admin").value as! Bool
-                    print("IS USER ADMIN: \(String(describing: admin))")
+                    print("USER IS ADMIN: \(admin)")
+                    if (admin){
+                        self.performSegue(withIdentifier: "redirectAdmin", sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
+                    }
                 })
-                
-                if (admin){
-                    self.performSegue(withIdentifier: "redirectAdmin", sender: self)
-                } else {
-                    self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
-                }
-                
             }
             
         })
