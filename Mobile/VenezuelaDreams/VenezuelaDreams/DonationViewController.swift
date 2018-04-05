@@ -15,9 +15,10 @@ class DonationViewController: UIViewController, STPPaymentCardTextFieldDelegate 
     @IBOutlet var inputsView: UIView!
     @IBOutlet weak var childToDonateView: UIView!
     @IBOutlet weak var donateButton: UIButton!
-    var childToDonateTo : DatabaseChild?
     var paymentTextField = STPPaymentCardTextField()
-    var childToDonateToID: String? 
+    //Child to donate to
+    var childToDonateTo : DatabaseChild?
+    var childToDonateToID: String?
     //var theme = STPTheme.default()
 
     let theme: STPTheme = {

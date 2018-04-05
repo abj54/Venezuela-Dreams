@@ -37,7 +37,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     let childName = childObject?["first_name"]
                     let childDescription = childObject?["description"]
                     let childID = databasechildren.key as! String
-                    let imageUrl = childObject?["imageurl"]
+                    let imageUrl = childObject?["img_url"]
                     
                     //FIX IT
                     let child = DatabaseChild(id: childID, name: childName as! String, description: childDescription as? String, childUrl: imageUrl  as? String)
@@ -51,9 +51,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
 
     }
 
-    func loadChildImage(){
-        
-    }
     
     //Sets properties of scroll view
     func setUpScroll(){
@@ -62,6 +59,8 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
     }
+    
+
     
     //Loads scroll view with cards of the children
     func loadPages(){
@@ -75,22 +74,24 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
             card.blurEffect = .light
 
             //GET IMAGE
-            let imageUrlString = childObject.childUrl
+            // http://swiftdeveloperblog.com/code-examples/uiimageview-and-uiimage-load-image-from-remote-url/
+            var imageUrlString = childObject.childUrl
             let imageUrl:URL = URL(string: imageUrlString!)!
-            
             // Start background thread so that image loading does not make app unresponsive
             DispatchQueue.global(qos: .userInitiated).async {
-                
-                let imageData:NSData = NSData(contentsOf: imageUrl)!
-                let imageView = UIImageView(frame: CGRect(x:0, y:0, width:200, height:200))
-                imageView.center = self.view.center
-                
-                // When from background thread, UI needs to be updated on main_queue
-                DispatchQueue.main.async {
-                    let image = UIImage(data: imageData as Data)
-                    card.backgroundImage = image
+                if let url:URL = URL(string: imageUrlString!), let data:NSData = NSData(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        let image = UIImage(data: data as Data)
+                        card.backgroundImage = image
+                    }
+                } else {
+                    //If image cannot be retreived, use default image
+                    print("something went wrong")
+                    card.backgroundImage = UIImage(named: "unknownperson")
+
                 }
             }
+            
             //card.backgroundColor = UIColor.clear
             card.textColor = UIColor.white
             card.hasParallax = true
@@ -129,16 +130,19 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
     func doSegue(){
         self.performSegue(withIdentifier: "goToWelcome", sender: self)
     }
-
+    
+    func doSegueSettings(){
+    self.performSegue(withIdentifier: "toSettings", sender: self)
+    }
+    
     @IBAction func goToSettings(_ sender: Any) {
         doSegueSettings()
     }
+    
     @IBAction func goToDonate(_ sender: Any) {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "DonationViewController") as! DonationViewController
         myVC.childToDonateToID = "1"
         self.present(myVC, animated:true, completion:nil)
     }
-    func doSegueSettings(){
-        self.performSegue(withIdentifier: "toSettings", sender: self)
-    }
+
 }
