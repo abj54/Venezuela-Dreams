@@ -7,10 +7,13 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: UITableViewController, UITextFieldDelegate{
     
-    
+    func getUserID()->String{
+        return (FIRAuth.auth()!.currentUser!.uid)
+    }
     
     @IBOutlet weak var firstname: UILabel!
     @IBOutlet weak var textFirstName: UITextField?

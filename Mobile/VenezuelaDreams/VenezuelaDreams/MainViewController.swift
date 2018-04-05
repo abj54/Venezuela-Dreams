@@ -88,7 +88,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     //If image cannot be retreived, use default image
                     print("something went wrong")
                     card.backgroundImage = UIImage(named: "unknownperson")
-
                 }
             }
             
