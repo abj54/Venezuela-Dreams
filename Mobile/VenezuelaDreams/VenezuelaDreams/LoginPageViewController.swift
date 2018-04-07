@@ -254,22 +254,22 @@ class LoginPageViewController: UIViewController {
     
     //creates the user and adds to the database
     func createAndAddtoDbUser(name:String, lastname:String, email:String, password:String, gender:String){
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user: User?, error) in
             
             //if error is not null then prompt user error
             if (error != nil){
                 print(error ?? "")
-                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
                     switch errCode{
                     //if the email already exists
-                    case .errorCodeEmailAlreadyInUse:
+                    case .emailAlreadyInUse:
                         let alertController = UIAlertController(title: "Not a valid email!", message:
                             "Email is already taken", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                         
                     //if the email entered is not valid
-                    case .errorCodeInvalidEmail:
+                    case .invalidEmail:
                         let alertController = UIAlertController(title: "Not a valid email!", message:
                             "That is not a vaid email", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
@@ -288,7 +288,7 @@ class LoginPageViewController: UIViewController {
             guard let uid = user?.uid else{
                 return
             }
-            let ref = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+            let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
             let values = ["name": name, "lastname": lastname, "email": email, "gender": gender]
             let usersReference = ref.child("user").child("email_users").child(uid)
             usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in

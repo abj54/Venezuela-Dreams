@@ -19,7 +19,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
     @IBOutlet weak var settings: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
 
-    var refChild: FIRDatabaseReference!
+    var refChild: DatabaseReference!
     var array_pages = [DatabaseChild]()
 
     //First method that runs
@@ -28,11 +28,11 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         super.viewDidLoad()
         //Get all the children from firebase
         
-        refChild = FIRDatabase.database().reference().child("child")
-        refChild.observe(FIRDataEventType.value, with: {(snapshot) in
+        refChild = Database.database().reference().child("child")
+        refChild.observe(DataEventType.value, with: {(snapshot) in
             if(snapshot.childrenCount > 0){
                 self.array_pages.removeAll()
-                for databasechildren in snapshot.children.allObjects as![FIRDataSnapshot]{
+                for databasechildren in snapshot.children.allObjects as![DataSnapshot]{
                     let childObject = databasechildren.value as? [String: AnyObject]
                     let childName = childObject?["first_name"]
                     let childDescription = childObject?["description"]
@@ -49,10 +49,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         })
         //print(FIRAuth.auth()?.currentUser!.uid as Any)
 
-    }
-
-    func loadChildImage(){
-        
     }
     
     //Sets properties of scroll view

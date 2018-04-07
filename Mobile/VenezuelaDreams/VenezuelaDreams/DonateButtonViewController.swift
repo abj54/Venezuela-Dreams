@@ -12,9 +12,6 @@ class DonateButtonViewController: UIViewController {
 
     var transferChildID: String? 
     
-    @IBOutlet weak var donateButton: DonateButton!
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

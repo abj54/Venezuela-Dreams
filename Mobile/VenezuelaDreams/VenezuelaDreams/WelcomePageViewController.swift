@@ -27,7 +27,7 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
         super.viewDidLoad()
         
         array_pages = [about_us, our_mission, how_it_works]
-        //checkUserIsLogged()
+        checkUserIsLogged()
         setUpButtons()
         setUpScroll()
     }
@@ -63,14 +63,11 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
         for (index, page) in array_pages.enumerated(){
             let card = CardArticle(frame: CGRect(x: 10, y: 30, width: self.loginButton.bounds.width , height: self.scrollView.bounds.height))
             card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
-            //card.icon = UIImage(named: "flappy")
             card.category = page["title"]!
             card.categoryLbl.textColor = UIColor.white
             card.title = ""
             card.subtitle = page["text"]!
             card.blurEffect = .light
-            //card.itemTitle = "Flappy Bird"
-            //card.itemSubtitle = "Flap That !"
             card.backgroundImage = UIImage(named: page["image"]!)
             card.textColor = UIColor.white
             card.hasParallax = true
@@ -100,11 +97,11 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
     
     //Check if there is an user logged in to redirect
     func checkUserIsLogged(){
-        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+        Auth.auth().addStateDidChangeListener { auth, user in
             
             if user != nil {
                 // User is signed in.
-                print("THIS IS THE UID: \(String(describing: FIRAuth.auth()?.currentUser?.uid))")
+                print("THIS IS THE UID: \(String(describing: Auth.auth().currentUser?.uid))")
                 self.performSegue(withIdentifier: "redirectAfterLoginFB", sender: self)
             } else {
                 print("NO USER IS SIGNED IN")
@@ -128,8 +125,8 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
         
         print("Logged succesfully with FB")
         //create credentials for Firebase Auth and create the user in the Auth
-        let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        Auth.auth().signIn(with: credential) { (user, error) in
             if error != nil {
                 print(error.debugDescription)
                 return
@@ -165,7 +162,7 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
     
     //add user's info to database
     func addToDbFacebookUser(name: String, lastname: String, email: String, gender: String, uid: String){
-        let ref = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+        let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
         let values = ["name": name, "lastname": lastname, "email": email, "gender": gender, "registration_type": "fb"]
         let usersReference = ref.child("user").child(uid)
         usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
@@ -189,10 +186,6 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 }
 

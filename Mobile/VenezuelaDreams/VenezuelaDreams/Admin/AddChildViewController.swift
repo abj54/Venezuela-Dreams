@@ -110,7 +110,7 @@ class AddChildViewController: UIViewController, UIImagePickerControllerDelegate,
 
         let values = ["first_name": first_name, "last_name": last_name, "date_of_birth": date_of_birth, "description": description, "date_created": curr_date as String] as [String : Any]
         
-        let dbRef = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+        let dbRef = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
         let childRef = dbRef.child("child").childByAutoId()
         let childId = childRef.key
         childRef.updateChildValues(values, withCompletionBlock: { (err, ref) in
@@ -123,14 +123,14 @@ class AddChildViewController: UIViewController, UIImagePickerControllerDelegate,
         })
         
         //Store picture in bucket
-        let storage = FIRStorage.storage(url: "gs://vzladreams.appspot.com/")
+        let storage = Storage.storage(url: "gs://vzladreams.appspot.com/")
         let storageReference = storage.reference().child("children").child(childId)
         
         var data = Data()
         data = UIImagePNGRepresentation(image)!
         
         let imageRef = storageReference.child("profile_pic.png")
-        imageRef.put(data, metadata: nil, completion: { (metadata,error ) in
+        imageRef.putData(data, metadata: nil, completion: { (metadata,error ) in
             guard let metadata = metadata else{
                     print(error!)
                     return

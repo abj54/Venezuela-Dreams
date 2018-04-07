@@ -1,7 +1,16 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
 #endif
 
+#import "FauxPasAnnotations.h"
 #import "STPAddCardViewController.h"
 #import "STPAddress.h"
 #import "STPAPIClient+ApplePay.h"
@@ -17,12 +26,17 @@
 #import "STPCardParams.h"
 #import "STPCardValidationState.h"
 #import "STPCardValidator.h"
+#import "STPConnectAccountParams.h"
 #import "STPCoreScrollViewController.h"
 #import "STPCoreTableViewController.h"
 #import "STPCoreViewController.h"
 #import "STPCustomer.h"
+#import "STPCustomerContext.h"
+#import "STPEphemeralKeyProvider.h"
+#import "STPFile.h"
 #import "STPFormEncodable.h"
 #import "STPImageLibrary.h"
+#import "STPLegalEntityParams.h"
 #import "STPPaymentActivityIndicatorView.h"
 #import "STPPaymentCardTextField.h"
 #import "STPPaymentConfiguration.h"
@@ -30,9 +44,11 @@
 #import "STPPaymentMethod.h"
 #import "STPPaymentMethodsViewController.h"
 #import "STPPaymentResult.h"
+#import "STPRedirectContext.h"
 #import "STPShippingAddressViewController.h"
 #import "STPSource.h"
 #import "STPSourceCardDetails.h"
+#import "STPSourceEnums.h"
 #import "STPSourceOwner.h"
 #import "STPSourceParams.h"
 #import "STPSourceProtocol.h"

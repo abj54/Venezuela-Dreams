@@ -36,7 +36,7 @@ class RemoveChildViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func getChildren(){
-        let ref = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+        let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
         let childRef = ref.child("child")
         
         childRef.observeSingleEvent(of: .value) { (snapshot) in
@@ -45,7 +45,7 @@ class RemoveChildViewController: UIViewController, UITableViewDataSource, UITabl
             // print(snapshot.childrenCount) // I got the expected number of items
             let enumerator = snapshot.children
             var count = 0
-            while let rest = enumerator.nextObject() as? FIRDataSnapshot {
+            while let rest = enumerator.nextObject() as? DataSnapshot {
                 let first_name = rest.childSnapshot(forPath: "first_name").value as! String
                 let last_name = rest.childSnapshot(forPath: "last_name").value as! String
                 let date_of_birth = rest.childSnapshot(forPath: "date_of_birth").value as! String
@@ -56,8 +56,8 @@ class RemoveChildViewController: UIViewController, UITableViewDataSource, UITabl
                 self.dictionaryChildren[count] = values
                 
                 var picture = UIImage()
-                let storageRef = FIRStorage.storage().reference(forURL: img_url)
-                storageRef.data(withMaxSize: 8 * 1024 * 1024) { data, error in
+                let storageRef = Storage.storage().reference(forURL: img_url)
+                storageRef.getData(maxSize: 8 * 1024 * 1024) { data, error in
                     if let error = error {
                         print(error)
                     } else {
@@ -138,7 +138,7 @@ class RemoveChildViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func removeFromDb(id: String){
-        let dbRef = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+        let dbRef = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
         let childRef = dbRef.child("child").child(id)
         childRef.removeValue { error, _ in
             if (error == nil){
@@ -149,7 +149,7 @@ class RemoveChildViewController: UIViewController, UITableViewDataSource, UITabl
             }
         }
         
-        let storage = FIRStorage.storage(url: "gs://vzladreams.appspot.com/")
+        let storage = Storage.storage(url: "gs://vzladreams.appspot.com/")
         let storageReference = storage.reference().child("children").child(id).child("profile_pic.png")
         storageReference.delete(completion: {error in
             if (error == nil){

@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
 
     let animationDuration = 0.25
     var mode:AMLoginSignupViewMode = .signup
-    let ref = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+    let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
     
     
     //MARK: - background image constraints
@@ -123,22 +123,22 @@ class LoginViewController: UIViewController {
     
     //creates the user and adds to the database
     func createAndAddtoDbUser(name:String, lastname:String, email:String, password:String, gender:String){
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user: User?, error) in
             
             //if error is not null then prompt user error
             if (error != nil){
                 print(error ?? "")
-                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
                     switch errCode{
                     //if the email already exists
-                    case .errorCodeEmailAlreadyInUse:
+                    case .emailAlreadyInUse:
                         let alertController = UIAlertController(title: "Not a valid email!", message:
                             "Email is already taken", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                         
                     //if the email entered is not valid
-                    case .errorCodeInvalidEmail:
+                    case .invalidEmail:
                         let alertController = UIAlertController(title: "Not a valid email!", message:
                             "That is not a vaid email", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
@@ -178,26 +178,26 @@ class LoginViewController: UIViewController {
             return
         }
 
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if (error != nil){
                 
-                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
                     switch errCode{
                     //if the email already exists
-                    case .errorCodeUserNotFound:
+                    case .userNotFound:
                         let alertController = UIAlertController(title: "Email doesn't exist", message:
                             "Verify your email or create an account", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                         
                     //if the email entered is not valid
-                    case .errorCodeInvalidEmail:
+                    case .invalidEmail:
                         let alertController = UIAlertController(title: "Not a valid email!", message:
                             "That is not a vaid email", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                     
-                    case .errorCodeWrongPassword:
+                    case .wrongPassword:
                         let alertController = UIAlertController(title: "Wrong password!", message:
                             "You entered the wrong password.", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
@@ -213,12 +213,13 @@ class LoginViewController: UIViewController {
                 }
             } else {
                 
-                let userID = FIRAuth.auth()?.currentUser?.uid
+                let userID = Auth.auth().currentUser?.uid
                 let userReference = self.ref.child("user").child(userID!)
                 var admin = Bool()
                 userReference.observeSingleEvent(of: .value, with: { (snapshot) in
                     if !snapshot.exists() { return }
-                    print(snapshot)
+                    let stripe_id = snapshot.childSnapshot(forPath: "stripe_id").value as! String
+                    UserDefaults.standard.set(stripe_id, forKey: "stripe_id")
                     admin = snapshot.childSnapshot(forPath: "admin").value as! Bool
                     print("USER IS ADMIN: \(admin)")
                     if (admin){
@@ -347,7 +348,7 @@ class LoginViewController: UIViewController {
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) -> Void in
             if (error == nil){
                 //create credentials for Firebase Auth and create the user in the Auth
-                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 let fbloginresult : FBSDKLoginManagerLoginResult = result!
                 if(fbloginresult.grantedPermissions.contains("email"))
                 {
