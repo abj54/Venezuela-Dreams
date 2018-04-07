@@ -17,6 +17,7 @@ target 'VenezuelaDreams' do
   pod 'FBSDKLoginKit'
   pod 'Stripe'
   pod 'ContextMenu.iOS', '~> 1.1.0'
+  pod 'Alamofire', '~> 4.7'
 
   # Pods for VenezuelaDreams
 
