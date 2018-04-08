@@ -206,8 +206,6 @@ class LoginViewController: UIViewController {
                     default:
                         print("Error creating user \(String(describing: error))")
                     }
-                    
-                    
                     print(error ?? "")
                     return
                 }
@@ -218,13 +216,13 @@ class LoginViewController: UIViewController {
                 var admin = Bool()
                 userReference.observeSingleEvent(of: .value, with: { (snapshot) in
                     if !snapshot.exists() { return }
-                    let stripe_id = snapshot.childSnapshot(forPath: "stripe_id").value as! String
-                    UserDefaults.standard.set(stripe_id, forKey: "stripe_id")
                     admin = snapshot.childSnapshot(forPath: "admin").value as! Bool
                     print("USER IS ADMIN: \(admin)")
                     if (admin){
                         self.performSegue(withIdentifier: "redirectAdmin", sender: self)
                     } else {
+                        let stripe_id = snapshot.childSnapshot(forPath: "stripe_id").value as! String
+                        UserDefaults.standard.set(stripe_id, forKey: "stripe_id")
                         self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
                     }
                 })
@@ -343,22 +341,66 @@ class LoginViewController: UIViewController {
     //
     // TODO
     @IBAction func fbButtonLogin(_ sender: Any) {
-        
-        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) -> Void in
-            if (error == nil){
-                //create credentials for Firebase Auth and create the user in the Auth
+        let login = FBSDKLoginManager()
+        login.logIn(withReadPermissions: ["public_profile"], from: self, handler: {(_ result: FBSDKLoginManagerLoginResult?, _ error: Error?) -> Void in
+            if error != nil {
+                print("Process error")
+            } else if result?.isCancelled != nil {
+                print("Cancelled")
+            } else {
+                print("Logged in")
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                let fbloginresult : FBSDKLoginManagerLoginResult = result!
-                if(fbloginresult.grantedPermissions.contains("email"))
-                {
-                    //self.getFBUserData()
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    if error != nil {
+                        print(error.debugDescription)
+                        return
+                    } else {
+                        print(result ?? "")
+                        print("Succesfully passed in the data")
+                        //gets the user's id
+                        guard let uid = user?.uid else{
+                            return
+                        }
+                        //method from FBSDK to get data
+                        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "first_name, last_name, gender, email"]).start(completionHandler: { (connection, result, error) -> Void in
+                            if (error == nil){
+                                let fbDetails = result as! NSDictionary
+                                //get email, name, lastname, gender from fb
+                                let email = fbDetails.value(forKeyPath: "email") as! String
+                                let name = fbDetails.value(forKeyPath: "first_name") as! String
+                                let lastname = fbDetails.value(forKeyPath: "last_name") as! String
+                                let gender = fbDetails.value(forKeyPath: "gender") as! String
+                                //call methos to add to the db with the repective parameters
+                                self.addToDbFacebookUser(name: name, lastname: lastname, email: email, gender: gender, uid: uid)
+                                print("\(email)\n  \(name)\n  \(lastname)\n  \(gender)")
+                            } else {
+                                print(error ?? "")
+                                return
+                            }
+                        })
+                        //do segue to main window
+                        self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
+                    }
                 }
             }
-        }
-        
+        })
     }
  
+    //add user's info to database
+    func addToDbFacebookUser(name: String, lastname: String, email: String, gender: String, uid: String){
+        let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+        let values = ["name": name, "lastname": lastname, "email": email, "gender": gender, "registration_type": "fb"]
+        let usersReference = ref.child("user").child(uid)
+        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+            
+            if (err != nil){
+                print(err ?? "")
+                return
+            }
+            print("Saved user succesfully into db")
+        })
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
