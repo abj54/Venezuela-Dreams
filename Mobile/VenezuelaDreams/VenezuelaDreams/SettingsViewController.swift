@@ -8,12 +8,10 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import Stripe
 import FirebaseDatabase
-class SettingsViewController: UITableViewController, UITextFieldDelegate{
-    
-    func getUserID()->String{
-        return (Auth.auth().currentUser!.uid)
-    }
+
+class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPaymentContextDelegate {
     
     //TABLE VIEW
     @IBOutlet var tableViewSettings: UITableView!
@@ -45,31 +43,30 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate{
     @IBOutlet weak var changePassword: UIButton!
 
     //UPDATE PAYMENT
-    @IBOutlet weak var updatePaymentButton: UIButton!
     
     //SIGN OUT
     @IBOutlet weak var signoutButton: UIButton!
     
     override func viewDidLoad() {
         //tableViewSettings.backgroundView = UIImageView(image: UIImage(named: "background7.png"))
-        tableViewSettings.backgroundColor = UIColor.white
         super.viewDidLoad()
-        
+        setupPaymentButton()
         GUISettings()
         getUserData()
         editorInitializer()
         
     }
     
-
     func GUISettings(){
         //Set password reset as security entry
+        tableViewSettings.backgroundColor = UIColor.white
         currentPassword.isSecureTextEntry = true
         newPasswordRetype.isSecureTextEntry = true
         newPassword.isSecureTextEntry = true
-        
-
-        
+    }
+    
+    func getUserID()->String{
+        return (Auth.auth().currentUser!.uid)
     }
     
     //get user data for contact information
@@ -115,7 +112,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate{
     
     func editFirstNameInitializer(){
         //FIRST NAME EDITOR
-        textFirstName?.delegate = self
+        //textFirstName?.delegate = self
         textFirstName?.isHidden = true
         firstname.isUserInteractionEnabled = true
         let aSelector : Selector = #selector(SettingsViewController.firstnameTapped)
@@ -140,7 +137,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate{
     
     func editLastNameInitializer(){
         //FIRST NAME EDITOR
-        textLastName?.delegate = self
+        //textLastName?.delegate = self
         textLastName?.isHidden = true
         lastname.isUserInteractionEnabled = true
         let aSelector : Selector = #selector(SettingsViewController.lastnameTapped)
@@ -166,7 +163,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate{
     
     func editEmailInitializer(){
         //FIRST NAME EDITOR
-        textEmail?.delegate = self
+        //textEmail?.delegate = self
         textEmail?.isHidden = true
         email.isUserInteractionEnabled = true
         let aSelector : Selector = #selector(SettingsViewController.emailTapped)
@@ -290,6 +287,160 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate{
             print ("Error signing out: %@", signOutError)
         }
     }
+    
+    
+    //CHANGE PAYMENT INFORMATION
+    
+    @IBOutlet var inputsView: UIView!
+
+    private let customerContext: STPCustomerContext
+    private let paymentContext: STPPaymentContext
+    
+    required init?(coder aDecoder: NSCoder) {
+        customerContext = STPCustomerContext(keyProvider: MainAPIClient.shared)
+        paymentContext = STPPaymentContext(customerContext: customerContext)
+        super.init(coder: aDecoder)
+        
+        paymentContext.delegate = self
+        paymentContext.hostViewController = self
+    }
+    
+    //Setup Button
+    
+    let paymentButton: UIButton = {
+        let tf = UIButton()
+        tf.backgroundColor = UIColor(red:66.0/255.0, green:69.0/255.0, blue:112.0/255.0, alpha:255.0/255.0)
+        tf.layer.borderWidth = 1.0
+        tf.layer.cornerRadius = 5
+        tf.layer.borderColor = UIColor(red:14.0/255.0, green:211.0/255.0, blue:140.0/255.0, alpha:255.0/255.0).cgColor
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.clipsToBounds = true
+        tf.setTitle("  Payment", for: .normal)
+        tf.setImage(#imageLiteral(resourceName: "Payment"), for: .normal)
+        return tf
+    }()
+    
+    func setupPaymentButton(){
+        inputsView.addSubview(paymentButton)
+
+        paymentButton.leftAnchor.constraint(equalTo: inputsView.leftAnchor, constant: 16).isActive = true
+        paymentButton.rightAnchor.constraint(equalTo: inputsView.rightAnchor, constant: -16).isActive = true
+        //paymentButton.topAnchor.constraint(equalTo: resetPasswordButton.bottomAnchor, constant: 8).isActive = true
+        paymentButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        paymentButton.addTarget(self, action: #selector(self.paymentButtonTapped(_:)), for: .touchUpInside)
+    }
+    
+    @objc func paymentButtonTapped(_ sender: UIButton) {
+        presentPaymentMethodsViewController()
+    }
+    
+    // MARK: STPPaymentContextDelegate
+
+
+
+    private func presentPaymentMethodsViewController() {
+        guard !STPPaymentConfiguration.shared().publishableKey.isEmpty else {
+            // Present error immediately because publishable key needs to be set
+            let message = "Please assign a value to `publishableKey` before continuing. See `AppDelegate.swift`."
+            print(message)
+            //present(UIAlertController(message: message), animated: true)
+            return
+        }
+        
+        guard !MainAPIClient.shared.baseURLString.isEmpty else {
+            // Present error immediately because base url needs to be set
+            let message = "Please assign a value to `MainAPIClient.shared.baseURLString` before continuing. See `AppDelegate.swift`."
+            print(message)
+            //present(UIAlertController(message: message), animated: true)
+            return
+        }
+        
+        // Present the Stripe payment methods view controller to enter payment details
+        paymentContext.presentPaymentMethodsViewController()
+    }
+    
+    private func reloadPaymentButtonContent() {
+        guard let selectedPaymentMethod = paymentContext.selectedPaymentMethod else {
+            // Show default image, text, and color
+            paymentButton.setImage(#imageLiteral(resourceName: "Payment"), for: .normal)
+            paymentButton.setTitle("  Payment", for: .normal)
+            paymentButton.setTitleColor(UIColor(red: 50.0 / 255.0, green: 49.0 / 255.0, blue: 94.0 / 255.0, alpha: 1.0), for: .normal)
+            return
+        }
+        // #0090FA
+        // Show selected payment method image, label, and darker color
+        let img = selectedPaymentMethod.image
+        let text = selectedPaymentMethod.label
+        
+        print("This is the button:: \(text)")
+        paymentButton.setImage(img, for: .normal)
+        paymentButton.setTitle("  \(text)", for: .normal)
+        paymentButton.setTitleColor(UIColor(red: 0.0 / 255.0, green: 144.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0), for: .normal)
+        //donateButton.isEnabled = true
+    }
+    
+    
+    //Payment context
+    func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPErrorBlock) {
+        
+        return
+        /*
+         // Create charge using payment result
+         let index = self.segmentedControl.currentSegment
+         var amount = ""
+         if (index == 0){
+         amount = "200"
+         } else if (index == 1){
+         amount = "500"
+         } else if (index == 2){
+         amount = "1000"
+         } else if (index == 3){
+         amount = "2000"
+         } else if (index == 4){
+         amount = "5000"
+         } else {
+         var text = amountTextField.text!
+         let index_$ = text.index(of: "$")
+         text.remove(at: index_$!)
+         let index_dot = text.index(of: ".")
+         text.remove(at: index_dot!)
+         if (text.contains(",")){
+         let index_comma = text.index(of: ",")
+         text.remove(at: index_comma!)
+         }
+         amount = text
+         print("THIS IS THE AMOUNT: \(amount)")
+         }
+         
+         let source = paymentResult.source.stripeID
+         sendToken(source: source, amount: amount)
+         //sendChildId()
+         */
+    }
+    
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
+        switch status {
+        case .error:
+            print(error!)
+        case .success:
+            print("Succeded! PAYMENT WORKED!")
+        case .userCancellation:
+            return // Do nothing
+        }
+    }
+    
+    func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
+        self.navigationController?.popViewController(animated: true)
+        print("ERROR TO USER: \(error)")
+    }
+    
+    func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
+        // Reload related components
+        reloadPaymentButtonContent()
+    }
+    
+    
     
 
 }
