@@ -124,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1252" y="391"/>
+            <point key="canvasLocation" x="-1316" y="189"/>
         </scene>
         <!--Card Content-->
         <scene sceneID="fhf-ya-Z7I">
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhB-Ru-opK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="1039"/>
+            <point key="canvasLocation" x="-631" y="1030"/>
         </scene>
         <!--Donation View Controller-->
         <scene sceneID="I30-dZ-PrY">
@@ -247,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77A-Dy-mAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="1092.5037481259371"/>
+            <point key="canvasLocation" x="958" y="1113"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="EWL-ft-BWm">
@@ -658,7 +658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQX-IP-d69" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957.60000000000002" y="-627.4362818590705"/>
+            <point key="canvasLocation" x="958" y="-686"/>
         </scene>
         <!--Add Child View Controller-->
         <scene sceneID="rgS-cW-ELd">
@@ -712,7 +712,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SL7-Uc-6xt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909.5999999999999" y="-1797.7511244377813"/>
+            <point key="canvasLocation" x="1702" y="-1650"/>
         </scene>
         <!--Remove Child View Controller-->
         <scene sceneID="Sfs-Nb-45i">
@@ -819,7 +819,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvy-ZH-ihl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2716" y="-1839"/>
+            <point key="canvasLocation" x="2638" y="-1650"/>
         </scene>
         <!--Admin View Controller-->
         <scene sceneID="hu8-7Z-ZW6">
@@ -851,7 +851,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9u-KW-49k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439.1999999999998" y="-1006.1469265367317"/>
+            <point key="canvasLocation" x="2716" y="-687"/>
         </scene>
         <!--Card Content-->
         <scene sceneID="CZA-Zg-knT">
@@ -930,7 +930,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Joe-mz-ZVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3477" y="-2531"/>
+            <point key="canvasLocation" x="3662" y="-2510"/>
         </scene>
         <!--Edit Child View Controller-->
         <scene sceneID="xqG-r9-Run">
@@ -1038,7 +1038,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SP2-sY-jsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3506" y="-1760"/>
+            <point key="canvasLocation" x="3663" y="-1650"/>
         </scene>
     </scenes>
     <resources>
@@ -1053,7 +1053,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="QMz-nh-a2d"/>
         <segue reference="YBy-WA-pzx"/>
-        <segue reference="Jml-Bm-CaI"/>
-        <segue reference="Kxd-fQ-Bhc"/>
+        <segue reference="smz-5l-MXI"/>
+        <segue reference="FBQ-54-qhl"/>
     </inferredMetricsTieBreakers>
 </document>
