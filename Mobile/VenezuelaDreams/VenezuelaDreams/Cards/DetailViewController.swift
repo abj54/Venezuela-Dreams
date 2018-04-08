@@ -85,7 +85,7 @@ internal class DetailViewController: UIViewController {
                                   y: card.backgroundIV.bounds.maxY,
                                   width: scrollView.frame.width,
                                   height: detail.frame.height)
-             
+             //FIX IT
             scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: detail.frame.maxY)
             
             

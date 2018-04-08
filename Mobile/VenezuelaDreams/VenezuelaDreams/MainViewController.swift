@@ -4,7 +4,7 @@
 //
 //  Created by Andres Prato on 1/25/18.
 //  Copyright © 2018 Andres Prato. All rights reserved.
-//
+//  
 
 import UIKit
 import FBSDKLoginKit
@@ -36,8 +36,13 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     let childObject = databasechildren.value as? [String: AnyObject]
                     let childName = childObject?["first_name"]
                     let childDescription = childObject?["description"]
+<<<<<<< HEAD
+                    let childID = databasechildren.key as! String
+                    let imageUrl = childObject?["img_url"]
+=======
                     let childID = databasechildren.key
                     let imageUrl = childObject?["image_url"]
+>>>>>>> 69cf6cd6563435db88581410d0f991c8c3aeb19a
                     
                     //FIX IT
                     let child = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
@@ -50,6 +55,10 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         //print(FIRAuth.auth()?.currentUser!.uid as Any)
 
     }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 69cf6cd6563435db88581410d0f991c8c3aeb19a
     
     //Sets properties of scroll view
     func setUpScroll(){
@@ -58,6 +67,8 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
     }
+    
+
     
     //Loads scroll view with cards of the children
     func loadPages(){
@@ -71,6 +82,25 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
             card.blurEffect = .light
 
             //GET IMAGE
+<<<<<<< HEAD
+            // http://swiftdeveloperblog.com/code-examples/uiimageview-and-uiimage-load-image-from-remote-url/
+            var imageUrlString = childObject.childUrl
+            let imageUrl:URL = URL(string: imageUrlString!)!
+            // Start background thread so that image loading does not make app unresponsive
+            DispatchQueue.global(qos: .userInitiated).async {
+                if let url:URL = URL(string: imageUrlString!), let data:NSData = NSData(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        let image = UIImage(data: data as Data)
+                        card.backgroundImage = image
+                    }
+                } else {
+                    //If image cannot be retreived, use default image
+                    print("something went wrong")
+                    card.backgroundImage = UIImage(named: "unknownperson")
+                }
+            }
+            
+=======
             //let imageUrlString = childObject.childUrl
             //let imageUrl:URL = URL(string: imageUrlString!)!
             
@@ -87,6 +117,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
 //                    card.backgroundImage = image
 //                }
 //            }
+>>>>>>> 69cf6cd6563435db88581410d0f991c8c3aeb19a
             //card.backgroundColor = UIColor.clear
             card.textColor = UIColor.white
             card.hasParallax = true
@@ -114,7 +145,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
      // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: xIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
@@ -125,16 +156,19 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
     func doSegue(){
         self.performSegue(withIdentifier: "goToWelcome", sender: self)
     }
-
+    
+    func doSegueSettings(){
+    self.performSegue(withIdentifier: "toSettings", sender: self)
+    }
+    
     @IBAction func goToSettings(_ sender: Any) {
         doSegueSettings()
     }
+    
     @IBAction func goToDonate(_ sender: Any) {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "DonationViewController") as! DonationViewController
         myVC.childToDonateToID = "1"
         self.present(myVC, animated:true, completion:nil)
     }
-    func doSegueSettings(){
-        self.performSegue(withIdentifier: "toSettings", sender: self)
-    }
+
 }

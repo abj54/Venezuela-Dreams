@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A15AF5F543D22D530CB5644 /* Pods_VenezuelaDreamsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B681EB2E7B4844165EAE4A90 /* Pods_VenezuelaDreamsTests.framework */; };
+		5008215F20768AF30036648E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008215E20768AF20036648E /* SettingsViewController.swift */; };
 		50135623201A9F610047EBF4 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50135622201A9F610047EBF4 /* LoginPageViewController.swift */; };
 		50135625201A9FA80047EBF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50135624201A9FA80047EBF4 /* MainViewController.swift */; };
 		50135628201D04550047EBF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50135627201D04540047EBF4 /* GoogleService-Info.plist */; };
@@ -73,6 +74,7 @@
 		17C818F4E1DBB088766A2626 /* Pods_VenezuelaDreams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenezuelaDreams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D0DE7049B0A7FF4C3F7B1D5 /* Pods-VenezuelaDreamsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenezuelaDreamsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VenezuelaDreamsTests/Pods-VenezuelaDreamsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37E34F698FCAFCEAB5AB83A9 /* Pods-VenezuelaDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenezuelaDreams.release.xcconfig"; path = "Pods/Target Support Files/Pods-VenezuelaDreams/Pods-VenezuelaDreams.release.xcconfig"; sourceTree = "<group>"; };
+		5008215E20768AF20036648E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "/Users/pascal/Documents/XCode Projects/Venezuela-Dreams/Mobile/VenezuelaDreams/VenezuelaDreams/SettingsViewController.swift"; sourceTree = "<absolute>"; };
 		50135622201A9F610047EBF4 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		50135624201A9FA80047EBF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50135627201D04540047EBF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				50E7B7BF206DB563008CF8FC /* Admin */,
 				50C7F8BE2052357C003EDC73 /* DonationViewController.swift */,
 				50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */,
+				5008215E20768AF20036648E /* SettingsViewController.swift */,
 				50135624201A9FA80047EBF4 /* MainViewController.swift */,
 				50C4C80A2033BAA000969019 /* LoginViewController.swift */,
 				50C7F8BC2052343F003EDC73 /* Buttons.swift */,
@@ -606,6 +609,7 @@
 				50F2151C2027A33C0027BE44 /* CardArticle.swift in Sources */,
 				50C7F8BD20523440003EDC73 /* Buttons.swift in Sources */,
 				508E05FD203B9D0700266AE1 /* MainCard.swift in Sources */,
+				5008215F20768AF30036648E /* SettingsViewController.swift in Sources */,
 				50C7F8BF2052357C003EDC73 /* DonationViewController.swift in Sources */,
 				507D532F2077C3E500776892 /* MainAPIClient.swift in Sources */,
 				50135625201A9FA80047EBF4 /* MainViewController.swift in Sources */,
