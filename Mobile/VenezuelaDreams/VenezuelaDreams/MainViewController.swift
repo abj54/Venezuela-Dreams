@@ -38,7 +38,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                 self.array_pages.removeAll()
                 for databasechildren in snapshot.children.allObjects as![DataSnapshot]{
                     let childObject = databasechildren.value as? [String: AnyObject]
-                    let childName = childObject?["first_name"]
+                    let childName = (childObject?["first_name"] as! String) + " " + (childObject?["last_name"] as! String)
                     let childDescription = childObject?["description"]
                     //let childID = databasechildren.key as! String
                     //let imageUrl = childObject?["img_url"]
@@ -46,7 +46,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     let imageUrl = childObject?["img_url"]
                     
                     //FIX IT
-                    let child = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
+                    let child = DatabaseChild(id: childID, name: childName, description: childDescription as? String, childUrl: imageUrl  as? String)
                     self.array_pages.append(child)
                 }
             }
@@ -65,9 +65,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
     }
-    
 
-    
     //Loads scroll view with cards of the children
     func loadPages(){
         for (index,childObject) in array_pages.enumerated(){

@@ -784,6 +784,7 @@
                     <connections>
                         <outlet property="childToDonateView" destination="I0n-dD-WA0" id="5XA-UG-hB1"/>
                         <outlet property="inputsView" destination="meE-2a-HTu" id="NFl-fv-dnf"/>
+                        <segue destination="VdJ-DT-2q5" kind="show" identifier="afterDonation" id="4QX-xn-Trm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77A-Dy-mAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -978,7 +979,7 @@
                                                     <action selector="loginButtonTouchUpInside:" destination="jE7-QJ-ggD" eventType="touchUpInside" id="Tod-e3-Cl0"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFi-3j-aX7">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFi-3j-aX7">
                                                 <rect key="frame" x="76" y="417" width="178" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="178" id="S2Y-kN-24L"/>
@@ -1846,7 +1847,7 @@
         <segue reference="Sba-Jr-ItJ"/>
         <segue reference="iit-vo-loG"/>
         <segue reference="Jqk-pe-BLF"/>
-        <segue reference="2O0-hB-Br2"/>
+        <segue reference="4QX-xn-Trm"/>
         <segue reference="FBQ-54-qhl"/>
     </inferredMetricsTieBreakers>
 </document>
