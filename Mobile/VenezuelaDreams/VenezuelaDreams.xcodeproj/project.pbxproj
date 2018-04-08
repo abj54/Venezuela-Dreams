@@ -24,6 +24,8 @@
 		508C3980206ADDDE001A8F0B /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C397F206ADDDE001A8F0B /* AdminViewController.swift */; };
 		508C3982206AED2C001A8F0B /* AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C3981206AED2C001A8F0B /* AddChildViewController.swift */; };
 		508C3984206D5297001A8F0B /* RemoveChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C3983206D5297001A8F0B /* RemoveChildViewController.swift */; };
+		508DDE8520797DD5003748BB /* EditChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DDE8420797DD5003748BB /* EditChildViewController.swift */; };
+		508DDE872079AB9C003748BB /* ActualEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DDE862079AB9C003748BB /* ActualEditViewController.swift */; };
 		508E05FD203B9D0700266AE1 /* MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E05FC203B9D0700266AE1 /* MainCard.swift */; };
 		50990B312073335F0020C0C3 /* RemoveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50990B302073335F0020C0C3 /* RemoveTableViewCell.swift */; };
 		50A282AA20547BE30003B9E6 /* DatabaseChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A282A920547BE30003B9E6 /* DatabaseChild.swift */; };
@@ -94,6 +96,8 @@
 		508C397F206ADDDE001A8F0B /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		508C3981206AED2C001A8F0B /* AddChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildViewController.swift; sourceTree = "<group>"; };
 		508C3983206D5297001A8F0B /* RemoveChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveChildViewController.swift; sourceTree = "<group>"; };
+		508DDE8420797DD5003748BB /* EditChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChildViewController.swift; sourceTree = "<group>"; };
+		508DDE862079AB9C003748BB /* ActualEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualEditViewController.swift; sourceTree = "<group>"; };
 		508E05FC203B9D0700266AE1 /* MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCard.swift; sourceTree = "<group>"; };
 		50990B302073335F0020C0C3 /* RemoveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveTableViewCell.swift; sourceTree = "<group>"; };
 		50A282A920547BE30003B9E6 /* DatabaseChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseChild.swift; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 				508C397F206ADDDE001A8F0B /* AdminViewController.swift */,
 				508C3983206D5297001A8F0B /* RemoveChildViewController.swift */,
 				50990B302073335F0020C0C3 /* RemoveTableViewCell.swift */,
+				508DDE8420797DD5003748BB /* EditChildViewController.swift */,
+				508DDE862079AB9C003748BB /* ActualEditViewController.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -593,10 +599,12 @@
 				50F215152027A33C0027BE44 /* Card.swift in Sources */,
 				508639F1201A9CE800582920 /* WelcomePageViewController.swift in Sources */,
 				508639EF201A9CE800582920 /* AppDelegate.swift in Sources */,
+				508DDE8520797DD5003748BB /* EditChildViewController.swift in Sources */,
 				50A282AA20547BE30003B9E6 /* DatabaseChild.swift in Sources */,
 				508C3984206D5297001A8F0B /* RemoveChildViewController.swift in Sources */,
 				5026031C201EAE870070B5A7 /* PagesView.swift in Sources */,
 				50C4C80B2033BAA000969019 /* LoginViewController.swift in Sources */,
+				508DDE872079AB9C003748BB /* ActualEditViewController.swift in Sources */,
 				50F215192027A33C0027BE44 /* Animator.swift in Sources */,
 				50F2151C2027A33C0027BE44 /* CardArticle.swift in Sources */,
 				50C7F8BD20523440003EDC73 /* Buttons.swift in Sources */,
@@ -688,7 +696,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: prato.andres@gmail.com (4NQ56YWY7J)";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -745,7 +754,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: prato.andres@gmail.com (4NQ56YWY7J)";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -771,12 +781,15 @@
 			baseConfigurationReference = E87133E3C2C6FE773407348B /* Pods-VenezuelaDreams.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6G828876N8;
+				DEVELOPMENT_TEAM = 398UP4MTHJ;
 				INFOPLIST_FILE = VenezuelaDreams/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = VenezuelaDreams;
+				PRODUCT_BUNDLE_IDENTIFIER = VenezuelaDreams123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -787,12 +800,15 @@
 			baseConfigurationReference = 37E34F698FCAFCEAB5AB83A9 /* Pods-VenezuelaDreams.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6G828876N8;
+				DEVELOPMENT_TEAM = 398UP4MTHJ;
 				INFOPLIST_FILE = VenezuelaDreams/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = VenezuelaDreams;
+				PRODUCT_BUNDLE_IDENTIFIER = VenezuelaDreams123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

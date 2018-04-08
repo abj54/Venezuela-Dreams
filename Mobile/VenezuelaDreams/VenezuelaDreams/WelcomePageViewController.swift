@@ -22,12 +22,11 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
     let our_mission = ["title": "Our mission", "text": "Our mission is to help children in Venezuela and help foundations raise money", "image": "delta1"]
     let how_it_works = ["title": "How it works", "text": "Select a child and then donate a amount of at leat 2$, between 1 week and 2 weeks you will receive a confirmation that the child received the food!", "image": "delta3"]
     var array_pages = [Dictionary<String, String>]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //checkUserIsLogged()
         array_pages = [about_us, our_mission, how_it_works]
-        checkUserIsLogged()
         setUpButtons()
         setUpScroll()
     }
@@ -35,6 +34,7 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
     //This happens after the autolayout is done. So, any calculation done with autolayout number, it has to occur here
     override func viewDidAppear(_ animated: Bool) {
         loadPages()
+       
     }
 
     //Set buttons of the view
@@ -93,21 +93,6 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.frame.size.width
         pageControl.currentPage = Int(page)
-    }
-    
-    //Check if there is an user logged in to redirect
-    func checkUserIsLogged(){
-        Auth.auth().addStateDidChangeListener { auth, user in
-            
-            if user != nil {
-                // User is signed in.
-                print("THIS IS THE UID: \(String(describing: Auth.auth().currentUser?.uid))")
-                self.performSegue(withIdentifier: "redirectAfterLoginFB", sender: self)
-            } else {
-                print("NO USER IS SIGNED IN")
-                // No user is signed in.
-            }
-        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -173,6 +158,37 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
             }
             print("Saved user succesfully into db")
         })
+    }
+    
+    //Check if there is an user logged in to redirect
+    func checkUserIsLogged(){
+        let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if user != nil {
+                // User is signed in.
+                print("THIS IS THE UID: \(String(describing: Auth.auth().currentUser?.uid))")
+                let userReference = ref.child("user").child((Auth.auth().currentUser?.uid)!)
+                var admin = Bool()
+                userReference.observeSingleEvent(of: .value, with: { (snapshot) in
+                    if !snapshot.exists() { return }
+                    admin = snapshot.childSnapshot(forPath: "admin").value as! Bool
+                    print("USER IS ADMIN: \(admin)")
+                    if (admin){
+                        try! Auth.auth().signOut()
+                        print("Signed user out")
+                    } else {
+//                        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                        let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: "mainViewController") as UIViewController
+//                        self.window = UIWindow(frame: UIScreen.main.bounds)
+//                        self.window?.rootViewController = initialViewControlleripad
+//                        self.window?.makeKeyAndVisible()
+                    }
+                })
+            } else {
+                print("NO USER IS SIGNED IN")
+                // No user is signed in.
+            }
+        }
     }
     
     @IBAction func continueWithoutSignIn(_ sender: Any) {

@@ -47,6 +47,7 @@ class AdminViewController: UIViewController {
         
         addChildButton.addTarget(self, action: #selector(self.addChildSegue(_:)), for: .touchUpInside)
         removeChildButton.addTarget(self, action: #selector(self.removeChildSegue(_:)), for: .touchUpInside)
+        editChildButton.addTarget(self, action: #selector(self.editChildSegue(_:)), for: .touchUpInside)
     }
     
     let addChildButton: UIButton = {
@@ -107,6 +108,10 @@ class AdminViewController: UIViewController {
     
     @objc func removeChildSegue(_ sender : UIButton){
         self.performSegue(withIdentifier: "removeChildSegue", sender: Any?.self)
+    }
+    
+    @objc func editChildSegue(_ sender : UIButton){
+        self.performSegue(withIdentifier: "editChildSegue", sender: Any?.self)
     }
 
     override func didReceiveMemoryWarning() {

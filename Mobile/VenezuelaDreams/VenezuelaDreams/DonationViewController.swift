@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Stripe
 
-class DonationViewController: UIViewController, UITextFieldDelegate ,STPPaymentContextDelegate {
+class DonationViewController: UIViewController, UITextFieldDelegate , STPPaymentContextDelegate {
 
     
     private let customerContext: STPCustomerContext
