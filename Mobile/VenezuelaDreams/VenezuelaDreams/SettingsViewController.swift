@@ -10,8 +10,13 @@ import UIKit
 import FirebaseAuth
 import Stripe
 import FirebaseDatabase
+import FBSDKLoginKit
 
 class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPaymentContextDelegate {
+    
+    
+
+    
     
     //TABLE VIEW
     @IBOutlet var tableViewSettings: UITableView!
@@ -44,8 +49,13 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
 
     //UPDATE PAYMENT
     
+    //VIEW TRANSACTIONS
+    @IBOutlet weak var viewTransactionsButton: UIButton!
+    
     //SIGN OUT
-    @IBOutlet weak var signoutButton: UIButton!
+    @IBOutlet weak var signoutButton: UIButton! //normal logout
+    @IBOutlet weak var logoutButtonFB: UIButton! //facebook
+
     
     override func viewDidLoad() {
         //tableViewSettings.backgroundView = UIImageView(image: UIImage(named: "background7.png"))
@@ -81,7 +91,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
             let name = value?["name"] as? String ?? ""
             print(name)
             self.firstname.text = name
-            let lastnameString = value?["lastName"] as? String
+            let lastnameString = value?["lastname"] as? String
             print(lastnameString)
             self.lastname.text = lastnameString
             let emailString = value?["email"] as? String
@@ -197,7 +207,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
             edited = true
         }
         if(lastname.text != ""){
-            ref.child("user/\(userID)/lastName").setValue(textLastName?.text)
+            ref.child("user/\(userID)/lastname").setValue(textLastName?.text)
             edited = true
         }
         if(email.text != ""){
@@ -214,6 +224,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
             
             // show the alert
             self.present(alert, animated: true, completion: nil)
+            self.tableView.reloadData()
+
         }
 
     }
@@ -278,6 +290,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
     }
     
     //SIGN OUT
+    
     @IBAction func signoutPressed(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
@@ -287,6 +300,17 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
             print ("Error signing out: %@", signOutError)
         }
     }
+    
+    //SIGNOUT FACEBOOOK
+    func logout() {
+        FBSDKLoginManager().logOut()
+    }
+    
+    @IBAction func signoutFacebook(_ sender: Any) {
+        logout()
+        self.performSegue(withIdentifier: "toWelcome", sender: self)
+    }
+    
     
     
     //CHANGE PAYMENT INFORMATION
@@ -439,6 +463,12 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
         // Reload related components
         reloadPaymentButtonContent()
     }
+    
+    //VIEW TRANSACTIONS
+    @IBAction func viewTransactionsPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "toTransactions", sender: self)
+    }
+    
     
     
     

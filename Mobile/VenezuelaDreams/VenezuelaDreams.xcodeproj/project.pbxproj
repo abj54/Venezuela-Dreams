@@ -28,6 +28,9 @@
 		508DDE8520797DD5003748BB /* EditChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DDE8420797DD5003748BB /* EditChildViewController.swift */; };
 		508DDE872079AB9C003748BB /* ActualEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508DDE862079AB9C003748BB /* ActualEditViewController.swift */; };
 		508E05FD203B9D0700266AE1 /* MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E05FC203B9D0700266AE1 /* MainCard.swift */; };
+		509375E6207AC59D0078D1B5 /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509375E5207AC59D0078D1B5 /* TransactionTableViewController.swift */; };
+		509375E8207AC5B10078D1B5 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509375E7207AC5B10078D1B5 /* TransactionViewController.swift */; };
+		509375EA207AC7220078D1B5 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509375E9207AC7220078D1B5 /* Transaction.swift */; };
 		50990B312073335F0020C0C3 /* RemoveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50990B302073335F0020C0C3 /* RemoveTableViewCell.swift */; };
 		50A282AA20547BE30003B9E6 /* DatabaseChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A282A920547BE30003B9E6 /* DatabaseChild.swift */; };
 		50A282AE205635C90003B9E6 /* DonateButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */; };
@@ -102,6 +105,9 @@
 		508DDE8420797DD5003748BB /* EditChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChildViewController.swift; sourceTree = "<group>"; };
 		508DDE862079AB9C003748BB /* ActualEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualEditViewController.swift; sourceTree = "<group>"; };
 		508E05FC203B9D0700266AE1 /* MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCard.swift; sourceTree = "<group>"; };
+		509375E5207AC59D0078D1B5 /* TransactionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
+		509375E7207AC5B10078D1B5 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		509375E9207AC7220078D1B5 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		50990B302073335F0020C0C3 /* RemoveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveTableViewCell.swift; sourceTree = "<group>"; };
 		50A282A920547BE30003B9E6 /* DatabaseChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseChild.swift; sourceTree = "<group>"; };
 		50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateButtonViewController.swift; sourceTree = "<group>"; };
@@ -207,19 +213,22 @@
 				50C4C8032033B96700969019 /* AMLogin */,
 				503C506E2031F6570078C929 /* Cards */,
 				508639EE201A9CE800582920 /* AppDelegate.swift */,
-				508639F0201A9CE800582920 /* WelcomePageViewController.swift */,
+				509375E9207AC7220078D1B5 /* Transaction.swift */,
 				5026031B201EAE870070B5A7 /* PagesView.swift */,
 				507D532E2077C3E500776892 /* MainAPIClient.swift */,
 				50A282A920547BE30003B9E6 /* DatabaseChild.swift */,
+				50C7F8BC2052343F003EDC73 /* Buttons.swift */,
 				508639F2201A9CE800582920 /* Main.storyboard */,
 				50E7B7BF206DB563008CF8FC /* Admin */,
+				509375E5207AC59D0078D1B5 /* TransactionTableViewController.swift */,
+				509375E7207AC5B10078D1B5 /* TransactionViewController.swift */,
 				50C7F8BE2052357C003EDC73 /* DonationViewController.swift */,
+				508639F0201A9CE800582920 /* WelcomePageViewController.swift */,
 				5036B902207A8F15000623C0 /* SettingsViewController.swift */,
 				50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */,
 				50BE9539207AA12F00161F85 /* ForgotPasswordViewController.swift */,
 				50135624201A9FA80047EBF4 /* MainViewController.swift */,
 				50C4C80A2033BAA000969019 /* LoginViewController.swift */,
-				50C7F8BC2052343F003EDC73 /* Buttons.swift */,
 				50135622201A9F610047EBF4 /* LoginPageViewController.swift */,
 				508639F5201A9CE800582920 /* Assets.xcassets */,
 				508639F7201A9CE800582920 /* LaunchScreen.storyboard */,
@@ -591,9 +600,11 @@
 				5036B903207A8F15000623C0 /* SettingsViewController.swift in Sources */,
 				50990B312073335F0020C0C3 /* RemoveTableViewCell.swift in Sources */,
 				50F215172027A33C0027BE44 /* CardPlayer.swift in Sources */,
+				509375E8207AC5B10078D1B5 /* TransactionViewController.swift in Sources */,
 				50F2151E2027A33C0027BE44 /* CardGroupSliding.swift in Sources */,
 				50C7F8C3205258AC003EDC73 /* UIView+Constraints.swift in Sources */,
 				5036B905207A9650000623C0 /* ProofViewController.swift in Sources */,
+				509375E6207AC59D0078D1B5 /* TransactionTableViewController.swift in Sources */,
 				50C7F8C4205258AC003EDC73 /* SJFluidSegmentedControl.swift in Sources */,
 				50F2151D2027A33C0027BE44 /* Player_by_Patric_Piemonte.swift in Sources */,
 				50F2151A2027A33C0027BE44 /* CardGroup.swift in Sources */,
@@ -614,6 +625,7 @@
 				50C4C80B2033BAA000969019 /* LoginViewController.swift in Sources */,
 				508DDE872079AB9C003748BB /* ActualEditViewController.swift in Sources */,
 				50F215192027A33C0027BE44 /* Animator.swift in Sources */,
+				509375EA207AC7220078D1B5 /* Transaction.swift in Sources */,
 				50F2151C2027A33C0027BE44 /* CardArticle.swift in Sources */,
 				50BE953A207AA12F00161F85 /* ForgotPasswordViewController.swift in Sources */,
 				50C7F8BD20523440003EDC73 /* Buttons.swift in Sources */,
