@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var logoCenterConstraint: NSLayoutConstraint!
     
     
-    @IBOutlet weak var forgotPassTopConstraint: NSLayoutConstraint!
+    //@IBOutlet weak var forgotPassTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var socialsView: UIView!
     
     
@@ -66,6 +66,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signupLastNameInputView: AMInputView!
     @IBOutlet weak var signupFirstNameInputView: AMInputView!
 
+    //Forgot password button
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    
     //MARK: - controller
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -316,7 +319,7 @@ class LoginViewController: UIViewController {
         logoBottomConstraint.constant = keyboardShow ? 20:32
         logoButtomInSingupConstraint.constant = keyboardShow ? 20:32
         
-        forgotPassTopConstraint.constant = keyboardShow ? 30:45
+        //forgotPassTopConstraint.constant = keyboardShow ? 30:45
         
         loginButtonTopConstraint.constant = keyboardShow ? 25:30
         //signupButtonTopConstraint.constant = keyboardShow ? 23:35
@@ -404,4 +407,11 @@ class LoginViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    //Forgot password segue
+    @IBAction func forgotPasswordSegue(_ sender: Any) {
+        self.performSegue(withIdentifier: "toForgot", sender: self)
+
+    }
+    
 }

@@ -13,12 +13,16 @@ import Firebase
 
 class MainViewController: UIViewController,UIScrollViewDelegate  {
     
-
-    @IBOutlet weak var donateButton: UIButton!
+    //Segue buttons
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var settings: UIButton!
+    
+    //Donate buttons
+    @IBOutlet weak var donateButton: UIButton!
+    @IBOutlet weak var donateRandomly: UIButton!
+    
+    //Scroll through children variables
     @IBOutlet weak var scrollView: UIScrollView!
-
     var refChild: DatabaseReference!
     var array_pages = [DatabaseChild]()
 
@@ -114,6 +118,27 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         }
     }
 
+    //Donation Actions
+    
+    //Donate to random child
+    //Note: This only chooses one from those who are loaded
+    @IBAction func donateRandomPressed(_ sender: Any) {
+        let randomIndex = Int(arc4random_uniform(UInt32(array_pages.count)))
+        let randomlyChosen = array_pages[randomIndex]
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "DonationViewController") as! DonationViewController
+        myVC.childToDonateToID = randomlyChosen.id
+        self.present(myVC, animated:true, completion:nil)
+    }
+    
+    //Donate to current child
+    @IBAction func donateButtonPressed(_ sender: Any) {
+        var page = scrollView.contentOffset.x / scrollView.frame.size.width
+        let chosenChild = array_pages[Int(page)]
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "DonationViewController") as! DonationViewController
+        myVC.childToDonateToID = chosenChild.id
+        self.present(myVC, animated:true, completion:nil)
+    }
+    
 
     
     /*
@@ -140,10 +165,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         doSegueSettings()
     }
     
-    @IBAction func goToDonate(_ sender: Any) {
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "DonationViewController") as! DonationViewController
-        myVC.childToDonateToID = "1"
-        self.present(myVC, animated:true, completion:nil)
-    }
+
 
 }
