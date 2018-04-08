@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import FBSDKCoreKit
 import Stripe
-import Fabric
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,21 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FIRApp.configure()
+        FirebaseApp.configure()
         //STPAPIClient.self
-        Stripe.setDefaultPublishableKey("sk_test_Jam7dbGCczWnfWmyjY8tInMc")
+        Stripe.setDefaultPublishableKey("pk_test_KRFIcaczK0iWhOBl2G4JN23i")
 
-        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-
-        if let accessToken = FBSDKAccessToken.current(){
-            print(accessToken)
-        }else{
-            print("Not logged In with FB.")
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if user != nil {
+                // User is signed in.
+            } else {
+                // No user is signed in.
+            }
         }
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         return true
     }
-
+    
     //FB function for URL
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])

@@ -12,9 +12,6 @@ class DonateButtonViewController: UIViewController {
 
     var transferChildID: String? 
     
-    @IBOutlet weak var donateButton: DonateButton!
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +36,7 @@ class DonateButtonViewController: UIViewController {
     @IBAction func goToDonationPage(_ sender: Any) {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "DonationViewController") as! DonationViewController
         print("Transfer Child ID:")
-        print(transferChildID)
+        print(transferChildID as? String)
         myVC.childToDonateToID = transferChildID!
         self.present(myVC, animated:true, completion:nil)
     }

@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
 
     let animationDuration = 0.25
     var mode:AMLoginSignupViewMode = .signup
+    let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
     
     
     //MARK: - background image constraints
@@ -105,7 +106,6 @@ class LoginViewController: UIViewController {
             //TODO: signup by this data
             //NSLog("Email:\(signupEmailInputView.textFieldView.text) Password:\(signupPasswordInputView.textFieldView.text), PasswordConfirm:\(signupPasswordConfirmInputView.textFieldView.text)")
             handleRegister()
-
         }
     }
     
@@ -119,46 +119,26 @@ class LoginViewController: UIViewController {
         }
         
         createAndAddtoDbUser(name: name, lastname: lastname, email: email, password: password, gender: "M")
-        
-//        var gender = ""
-//        //if gender is male, create user if the male gender
-//        if (maleIsChecked){
-//            gender = "male"
-//            createAndAddtoDbUser(name: name, lastname: lastname, email: email, password: password, gender: gender)
-//
-//            //if gender is female, create user if the female gender
-//        } else if (femaleIsChecked){
-//            gender = "female"
-//            createAndAddtoDbUser(name: name, lastname: lastname, email: email, password: password, gender: gender)
-//
-//            //if gender is empty, prompt user to enter one
-//        } else if (gender == ""){
-//            print("Please specify gender")
-//            let alertController = UIAlertController(title: "Form is not valid!", message:
-//                "Please, enter gender!", preferredStyle: UIAlertControllerStyle.alert)
-//            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-//            self.present(alertController, animated: true, completion: nil)
-//        }
     }
     
     //creates the user and adds to the database
     func createAndAddtoDbUser(name:String, lastname:String, email:String, password:String, gender:String){
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user: User?, error) in
             
             //if error is not null then prompt user error
             if (error != nil){
                 print(error ?? "")
-                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
                     switch errCode{
                     //if the email already exists
-                    case .errorCodeEmailAlreadyInUse:
+                    case .emailAlreadyInUse:
                         let alertController = UIAlertController(title: "Not a valid email!", message:
                             "Email is already taken", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                         
                     //if the email entered is not valid
-                    case .errorCodeInvalidEmail:
+                    case .invalidEmail:
                         let alertController = UIAlertController(title: "Not a valid email!", message:
                             "That is not a vaid email", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
@@ -177,9 +157,9 @@ class LoginViewController: UIViewController {
             guard let uid = user?.uid else{
                 return
             }
-            let ref = FIRDatabase.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
-            let values = ["name": name, "lastname": lastname, "email": email, "gender": gender, "registration_type": "email"]
-            let usersReference = ref.child("user").child(uid)
+            
+            let values = ["name": name, "lastname": lastname, "email": email, "gender": gender, "registration_type": "email", "admin": false] as [String : Any]
+            let usersReference = self.ref.child("user").child(uid)
             usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
                 
                 if (err != nil){
@@ -197,27 +177,27 @@ class LoginViewController: UIViewController {
             print("Form is not valid")
             return
         }
-        
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if (error != nil){
                 
-                if let errCode = FIRAuthErrorCode(rawValue: error!._code) {
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
                     switch errCode{
                     //if the email already exists
-                    case .errorCodeUserNotFound:
+                    case .userNotFound:
                         let alertController = UIAlertController(title: "Email doesn't exist", message:
                             "Verify your email or create an account", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                         
                     //if the email entered is not valid
-                    case .errorCodeInvalidEmail:
+                    case .invalidEmail:
                         let alertController = UIAlertController(title: "Not a valid email!", message:
                             "That is not a vaid email", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
                         self.present(alertController, animated: true, completion: nil)
                     
-                    case .errorCodeWrongPassword:
+                    case .wrongPassword:
                         let alertController = UIAlertController(title: "Wrong password!", message:
                             "You entered the wrong password.", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
@@ -231,8 +211,24 @@ class LoginViewController: UIViewController {
                     print(error ?? "")
                     return
                 }
+            } else {
+                
+                let userID = Auth.auth().currentUser?.uid
+                let userReference = self.ref.child("user").child(userID!)
+                var admin = Bool()
+                userReference.observeSingleEvent(of: .value, with: { (snapshot) in
+                    if !snapshot.exists() { return }
+                    let stripe_id = snapshot.childSnapshot(forPath: "stripe_id").value as! String
+                    UserDefaults.standard.set(stripe_id, forKey: "stripe_id")
+                    admin = snapshot.childSnapshot(forPath: "admin").value as! Bool
+                    print("USER IS ADMIN: \(admin)")
+                    if (admin){
+                        self.performSegue(withIdentifier: "redirectAdmin", sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
+                    }
+                })
             }
-            self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
             
         })
     }
@@ -352,7 +348,7 @@ class LoginViewController: UIViewController {
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) -> Void in
             if (error == nil){
                 //create credentials for Firebase Auth and create the user in the Auth
-                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 let fbloginresult : FBSDKLoginManagerLoginResult = result!
                 if(fbloginresult.grantedPermissions.contains("email"))
                 {
@@ -363,7 +359,6 @@ class LoginViewController: UIViewController {
         
     }
  
-    //MARK: - hide status bar in swift3
     override var prefersStatusBarHidden: Bool {
         return true
     }

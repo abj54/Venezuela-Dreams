@@ -14,9 +14,8 @@
 //  limitations under the License.
 //
 
-@import UIKit;
-
-@import FirebaseDatabase;
+#import <FirebaseDatabase/FirebaseDatabase.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -57,7 +56,17 @@ didFailLoadAtIndex:(NSUInteger)index
  */
 @interface FUIIndexCollectionViewDataSource : NSObject <UICollectionViewDataSource>
 
+/**
+ * The delegate that should receive updates from this data source. Implement this delegate
+ * to handle load errors and successes.
+ */
 @property (nonatomic, readwrite, weak, nullable) id<FUIIndexCollectionViewDataSourceDelegate> delegate;
+
+/**
+ * The indexes that have finished loading in the data source. Returns an empty array if no indexes
+ * have loaded.
+ */
+@property (nonatomic, readonly, copy) NSArray<FIRDataSnapshot *> *indexes;
 
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -80,6 +89,14 @@ didFailLoadAtIndex:(NSUInteger)index
                  populateCell:(UICollectionViewCell *(^)(UICollectionView *collectionView,
                                                          NSIndexPath *indexPath,
                                                          FIRDataSnapshot *_Nullable snap))populateCell NS_DESIGNATED_INITIALIZER;
+
+/**
+ * Returns the snapshot at the given index, if it has loaded.
+ * Raises a fatal error if the index is out of bounds.
+ * @param index The index of the requested snapshot.
+ * @return A snapshot, or nil if one has not yet been loaded.
+ */
+- (nullable FIRDataSnapshot *)snapshotAtIndex:(NSInteger)index;
 
 @end
 

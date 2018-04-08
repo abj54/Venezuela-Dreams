@@ -16,26 +16,30 @@ const currency = functions.config().stripe.currency || 'USD';
 
 // [START chargecustomer]
 // Charge the Stripe customer whenever an amount is written to the Realtime database
+var child_id = ""
 exports.createStripeCharge = functions.database.ref('/transactions/userId/{userId}/transactionId/{transactionId}').onWrite((event) => {
     
   const val = event.data.val();
+  child_id = val.child_id
   // This onWrite will trigger whenever anything is written to the path, so
   // noop if the charge was deleted, errored out, or the Stripe API returned a result (id exists)
   if (val === null || val.transactionId || val.error) return null;
   // Look up the Stripe userId and transactionId
-  return admin.database().ref(`/transactions/userId/${event.params.userId}/transactionId/${event.params.transactionId}`).once('value').then((snapshot) => {
+  return admin.database().ref(`/user/${event.params.userId}/stripe_id`).once('value').then((snapshot) => {
     return snapshot.val();
   }).then((customer) => {
     // Create a charge using the transactionId as the idempotency key, protecting against double charges
     const amount = val.amount;
     const idempotency_key = event.params.transactionId;
-    const source = val.token;
-    let charge = {amount, currency, source};
-    //if (val.source !== null) charge.source = val.source;
+      
+    let charge = {amount, currency, customer};
+    if (val.source !== null) charge.source = val.source;
+    if (val.token !== null) charge.source = val.token;
     return stripe.charges.create(charge, {idempotency_key});
   }).then((response) => {
     // If the result is successful, write it back to the database
-    return event.data.adminRef.set(response);
+    //admin.database().ref(`/transactions/userId/${event.params.userId}/transactionId/${event.params.transactionId}/child_id`).set(child_id);
+    return event.data.adminRef.set(response)
   }).catch((error) => {
     // We want to capture errors and render them in a user-friendly way, while
     // still logging an exception with Stackdriver
@@ -45,6 +49,29 @@ exports.createStripeCharge = functions.database.ref('/transactions/userId/{userI
   });
 });
 // [END chargecustomer]]
+
+exports.StripeEphemeralKeys = functions.https.onRequest((req, res) => {
+  const stripe_version = req.body.api_version;
+  const customerId = req.body.customerId
+  if (!stripe_version) {
+    console.log('I did not see any api version')
+    res.status(400).end()
+    return;
+  }
+
+  stripe.ephemeralKeys.create(
+    {customer: customerId},
+    {stripe_version: stripe_version}
+  ).then((key) => {
+     console.log("Ephemeral key: " + key)
+     res.status(200).json(key)
+     return
+  }).catch((err) => {
+    console.log('stripe version is ' + stripe_version + " and customer id is " + customerId + " for key: " + stripe_key + " and err is " + err.message )
+    res.status(500).json(err)
+    return
+  });
+});
 
 // When a user is created, register them with Stripe
 exports.createStripeCustomer = functions.auth.user().onCreate((event) => {

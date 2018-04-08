@@ -19,7 +19,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
     @IBOutlet weak var settings: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
 
-    var refChild: FIRDatabaseReference!
+    var refChild: DatabaseReference!
     var array_pages = [DatabaseChild]()
 
     //First method that runs
@@ -28,19 +28,24 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         super.viewDidLoad()
         //Get all the children from firebase
         
-        refChild = FIRDatabase.database().reference().child("child")
-        refChild.observe(FIRDataEventType.value, with: {(snapshot) in
+        refChild = Database.database().reference().child("child")
+        refChild.observe(DataEventType.value, with: {(snapshot) in
             if(snapshot.childrenCount > 0){
                 self.array_pages.removeAll()
-                for databasechildren in snapshot.children.allObjects as![FIRDataSnapshot]{
+                for databasechildren in snapshot.children.allObjects as![DataSnapshot]{
                     let childObject = databasechildren.value as? [String: AnyObject]
                     let childName = childObject?["first_name"]
                     let childDescription = childObject?["description"]
+<<<<<<< HEAD
                     let childID = databasechildren.key as! String
                     let imageUrl = childObject?["img_url"]
+=======
+                    let childID = databasechildren.key
+                    let imageUrl = childObject?["image_url"]
+>>>>>>> 69cf6cd6563435db88581410d0f991c8c3aeb19a
                     
                     //FIX IT
-                    let child = DatabaseChild(id: childID, name: childName as! String, description: childDescription as? String, childUrl: imageUrl  as? String)
+                    let child = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
                     self.array_pages.append(child)
                 }
             }
@@ -50,7 +55,10 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         //print(FIRAuth.auth()?.currentUser!.uid as Any)
 
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 69cf6cd6563435db88581410d0f991c8c3aeb19a
     
     //Sets properties of scroll view
     func setUpScroll(){
@@ -74,6 +82,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
             card.blurEffect = .light
 
             //GET IMAGE
+<<<<<<< HEAD
             // http://swiftdeveloperblog.com/code-examples/uiimageview-and-uiimage-load-image-from-remote-url/
             var imageUrlString = childObject.childUrl
             let imageUrl:URL = URL(string: imageUrlString!)!
@@ -91,6 +100,24 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                 }
             }
             
+=======
+            //let imageUrlString = childObject.childUrl
+            //let imageUrl:URL = URL(string: imageUrlString!)!
+            
+            // Start background thread so that image loading does not make app unresponsive
+//            DispatchQueue.global(qos: .userInitiated).async {
+//
+//                let imageData:NSData = NSData(contentsOf: imageUrl)!
+//                let imageView = UIImageView(frame: CGRect(x:0, y:0, width:200, height:200))
+//                imageView.center = self.view.center
+//
+//                // When from background thread, UI needs to be updated on main_queue
+//                DispatchQueue.main.async {
+//                    let image = UIImage(data: imageData as Data)
+//                    card.backgroundImage = image
+//                }
+//            }
+>>>>>>> 69cf6cd6563435db88581410d0f991c8c3aeb19a
             //card.backgroundColor = UIColor.clear
             card.textColor = UIColor.white
             card.hasParallax = true
