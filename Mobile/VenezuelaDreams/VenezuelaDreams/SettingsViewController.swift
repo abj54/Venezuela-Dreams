@@ -12,7 +12,7 @@ import FirebaseDatabase
 class SettingsViewController: UITableViewController, UITextFieldDelegate{
     
     func getUserID()->String{
-        return (FIRAuth.auth()!.currentUser!.uid)
+        return (Auth.auth().currentUser!.uid)
     }
     
     //TABLE VIEW
@@ -74,8 +74,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate{
     
     //get user data for contact information
     func getUserData(){
-        var ref: FIRDatabaseReference!
-        ref = FIRDatabase.database().reference()
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
         let userID = getUserID()
         print(userID)
         ref.child("user").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -191,8 +191,8 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate{
     //CONFIRMATION BUTTON
     
     @IBAction func changeInfo(_ sender: Any) {
-        var ref: FIRDatabaseReference!
-        ref = FIRDatabase.database().reference()
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
         let userID = getUserID()
         var edited = false
         if(firstname.text != ""){
@@ -226,7 +226,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate{
     
 //CHANGE PASSWORD
     @IBAction func changePasswordPressed(_ sender: Any) {
-        var user = FIRAuth.auth()?.currentUser;
+        var user = Auth.auth().currentUser;
         var currentPassword = self.currentPassword.text
         //Catch Errors
         if(newPassword.text == ""){
@@ -247,29 +247,27 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate{
         }
         
         //If Email
-        let credential = FIREmailPasswordAuthProvider.credential(withEmail: (FIRAuth.auth()?.currentUser?.email)!, password: currentPassword!)
+        let credential = EmailAuthProvider.credential(withEmail: (Auth.auth().currentUser?.email)!, password: currentPassword!)
         //If facebook
         //let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
         
         //Authenticate if password is correct
-        FIRAuth.auth()?.currentUser?.reauthenticate(with: credential, completion: { (error) in
+        Auth.auth().currentUser?.reauthenticate(with: credential, completion: { (error) in
             if error != nil {
                 // handle error - incorrect password entered is a possibility
                 return
             }
             
             // reauthentication succeeded!
-            user?.updatePassword(self.newPassword.text!) { (errror) in
+            user?.updatePassword(to: self.newPassword.text!) { (errror) in
             }
         })
-        
-        
     }
     
     //RESET PASSWORD
     
     @IBAction func resetPassword(_ sender: Any) {
-        FIRAuth.auth()?.sendPasswordReset(withEmail: self.email.text!) { error in
+        Auth.auth().sendPasswordReset(withEmail: self.email.text!) { error in
             //https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift/33340757#33340757
             // create the alert
             let alert = UIAlertController(title: "Email Sent", message: "Check your email for password reset link.", preferredStyle: UIAlertControllerStyle.alert)
@@ -284,9 +282,9 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate{
     
     //SIGN OUT
     @IBAction func signoutPressed(_ sender: Any) {
-        let firebaseAuth = FIRAuth.auth()
+        let firebaseAuth = Auth.auth()
         do {
-            try firebaseAuth?.signOut()
+            try firebaseAuth.signOut()
             self.performSegue(withIdentifier: "toWelcome", sender: self)
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)

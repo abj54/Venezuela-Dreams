@@ -27,12 +27,7 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
 
     @IBOutlet var inputsView: UIView!
     @IBOutlet weak var childToDonateView: UIView!
-    @IBOutlet weak var donateButton: UIButton!
-    var paymentTextField = STPPaymentCardTextField()
     //Child to donate to
-    var childToDonateTo : DatabaseChild?
-    var childToDonateToID: String?
-    //var theme = STPTheme.default()
     var childToDonateTo : DatabaseChild?
     var childToDonateToID: String?
     var transaction_id = ""
@@ -261,7 +256,7 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
             let childName = value?["first_name"]
             let childDescription = value?["description"]
             let childID = refChild.key
-            let imageUrl = value?["imageurl"]
+            let imageUrl = value?["img_url"]
             childFromDatabase = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
             self.childToDonateTo = childFromDatabase
             self.loadChild()
@@ -284,21 +279,21 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         card.hasParallax = true
         //SET IMAGE
         let imageUrlString = childToDonateTo?.childUrl
-        //let imageUrl:URL = URL(string: imageUrlString!)!
+        let imageUrl:URL = URL(string: imageUrlString!)!
         
         // Start background thread so that image loading does not make app unresponsive
-        //        DispatchQueue.global(qos: .userInitiated).async {
-        //
-        //            let imageData:NSData = NSData(contentsOf: imageUrl)!
-        //            let imageView = UIImageView(frame: CGRect(x:0, y:0, width:200, height:200))
-        //            imageView.center = self.view.center
-        //
-        //            // When from background thread, UI needs to be updated on main_queue
-        //            DispatchQueue.main.async {
-        //                let image = UIImage(data: imageData as Data)
-        //                card.backgroundImage = image
-        //            }
-        //        }
+                DispatchQueue.global(qos: .userInitiated).async {
+        
+                    let imageData:NSData = NSData(contentsOf: imageUrl)!
+                    let imageView = UIImageView(frame: CGRect(x:0, y:0, width:200, height:200))
+                    imageView.center = self.view.center
+        
+                    // When from background thread, UI needs to be updated on main_queue
+                    DispatchQueue.main.async {
+                        let image = UIImage(data: imageData as Data)
+                        card.backgroundImage = image
+                    }
+                }
         
 
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContent")

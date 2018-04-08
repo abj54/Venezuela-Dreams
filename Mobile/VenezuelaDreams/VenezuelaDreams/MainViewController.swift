@@ -39,7 +39,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     //let childID = databasechildren.key as! String
                     //let imageUrl = childObject?["img_url"]
                     let childID = databasechildren.key
-                    let imageUrl = childObject?["image_url"]
+                    let imageUrl = childObject?["img_url"]
                     
                     //FIX IT
                     let child = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
@@ -77,7 +77,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
 
             //GET IMAGE
             // http://swiftdeveloperblog.com/code-examples/uiimageview-and-uiimage-load-image-from-remote-url/
-            var imageUrlString = childObject.childUrl
+            let imageUrlString = childObject.childUrl
             let imageUrl:URL = URL(string: imageUrlString!)!
             // Start background thread so that image loading does not make app unresponsive
             DispatchQueue.global(qos: .userInitiated).async {
@@ -92,23 +92,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     card.backgroundImage = UIImage(named: "unknownperson")
                 }
             }
-            
-            //let imageUrlString = childObject.childUrl
-            //let imageUrl:URL = URL(string: imageUrlString!)!
-            
-            // Start background thread so that image loading does not make app unresponsive
-//            DispatchQueue.global(qos: .userInitiated).async {
-//
-//                let imageData:NSData = NSData(contentsOf: imageUrl)!
-//                let imageView = UIImageView(frame: CGRect(x:0, y:0, width:200, height:200))
-//                imageView.center = self.view.center
-//
-//                // When from background thread, UI needs to be updated on main_queue
-//                DispatchQueue.main.async {
-//                    let image = UIImage(data: imageData as Data)
-//                    card.backgroundImage = image
-//                }
-//            }
+
             //card.backgroundColor = UIColor.clear
             card.textColor = UIColor.white
             card.hasParallax = true
