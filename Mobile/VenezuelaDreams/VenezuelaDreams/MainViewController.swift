@@ -36,13 +36,10 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     let childObject = databasechildren.value as? [String: AnyObject]
                     let childName = childObject?["first_name"]
                     let childDescription = childObject?["description"]
-<<<<<<< HEAD
-                    let childID = databasechildren.key as! String
-                    let imageUrl = childObject?["img_url"]
-=======
+                    //let childID = databasechildren.key as! String
+                    //let imageUrl = childObject?["img_url"]
                     let childID = databasechildren.key
                     let imageUrl = childObject?["image_url"]
->>>>>>> 69cf6cd6563435db88581410d0f991c8c3aeb19a
                     
                     //FIX IT
                     let child = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
@@ -55,10 +52,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         //print(FIRAuth.auth()?.currentUser!.uid as Any)
 
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 69cf6cd6563435db88581410d0f991c8c3aeb19a
     
     //Sets properties of scroll view
     func setUpScroll(){
@@ -82,7 +76,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
             card.blurEffect = .light
 
             //GET IMAGE
-<<<<<<< HEAD
             // http://swiftdeveloperblog.com/code-examples/uiimageview-and-uiimage-load-image-from-remote-url/
             var imageUrlString = childObject.childUrl
             let imageUrl:URL = URL(string: imageUrlString!)!
@@ -100,7 +93,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                 }
             }
             
-=======
             //let imageUrlString = childObject.childUrl
             //let imageUrl:URL = URL(string: imageUrlString!)!
             
@@ -117,7 +109,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
 //                    card.backgroundImage = image
 //                }
 //            }
->>>>>>> 69cf6cd6563435db88581410d0f991c8c3aeb19a
             //card.backgroundColor = UIColor.clear
             card.textColor = UIColor.white
             card.hasParallax = true

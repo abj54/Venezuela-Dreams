@@ -27,18 +27,15 @@ class DonationViewController: UIViewController, UITextFieldDelegate ,STPPaymentC
 
     @IBOutlet var inputsView: UIView!
     @IBOutlet weak var childToDonateView: UIView!
-<<<<<<< HEAD
     @IBOutlet weak var donateButton: UIButton!
     var paymentTextField = STPPaymentCardTextField()
     //Child to donate to
     var childToDonateTo : DatabaseChild?
     var childToDonateToID: String?
     //var theme = STPTheme.default()
-=======
     var childToDonateTo : DatabaseChild?
     var childToDonateToID: String?
     var transaction_id = ""
->>>>>>> 69cf6cd6563435db88581410d0f991c8c3aeb19a
 
     override func viewDidLoad() {
         super.viewDidLoad()
