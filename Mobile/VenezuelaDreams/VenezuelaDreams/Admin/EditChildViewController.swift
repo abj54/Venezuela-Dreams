@@ -75,10 +75,6 @@ class EditChildViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    func printDictionary(){
-        print("AFTER THE FUNCTION: \(self.dictionaryChildren)")
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
