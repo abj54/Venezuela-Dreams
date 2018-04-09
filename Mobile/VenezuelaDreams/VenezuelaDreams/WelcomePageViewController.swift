@@ -140,7 +140,7 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
                     }
                 })
                 //do segue to main window
-                self.doSegue()
+                self.saveStripeId()
             }
         }
     }
@@ -189,6 +189,19 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
                 // No user is signed in.
             }
         }
+    }
+    
+    func saveStripeId(){
+        let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+        let userID = Auth.auth().currentUser?.uid
+        let userReference = ref.child("user").child(userID!)
+        userReference.observeSingleEvent(of: .value, with: { (snapshot) in
+            if !snapshot.exists() { return }
+                let stripe_id = snapshot.childSnapshot(forPath: "stripe_id").value as! String
+                UserDefaults.standard.set(stripe_id, forKey: "stripe_id")
+                self.doSegue()
+            }
+        )
     }
     
     @IBAction func continueWithoutSignIn(_ sender: Any) {

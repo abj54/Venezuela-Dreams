@@ -38,7 +38,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                 self.array_pages.removeAll()
                 for databasechildren in snapshot.children.allObjects as![DataSnapshot]{
                     let childObject = databasechildren.value as? [String: AnyObject]
-                    let childName = childObject?["first_name"]
+                    let childName = (childObject?["first_name"] as! String) + " " + (childObject?["last_name"] as! String)
                     let childDescription = childObject?["description"]
                     //let childID = databasechildren.key as! String
                     //let imageUrl = childObject?["img_url"]
@@ -46,12 +46,13 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
                     let imageUrl = childObject?["img_url"]
                     
                     //FIX IT
-                    let child = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
+                    let child = DatabaseChild(id: childID, name: childName, description: childDescription as? String, childUrl: imageUrl  as? String)
                     self.array_pages.append(child)
                 }
             }
             self.setUpScroll()
             self.loadPages()
+            self.saveStripeId()
         })
         //print(FIRAuth.auth()?.currentUser!.uid as Any)
 
@@ -65,8 +66,19 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
     }
-    
 
+    func saveStripeId(){
+        let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+        let userID = Auth.auth().currentUser?.uid
+        let userReference = ref.child("user").child(userID!)
+        userReference.observeSingleEvent(of: .value, with: { (snapshot) in
+            if !snapshot.exists() { return }
+            let stripe_id = snapshot.childSnapshot(forPath: "stripe_id").value as! String
+            print("before saving it: \(userID!)")
+            print("BEFORE SAVING IT: \(stripe_id)")
+            UserDefaults.standard.set(stripe_id, forKey: "stripe_id")
+        })
+    }
     
     //Loads scroll view with cards of the children
     func loadPages(){
