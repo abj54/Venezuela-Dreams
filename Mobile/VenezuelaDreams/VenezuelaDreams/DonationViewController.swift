@@ -176,7 +176,15 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         
         let source = paymentResult.source.stripeID
         sendToken(source: source, amount: amount)
-        //sendChildId()
+        completion(nil)
+        let name = self.childToDonateTo?.name as! String
+        let alertController = UIAlertController(title: "Thank you for your donation!", message: "Your contribution will help feed \(name)", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: {_ in CATransaction.setCompletionBlock({
+            self.doSegue()
+            //self.sendChildId()
+            })
+        }))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
@@ -212,8 +220,11 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
     func sendToken(source: String, amount: String){
         let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
         let userId = Auth.auth().currentUser!.uid
-    
-        let values = ["amount": amount, "source": source, "child_id": childToDonateToID]
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-YYYY"
+        let curr_date = dateFormatter.string(from: date)
+        let values = ["amount": amount, "source": source, "child_id": childToDonateToID, "transaction_date": curr_date]
         ///transactions/userId/{userId}/transactionId/{transactionId}
         let usersReference = ref.child("transactions").child("userId").child(userId).child("transactionId").childByAutoId()
         transaction_id = usersReference.key
@@ -230,7 +241,12 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
         let userId = Auth.auth().currentUser!.uid
         
-        let values = ["child_id": childToDonateToID]
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-YYYY"
+        let curr_date = dateFormatter.string(from: date)
+        
+        let values = ["child_id": childToDonateToID, "transaction_date": curr_date]
         ///transactions/userId/{userId}/transactionId/{transactionId}
         let usersReference = ref.child("transactions").child("userId").child(userId).child("transactionId").child(self.transaction_id)
         usersReference.updateChildValues(values as Any as! [AnyHashable : Any], withCompletionBlock: { (err, ref) in
@@ -253,11 +269,11 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         refChild.observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
-            let childName = value?["first_name"]
+            let childName = (value?["first_name"] as! String) + " " + (value?["last_name"] as! String)
             let childDescription = value?["description"]
             let childID = refChild.key
             let imageUrl = value?["img_url"]
-            childFromDatabase = DatabaseChild(id: childID, name: childName as? String, description: childDescription as? String, childUrl: imageUrl  as? String)
+            childFromDatabase = DatabaseChild(id: childID, name: childName, description: childDescription as? String, childUrl: imageUrl  as? String)
             self.childToDonateTo = childFromDatabase
             self.loadChild()
             // ...
@@ -282,19 +298,18 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         let imageUrl:URL = URL(string: imageUrlString!)!
         
         // Start background thread so that image loading does not make app unresponsive
-                DispatchQueue.global(qos: .userInitiated).async {
-        
-                    let imageData:NSData = NSData(contentsOf: imageUrl)!
-                    let imageView = UIImageView(frame: CGRect(x:0, y:0, width:200, height:200))
-                    imageView.center = self.view.center
-        
-                    // When from background thread, UI needs to be updated on main_queue
-                    DispatchQueue.main.async {
-                        let image = UIImage(data: imageData as Data)
-                        card.backgroundImage = image
-                    }
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let url:URL = URL(string: imageUrlString!), let data:NSData = NSData(contentsOf: url) {
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data as Data)
+                    card.backgroundImage = image
                 }
-        
+            } else {
+                //If image cannot be retreived, use default image
+                print("something went wrong")
+                card.backgroundImage = UIImage(named: "unknownperson")
+            }
+        }
 
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContent")
         card.shouldPresent(cardContentVC, from: self, fullscreen: false)
@@ -370,6 +385,10 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         tf.isEnabled = false
         return tf
     }()
+    
+    func doSegue(){
+        self.performSegue(withIdentifier: "afterDonation", sender: self)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

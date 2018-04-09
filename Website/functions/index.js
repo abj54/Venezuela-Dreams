@@ -17,10 +17,12 @@ const currency = functions.config().stripe.currency || 'USD';
 // [START chargecustomer]
 // Charge the Stripe customer whenever an amount is written to the Realtime database
 var child_id = ""
+var transaction_date = ""
 exports.createStripeCharge = functions.database.ref('/transactions/userId/{userId}/transactionId/{transactionId}').onWrite((event) => {
     
   const val = event.data.val();
   child_id = val.child_id
+  transaction_date = val.transaction_date
   // This onWrite will trigger whenever anything is written to the path, so
   // noop if the charge was deleted, errored out, or the Stripe API returned a result (id exists)
   if (val === null || val.transactionId || val.error) return null;
@@ -38,7 +40,9 @@ exports.createStripeCharge = functions.database.ref('/transactions/userId/{userI
     return stripe.charges.create(charge, {idempotency_key});
   }).then((response) => {
     // If the result is successful, write it back to the database
-    //admin.database().ref(`/transactions/userId/${event.params.userId}/transactionId/${event.params.transactionId}/child_id`).set(child_id);
+    if (child_id !== null) {response["child_id"] = child_id;}
+    if (transaction_date !== null) {response["transaction_date"] = transaction_date;}
+      
     return event.data.adminRef.set(response)
   }).catch((error) => {
     // We want to capture errors and render them in a user-friendly way, while

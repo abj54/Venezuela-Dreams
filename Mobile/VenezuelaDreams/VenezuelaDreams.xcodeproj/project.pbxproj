@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2A15AF5F543D22D530CB5644 /* Pods_VenezuelaDreamsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B681EB2E7B4844165EAE4A90 /* Pods_VenezuelaDreamsTests.framework */; };
-		50135623201A9F610047EBF4 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50135622201A9F610047EBF4 /* LoginPageViewController.swift */; };
 		50135625201A9FA80047EBF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50135624201A9FA80047EBF4 /* MainViewController.swift */; };
 		50135628201D04550047EBF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50135627201D04540047EBF4 /* GoogleService-Info.plist */; };
 		5026031C201EAE870070B5A7 /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026031B201EAE870070B5A7 /* PagesView.swift */; };
@@ -39,7 +38,6 @@
 		50C4C8062033B97700969019 /* AMInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4C8042033B97600969019 /* AMInputView.xib */; };
 		50C4C8072033B97700969019 /* AMInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4C8052033B97700969019 /* AMInputView.swift */; };
 		50C4C80B2033BAA000969019 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4C80A2033BAA000969019 /* LoginViewController.swift */; };
-		50C7F8BD20523440003EDC73 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8BC2052343F003EDC73 /* Buttons.swift */; };
 		50C7F8BF2052357C003EDC73 /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8BE2052357C003EDC73 /* DonationViewController.swift */; };
 		50C7F8C3205258AC003EDC73 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8C0205258A6003EDC73 /* UIView+Constraints.swift */; };
 		50C7F8C4205258AC003EDC73 /* SJFluidSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7F8C1205258A9003EDC73 /* SJFluidSegmentedControl.swift */; };
@@ -79,7 +77,6 @@
 		17C818F4E1DBB088766A2626 /* Pods_VenezuelaDreams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenezuelaDreams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D0DE7049B0A7FF4C3F7B1D5 /* Pods-VenezuelaDreamsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenezuelaDreamsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VenezuelaDreamsTests/Pods-VenezuelaDreamsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37E34F698FCAFCEAB5AB83A9 /* Pods-VenezuelaDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenezuelaDreams.release.xcconfig"; path = "Pods/Target Support Files/Pods-VenezuelaDreams/Pods-VenezuelaDreams.release.xcconfig"; sourceTree = "<group>"; };
-		50135622201A9F610047EBF4 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		50135624201A9FA80047EBF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50135627201D04540047EBF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5026031B201EAE870070B5A7 /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
@@ -116,7 +113,6 @@
 		50C4C8042033B97600969019 /* AMInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMInputView.xib; sourceTree = "<group>"; };
 		50C4C8052033B97700969019 /* AMInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMInputView.swift; sourceTree = "<group>"; };
 		50C4C80A2033BAA000969019 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		50C7F8BC2052343F003EDC73 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		50C7F8BE2052357C003EDC73 /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
 		50C7F8C0205258A6003EDC73 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		50C7F8C1205258A9003EDC73 /* SJFluidSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJFluidSegmentedControl.swift; sourceTree = "<group>"; };
@@ -217,7 +213,6 @@
 				5026031B201EAE870070B5A7 /* PagesView.swift */,
 				507D532E2077C3E500776892 /* MainAPIClient.swift */,
 				50A282A920547BE30003B9E6 /* DatabaseChild.swift */,
-				50C7F8BC2052343F003EDC73 /* Buttons.swift */,
 				508639F2201A9CE800582920 /* Main.storyboard */,
 				50E7B7BF206DB563008CF8FC /* Admin */,
 				509375E5207AC59D0078D1B5 /* TransactionTableViewController.swift */,
@@ -229,7 +224,6 @@
 				50BE9539207AA12F00161F85 /* ForgotPasswordViewController.swift */,
 				50135624201A9FA80047EBF4 /* MainViewController.swift */,
 				50C4C80A2033BAA000969019 /* LoginViewController.swift */,
-				50135622201A9F610047EBF4 /* LoginPageViewController.swift */,
 				508639F5201A9CE800582920 /* Assets.xcassets */,
 				508639F7201A9CE800582920 /* LaunchScreen.storyboard */,
 				50135627201D04540047EBF4 /* GoogleService-Info.plist */,
@@ -614,7 +608,6 @@
 				50F215182027A33C0027BE44 /* LayoutHelper.swift in Sources */,
 				50C7F8C5205258AC003EDC73 /* SJGradientView.swift in Sources */,
 				50F215162027A33C0027BE44 /* CardHighlight.swift in Sources */,
-				50135623201A9F610047EBF4 /* LoginPageViewController.swift in Sources */,
 				50F215152027A33C0027BE44 /* Card.swift in Sources */,
 				508639F1201A9CE800582920 /* WelcomePageViewController.swift in Sources */,
 				508639EF201A9CE800582920 /* AppDelegate.swift in Sources */,
@@ -628,7 +621,6 @@
 				509375EA207AC7220078D1B5 /* Transaction.swift in Sources */,
 				50F2151C2027A33C0027BE44 /* CardArticle.swift in Sources */,
 				50BE953A207AA12F00161F85 /* ForgotPasswordViewController.swift in Sources */,
-				50C7F8BD20523440003EDC73 /* Buttons.swift in Sources */,
 				508E05FD203B9D0700266AE1 /* MainCard.swift in Sources */,
 				50C7F8BF2052357C003EDC73 /* DonationViewController.swift in Sources */,
 				507D532F2077C3E500776892 /* MainAPIClient.swift in Sources */,

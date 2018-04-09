@@ -838,6 +838,7 @@
                     <connections>
                         <outlet property="childToDonateView" destination="I0n-dD-WA0" id="5XA-UG-hB1"/>
                         <outlet property="inputsView" destination="meE-2a-HTu" id="NFl-fv-dnf"/>
+                        <segue destination="VdJ-DT-2q5" kind="show" identifier="afterDonation" id="jAR-1o-u4P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77A-Dy-mAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1962,7 +1963,7 @@
         <segue reference="Sba-Jr-ItJ"/>
         <segue reference="iit-vo-loG"/>
         <segue reference="eIS-VR-I4V"/>
-        <segue reference="MH4-KX-pet"/>
+        <segue reference="jAR-1o-u4P"/>
         <segue reference="a4L-Ne-LjO"/>
         <segue reference="cyX-W6-5sF"/>
     </inferredMetricsTieBreakers>

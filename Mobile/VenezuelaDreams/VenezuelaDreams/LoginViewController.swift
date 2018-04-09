@@ -170,7 +170,7 @@ class LoginViewController: UIViewController {
                     return
                 }
                 print("Saves user succesfully into db")
-                self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
+                self.checkUserAdminStripeId()
             })
         })
     }
@@ -213,24 +213,27 @@ class LoginViewController: UIViewController {
                     return
                 }
             } else {
-                
-                let userID = Auth.auth().currentUser?.uid
-                let userReference = self.ref.child("user").child(userID!)
-                var admin = Bool()
-                userReference.observeSingleEvent(of: .value, with: { (snapshot) in
-                    if !snapshot.exists() { return }
-                    admin = snapshot.childSnapshot(forPath: "admin").value as! Bool
-                    print("USER IS ADMIN: \(admin)")
-                    if (admin){
-                        self.performSegue(withIdentifier: "redirectAdmin", sender: self)
-                    } else {
-                        let stripe_id = snapshot.childSnapshot(forPath: "stripe_id").value as! String
-                        UserDefaults.standard.set(stripe_id, forKey: "stripe_id")
-                        self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
-                    }
-                })
+                self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
             }
             
+        })
+    }
+    
+    func checkUserAdminStripeId(){
+        let userID = Auth.auth().currentUser?.uid
+        let userReference = self.ref.child("user").child(userID!)
+        var admin = Bool()
+        userReference.observeSingleEvent(of: .value, with: { (snapshot) in
+            if !snapshot.exists() { return }
+            admin = snapshot.childSnapshot(forPath: "admin").value as! Bool
+            print("USER IS ADMIN: \(admin)")
+            if (admin){
+                self.performSegue(withIdentifier: "redirectAdmin", sender: self)
+            } else {
+                let stripe_id = snapshot.childSnapshot(forPath: "stripe_id").value as! String
+                UserDefaults.standard.set(stripe_id, forKey: "stripe_id")
+                self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
+            }
         })
     }
     
