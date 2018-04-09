@@ -202,15 +202,15 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
         ref = Database.database().reference()
         let userID = getUserID()
         var edited = false
-        if(firstname.text != ""){
+        if(textFirstName?.text != ""){
             ref.child("user/\(userID)/name").setValue(textFirstName?.text)
             edited = true
         }
-        if(lastname.text != ""){
+        if(textLastName?.text != ""){
             ref.child("user/\(userID)/lastname").setValue(textLastName?.text)
             edited = true
         }
-        if(email.text != ""){
+        if(textEmail.text != ""){
             ref.child("user/\(userID)/email").setValue(textEmail.text)
             edited = true
         }
