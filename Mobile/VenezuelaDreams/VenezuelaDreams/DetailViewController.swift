@@ -1,16 +1,17 @@
 //
-//  DonateButtonViewController.swift
+//  DetailViewController.swift
 //  VenezuelaDreams
 //
-//  Created by Pascal on 3/12/18.
+//  Created by Pascal on 4/9/18.
 //  Copyright © 2018 Andres Prato. All rights reserved.
 //
 
 import UIKit
 
-class DonateButtonViewController: UIViewController {
+class DetailViewController: UIViewController {
 
-    var transferChildID: String? 
+    var transaction: TransactionObject
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +34,5 @@ class DonateButtonViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func goToDonationPage(_ sender: Any) {
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "DonationViewController") as! DonationViewController
-        print("Transfer Child ID:")
-        print(transferChildID as? String)
-        myVC.childToDonateToID = transferChildID!
-        self.present(myVC, animated:true, completion:nil)
-    }
-    
 
-    
 }

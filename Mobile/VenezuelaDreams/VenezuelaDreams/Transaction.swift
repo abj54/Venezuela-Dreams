@@ -12,11 +12,11 @@ class TransactionObject{
     var userID: String!
     var childID: String!
     var date: String?
-    var amount:String?
+    var amount:Int?
     var status: String?
     var currency: String?
     
-    init(userID: String!, childID: String!, date: String?, amount:String?, status: String?, currency: String?){
+    init(userID: String!, childID: String!, date: String?, amount:Int?, status: String?, currency: String?){
         self.userID = userID
         self.childID = childID
         self.date = date
