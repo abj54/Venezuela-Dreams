@@ -105,7 +105,7 @@ class TransactionTableViewController: UITableViewController{
         // Configure the cell...
         let transaction = user_transactions[indexPath.row]
         
-        cell.amountLabel.text = String(describing: transaction.amount!)
+        cell.amountLabel.text = String(describing: transaction.amount!)+transaction.currency!
         cell.dateLabel.text = transaction.date!
         cell.transactionObject = transaction
         return cell

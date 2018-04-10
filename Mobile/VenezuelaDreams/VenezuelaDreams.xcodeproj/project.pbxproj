@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		2A15AF5F543D22D530CB5644 /* Pods_VenezuelaDreamsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B681EB2E7B4844165EAE4A90 /* Pods_VenezuelaDreamsTests.framework */; };
 		500BC2D4207B1D4D0058D744 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BC2D3207B1D4D0058D744 /* TransactionCell.swift */; };
-		500BC2DC207B435C0058D744 /* ShowMoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BC2DB207B435C0058D744 /* ShowMoreDetailViewController.swift */; };
 		50135625201A9FA80047EBF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50135624201A9FA80047EBF4 /* MainViewController.swift */; };
 		50135628201D04550047EBF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50135627201D04540047EBF4 /* GoogleService-Info.plist */; };
 		5026031C201EAE870070B5A7 /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026031B201EAE870070B5A7 /* PagesView.swift */; };
 		5036B903207A8F15000623C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036B902207A8F15000623C0 /* SettingsViewController.swift */; };
 		5036B905207A9650000623C0 /* ProofViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036B904207A9650000623C0 /* ProofViewController.swift */; };
+		5061060B207C6D9500627120 /* ShowMoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061060A207C6D9500627120 /* ShowMoreDetailViewController.swift */; };
 		507D532F2077C3E500776892 /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D532E2077C3E500776892 /* MainAPIClient.swift */; };
 		508639EF201A9CE800582920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508639EE201A9CE800582920 /* AppDelegate.swift */; };
 		508639F1201A9CE800582920 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508639F0201A9CE800582920 /* WelcomePageViewController.swift */; };
@@ -79,13 +79,13 @@
 		1D0DE7049B0A7FF4C3F7B1D5 /* Pods-VenezuelaDreamsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenezuelaDreamsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VenezuelaDreamsTests/Pods-VenezuelaDreamsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37E34F698FCAFCEAB5AB83A9 /* Pods-VenezuelaDreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenezuelaDreams.release.xcconfig"; path = "Pods/Target Support Files/Pods-VenezuelaDreams/Pods-VenezuelaDreams.release.xcconfig"; sourceTree = "<group>"; };
 		500BC2D3207B1D4D0058D744 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
-		500BC2DB207B435C0058D744 /* ShowMoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowMoreDetailViewController.swift; path = "/Users/pascal/Documents/XCode Projects/Venezuela-Dreams/Mobile/VenezuelaDreams/VenezuelaDreams/ShowMoreDetailViewController.swift"; sourceTree = "<absolute>"; };
 		500BC2DE207B46250058D744 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		50135624201A9FA80047EBF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		50135627201D04540047EBF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5026031B201EAE870070B5A7 /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
 		5036B902207A8F15000623C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5036B904207A9650000623C0 /* ProofViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProofViewController.swift; sourceTree = "<group>"; };
+		5061060A207C6D9500627120 /* ShowMoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreDetailViewController.swift; sourceTree = "<group>"; };
 		507D532E2077C3E500776892 /* MainAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIClient.swift; sourceTree = "<group>"; };
 		508639EB201A9CE800582920 /* VenezuelaDreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenezuelaDreams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508639EE201A9CE800582920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,8 +216,8 @@
 				507D532E2077C3E500776892 /* MainAPIClient.swift */,
 				500BC2D3207B1D4D0058D744 /* TransactionCell.swift */,
 				50A282A920547BE30003B9E6 /* DatabaseChild.swift */,
+				5061060A207C6D9500627120 /* ShowMoreDetailViewController.swift */,
 				508639F2201A9CE800582920 /* Main.storyboard */,
-				500BC2DB207B435C0058D744 /* ShowMoreDetailViewController.swift */,
 				50E7B7BF206DB563008CF8FC /* Admin */,
 				509375E5207AC59D0078D1B5 /* TransactionTableViewController.swift */,
 				50F2150F2027A3390027BE44 /* Animator.swift */,
@@ -619,7 +619,7 @@
 				50A282AA20547BE30003B9E6 /* DatabaseChild.swift in Sources */,
 				508C3984206D5297001A8F0B /* RemoveChildViewController.swift in Sources */,
 				5026031C201EAE870070B5A7 /* PagesView.swift in Sources */,
-				500BC2DC207B435C0058D744 /* ShowMoreDetailViewController.swift in Sources */,
+				5061060B207C6D9500627120 /* ShowMoreDetailViewController.swift in Sources */,
 				50C4C80B2033BAA000969019 /* LoginViewController.swift in Sources */,
 				508DDE872079AB9C003748BB /* ActualEditViewController.swift in Sources */,
 				50F215192027A33C0027BE44 /* Animator.swift in Sources */,
