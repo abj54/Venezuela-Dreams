@@ -1,0 +1,210 @@
+
+/* Class = "UILabel"; text = "Admin Venezuela Dreams"; ObjectID = "2bI-CE-Ecy"; */
+"2bI-CE-Ecy.text" = "Admin Venezuela Dreams";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "39M-0x-5ys"; */
+"39M-0x-5ys.text" = "Amount";
+
+/* Class = "UIButton"; normalTitle = "< Back"; ObjectID = "3cd-yZ-S2o"; */
+"3cd-yZ-S2o.normalTitle" = "< Back";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "6SE-XB-QhS"; */
+"6SE-XB-QhS.text" = "Last Name";
+
+/* Class = "UIViewController"; title = "Forgot Password"; ObjectID = "6oC-f1-aWu"; */
+"6oC-f1-aWu.title" = "Forgot Password";
+
+/* Class = "UIButton"; normalTitle = "< Back"; ObjectID = "6re-zi-RTy"; */
+"6re-zi-RTy.normalTitle" = "< Back";
+
+/* Class = "UILabel"; text = "Edit Child"; ObjectID = "6t4-GK-vuF"; */
+"6t4-GK-vuF.text" = "Edit Child";
+
+/* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "7ee-8M-tJZ"; */
+"7ee-8M-tJZ.normalTitle" = "SIGN UP";
+
+/* Class = "UIButton"; normalTitle = "Detail"; ObjectID = "7oL-FF-1n1"; */
+"7oL-FF-1n1.normalTitle" = "Detail";
+
+/* Class = "UIViewController"; title = "DonateButtonViewController"; ObjectID = "An0-TB-nqQ"; */
+"An0-TB-nqQ.title" = "DonateButtonViewController";
+
+/* Class = "UIButton"; normalTitle = "< BACK"; ObjectID = "B54-ON-Nf7"; */
+"B54-ON-Nf7.normalTitle" = "< BACK";
+
+/* Class = "UILabel"; text = "Remove Child"; ObjectID = "BEz-v6-fAa"; */
+"BEz-v6-fAa.text" = "Remove Child";
+
+/* Class = "UIButton"; normalTitle = "View Transactions"; ObjectID = "Byb-n9-v3J"; */
+"Byb-n9-v3J.normalTitle" = "View Transactions";
+
+/* Class = "UIButton"; normalTitle = "Donate"; ObjectID = "DSg-OS-H9f"; */
+"DSg-OS-H9f.normalTitle" = "Donate";
+
+/* Class = "UILabel"; text = "Venezuela Dreams"; ObjectID = "ESf-HH-b0j"; */
+"ESf-HH-b0j.text" = "Venezuela Dreams";
+
+/* Class = "UIButton"; normalTitle = "LOG IN"; ObjectID = "ErT-m9-Pv6"; */
+"ErT-m9-Pv6.normalTitle" = "LOG IN";
+
+/* Class = "UIButton"; normalTitle = "Reset Password"; ObjectID = "HZD-4N-D8d"; */
+"HZD-4N-D8d.normalTitle" = "Reset Password";
+
+/* Class = "UITableViewSection"; headerTitle = "Contact Information"; ObjectID = "JAf-vJ-JZk"; */
+"JAf-vJ-JZk.headerTitle" = "Contact Information";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "K76-JU-s3A"; */
+"K76-JU-s3A.text" = "Date";
+
+/* Class = "UITableViewSection"; headerTitle = "Change Password"; ObjectID = "L1l-nC-UIg"; */
+"L1l-nC-UIg.headerTitle" = "Change Password";
+
+/* Class = "UIButton"; normalTitle = "Continue without login"; ObjectID = "Lkj-2h-EmT"; */
+"Lkj-2h-EmT.normalTitle" = "Continue without login";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "LrF-s8-dtW"; */
+"LrF-s8-dtW.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "Change Password"; ObjectID = "LtX-K9-izW"; */
+"LtX-K9-izW.normalTitle" = "Change Password";
+
+/* Class = "UILabel"; text = "New Password"; ObjectID = "Nhm-Zr-zfL"; */
+"Nhm-Zr-zfL.text" = "New Password";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "OgZ-Mm-fxG"; */
+"OgZ-Mm-fxG.text" = "Name";
+
+/* Class = "UILabel"; text = "Amount:"; ObjectID = "P3D-lS-4rP"; */
+"P3D-lS-4rP.text" = "Amount:";
+
+/* Class = "UIButton"; normalTitle = "Facebook"; ObjectID = "QkS-FK-Y6s"; */
+"QkS-FK-Y6s.normalTitle" = "Facebook";
+
+/* Class = "UILabel"; text = "Currency: "; ObjectID = "Scw-te-pY2"; */
+"Scw-te-pY2.text" = "Currency: ";
+
+/* Class = "UITextField"; placeholder = "Enter your email"; ObjectID = "SyH-4d-Fn6"; */
+"SyH-4d-Fn6.placeholder" = "Enter your email";
+
+/* Class = "UITableViewSection"; headerTitle = "Notification"; ObjectID = "TjI-R9-8lk"; */
+"TjI-R9-8lk.headerTitle" = "Notification";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "U6J-EU-JpL"; */
+"U6J-EU-JpL.text" = "Name";
+
+/* Class = "UILabel"; text = "Retype"; ObjectID = "UVe-xb-UmJ"; */
+"UVe-xb-UmJ.text" = "Retype";
+
+/* Class = "UILabel"; text = "Date Of Birth"; ObjectID = "Uh2-5Q-Q4a"; */
+"Uh2-5Q-Q4a.text" = "Date Of Birth";
+
+/* Class = "UIButton"; normalTitle = "< Back"; ObjectID = "Vem-Br-SXG"; */
+"Vem-Br-SXG.normalTitle" = "< Back";
+
+/* Class = "UIButton"; normalTitle = "Login / Sign Up"; ObjectID = "Vfb-7W-bcr"; */
+"Vfb-7W-bcr.normalTitle" = "Login / Sign Up";
+
+/* Class = "UILabel"; text = "currency"; ObjectID = "Vx5-lV-TuV"; */
+"Vx5-lV-TuV.text" = "currency";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "W2p-dB-vv0"; */
+"W2p-dB-vv0.text" = "Settings";
+
+/* Class = "UILabel"; text = "amount"; ObjectID = "XFS-kS-jBT"; */
+"XFS-kS-jBT.text" = "amount";
+
+/* Class = "UIButton"; normalTitle = "Donate Again"; ObjectID = "XO8-MS-rsl"; */
+"XO8-MS-rsl.normalTitle" = "Donate Again";
+
+/* Class = "UILabel"; text = "TransactionDate"; ObjectID = "ZWj-G2-hZq"; */
+"ZWj-G2-hZq.text" = "TransactionDate";
+
+/* Class = "UIButton"; normalTitle = "< Back"; ObjectID = "abY-2S-ao7"; */
+"abY-2S-ao7.normalTitle" = "< Back";
+
+/* Class = "UILabel"; text = "Current Password"; ObjectID = "awf-Xf-kGR"; */
+"awf-Xf-kGR.text" = "Current Password";
+
+/* Class = "UIButton"; normalTitle = "< Back"; ObjectID = "bIw-3u-ENa"; */
+"bIw-3u-ENa.normalTitle" = "< Back";
+
+/* Class = "UILabel"; text = "child"; ObjectID = "bbL-ft-Htk"; */
+"bbL-ft-Htk.text" = "child";
+
+/* Class = "UILabel"; text = "Status:"; ObjectID = "cfa-Vd-qa8"; */
+"cfa-Vd-qa8.text" = "Status:";
+
+/* Class = "UIButton"; normalTitle = "< Back"; ObjectID = "d5p-4q-6JO"; */
+"d5p-4q-6JO.normalTitle" = "< Back";
+
+/* Class = "UILabel"; text = "Date Of Birth"; ObjectID = "dgH-6k-oaW"; */
+"dgH-6k-oaW.text" = "Date Of Birth";
+
+/* Class = "UILabel"; text = "Date Of Birth"; ObjectID = "fZ2-2m-HX6"; */
+"fZ2-2m-HX6.text" = "Date Of Birth";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "gEx-HE-pgO"; */
+"gEx-HE-pgO.text" = "Name";
+
+/* Class = "UILabel"; text = "Phone Alert"; ObjectID = "hnU-Bj-Uqm"; */
+"hnU-Bj-Uqm.text" = "Phone Alert";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "kFi-3j-aX7"; */
+"kFi-3j-aX7.normalTitle" = "Forgot Password?";
+
+/* Class = "UIButton"; normalTitle = "Donate"; ObjectID = "lOq-Z6-9gi"; */
+"lOq-Z6-9gi.normalTitle" = "Donate";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "mre-Wa-AyN"; */
+"mre-Wa-AyN.text" = "Email";
+
+/* Class = "UITableViewSection"; headerTitle = "Payment Information"; ObjectID = "oVt-Rx-lCM"; */
+"oVt-Rx-lCM.headerTitle" = "Payment Information";
+
+/* Class = "UIButton"; normalTitle = "Signout"; ObjectID = "pMN-0R-Rjp"; */
+"pMN-0R-Rjp.normalTitle" = "Signout";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password"; ObjectID = "qNa-5w-Zik"; */
+"qNa-5w-Zik.normalTitle" = "Forgot Password";
+
+/* Class = "UIButton"; normalTitle = "Random"; ObjectID = "qmh-uq-CTQ"; */
+"qmh-uq-CTQ.normalTitle" = "Random";
+
+/* Class = "UILabel"; text = "Edit Child"; ObjectID = "rSy-kx-5YT"; */
+"rSy-kx-5YT.text" = "Edit Child";
+
+/* Class = "UILabel"; text = "lastname"; ObjectID = "ruq-FV-qHx"; */
+"ruq-FV-qHx.text" = "lastname";
+
+/* Class = "UILabel"; text = "email"; ObjectID = "sVI-EF-aWx"; */
+"sVI-EF-aWx.text" = "email";
+
+/* Class = "UIButton"; normalTitle = "Update Info"; ObjectID = "uVO-bX-bfv"; */
+"uVO-bX-bfv.normalTitle" = "Update Info";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "vIV-um-f9J"; */
+"vIV-um-f9J.text" = "Email";
+
+/* Class = "UILabel"; text = "status"; ObjectID = "vwc-UZ-mbS"; */
+"vwc-UZ-mbS.text" = "status";
+
+/* Class = "UILabel"; text = "firstname"; ObjectID = "wJY-h0-1Rs"; */
+"wJY-h0-1Rs.text" = "firstname";
+
+/* Class = "UILabel"; text = "Add New Child"; ObjectID = "wpU-s5-w15"; */
+"wpU-s5-w15.text" = "Add New Child";
+
+/* Class = "UIButton"; normalTitle = "Logout Facebook"; ObjectID = "yPJ-8f-JoR"; */
+"yPJ-8f-JoR.normalTitle" = "Logout Facebook";
+
+/* Class = "UILabel"; text = "Venezuela Dreams"; ObjectID = "yw9-gA-M23"; */
+"yw9-gA-M23.text" = "Venezuela Dreams";
+
+/* Class = "UILabel"; text = "Forgot Password"; ObjectID = "yzu-WC-F9s"; */
+"yzu-WC-F9s.text" = "Forgot Password";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "zJ9-XO-EBO"; */
+"zJ9-XO-EBO.text" = "First Name";
+
+/* Class = "UILabel"; text = "Child"; ObjectID = "zTZ-De-Udl"; */
+"zTZ-De-Udl.text" = "Child";
