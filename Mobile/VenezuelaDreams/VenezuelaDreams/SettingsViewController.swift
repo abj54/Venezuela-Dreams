@@ -60,6 +60,7 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
     override func viewDidLoad() {
         //tableViewSettings.backgroundView = UIImageView(image: UIImage(named: "background7.png"))
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         setupPaymentButton()
         GUISettings()
         getUserData()
@@ -464,10 +465,6 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
         reloadPaymentButtonContent()
     }
     
-    //VIEW TRANSACTIONS
-    @IBAction func viewTransactionsPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "toTransactions", sender: self)
-    }
     
     
     

@@ -1,6 +1,6 @@
 //
 //  ShowMoreDetailViewController.swift
-//  
+//
 //
 //  Created by Pascal on 4/9/18.
 //
@@ -29,12 +29,12 @@ class ShowMoreDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        amountLabel.text = String(describing: transactionObject?.amount)
+        amountLabel.text = String(describing: transactionObject?.amount)+(transactionObject?.currency)!
         currencyLabel.text = transactionObject?.currency
         statusLabel.text = transactionObject?.status
         childIDLabel.text = transactionObject?.childID
@@ -76,28 +76,29 @@ class ShowMoreDetailViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     @IBAction func repeatDonation(_ sender: Any) {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "DonationViewController") as! DonationViewController
         myVC.childToDonateToID = transactionObject?.childID
         self.present(myVC, animated:true, completion:nil)
     }
     
-  
+    
     
 }
+
