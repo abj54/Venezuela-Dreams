@@ -21,7 +21,7 @@ class MainAPIClient: NSObject, STPEphemeralKeyProvider {
     func createCustomerKey(withAPIVersion apiVersion: String, completion: @escaping STPJSONResponseCompletionBlock)
     {
         let stripe_id = UserDefaults.standard.string(forKey: "stripe_id")
-        print(stripe_id!)
+        print("THIS IS IN THE API: \(stripe_id!)")
         let baseURL = URL(string: baseURLString)
         
         let url = baseURL?.appendingPathComponent("StripeEphemeralKeys")

@@ -71,10 +71,17 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
             card.backgroundImage = UIImage(named: page["image"]!)
             card.textColor = UIColor.white
             card.hasParallax = true
-            let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContent")
+            var cardContentVC = storyboard?.instantiateInitialViewController()
+            print(page["title"]!)
+            if (page["title"]! == "How it works"){
+                cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContentHow")
+            } else if (page["title"]! == "About us"){
+                cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContentAbout")
+            } else {
+                cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContentMission")
+            }
             card.shouldPresent(cardContentVC, from: self, fullscreen: false)
-            
-            
+        
             //set origin of x coordinate for the card
             if (index == 0){
                 card.frame.origin.x = (self.view.bounds.width - self.loginButton.bounds.width) / 2
@@ -205,7 +212,26 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
     }
     
     @IBAction func continueWithoutSignIn(_ sender: Any) {
-        doSegue()
+        let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
+        Auth.auth().signInAnonymously { (user, error) in
+            if let error = error {
+                print("Sign in failed:", error.localizedDescription)
+                
+            } else {
+                print ("Signed in with uid:", user!.uid)
+                let values = ["registration_type": "anonymous", "admin": false, "email": "temp@email.com"] as [String : Any]
+                let usersReference = ref.child("user").child(user!.uid)
+                usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                    
+                    if (err != nil){
+                        print(err ?? "")
+                        return
+                    }
+                    print("Saves user succesfully into db")
+                    self.doSegue()
+                })
+            }
+        }
     }
     
     func doSegue(){
@@ -216,12 +242,5 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    //FOROGT PASSWORD SEGUE
-
-    
-    
-    
 }
 

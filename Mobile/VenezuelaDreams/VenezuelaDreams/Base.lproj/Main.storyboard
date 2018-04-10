@@ -126,29 +126,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1316" y="189"/>
+            <point key="canvasLocation" x="-849" y="165"/>
         </scene>
-        <!--Card Content-->
+        <!--Card Content About Us-->
         <scene sceneID="fhf-ya-Z7I">
             <objects>
-                <viewController storyboardIdentifier="CardContent" id="jsS-dx-SeU" userLabel="Card Content" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardContentAbout" id="jsS-dx-SeU" userLabel="Card Content About Us" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jWF-UW-9SB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrF-s8-dtW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="186" id="0lJ-K0-pf2"/>
+                                    <constraint firstAttribute="height" constant="82" id="0lJ-K0-pf2"/>
                                     <constraint firstAttribute="width" constant="375" id="KsX-Tr-duo"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <string key="text">We are a group of senior students in Wentworth Institute of Technology. We are Andres Prato, Jeff Tocco, Pascal Bakker, and Nischal Paudyal</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delta3" translatesAutoresizingMaskIntoConstraints="NO" id="Fth-QT-vXh">
-                                <rect key="frame" x="0.0" y="194" width="375" height="215"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="215"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="215" id="4Sg-aZ-9jI"/>
                                     <constraint firstAttribute="width" constant="375" id="CNM-8d-KTJ"/>
@@ -169,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ue7-sW-eod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1574" y="-599"/>
+            <point key="canvasLocation" x="-1290.4000000000001" y="-815.44227886056979"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="2fP-Uj-n7l">
@@ -1584,6 +1584,7 @@
                         <segue destination="NCt-UK-vlk" kind="show" identifier="removeChildSegue" id="rxO-iO-s3e"/>
                         <segue destination="GbF-VE-juj" kind="show" identifier="editChildSegue" id="Sba-Jr-ItJ"/>
                         <segue destination="EZh-hC-MCV" kind="show" identifier="proofSegue" id="dnB-IN-WuK"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="adminLogout" id="kOT-g7-u4R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9u-KW-49k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1771,6 +1772,7 @@
                     <connections>
                         <outlet property="tableView" destination="Ix5-Ey-7iX" id="K7d-q9-n5a"/>
                         <segue destination="Jds-eL-TLP" kind="show" identifier="editChild" id="xx5-Pr-elL"/>
+                        <segue destination="7pb-Ji-TIJ" kind="show" identifier="afterEdit" id="g1a-ZO-Isr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SP2-sY-jsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1949,6 +1951,92 @@
             </objects>
             <point key="canvasLocation" x="380" y="1944.8275862068967"/>
         </scene>
+        <!--Card Content How-->
+        <scene sceneID="AbZ-YG-8iu">
+            <objects>
+                <viewController storyboardIdentifier="CardContentHow" id="Fpg-nE-ktk" userLabel="Card Content How" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W3P-9m-HqK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rl5-OK-sOA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="dGR-jB-iFQ"/>
+                                    <constraint firstAttribute="width" constant="375" id="iHD-YB-A5O"/>
+                                </constraints>
+                                <string key="text">You will be able to donate easily to a child in Venezuela. This child will be registered with our organization in Venezuela and will be able to receive food through a community diner. You can save your payment information, and that way you can donate again in an easy way. Help us feed children in Venezuela!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delta3" translatesAutoresizingMaskIntoConstraints="NO" id="ZUq-Od-3mv">
+                                <rect key="frame" x="0.0" y="133" width="375" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Gkl-VF-KgM"/>
+                                    <constraint firstAttribute="height" constant="215" id="SKv-T6-nlT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZUq-Od-3mv" firstAttribute="trailing" secondItem="3bD-CA-wXW" secondAttribute="trailing" id="3Rv-ms-GsE"/>
+                            <constraint firstItem="ZUq-Od-3mv" firstAttribute="top" secondItem="rl5-OK-sOA" secondAttribute="bottom" constant="8" id="HcT-TW-ybf"/>
+                            <constraint firstItem="rl5-OK-sOA" firstAttribute="trailing" secondItem="3bD-CA-wXW" secondAttribute="trailing" id="JEC-gp-fAN"/>
+                            <constraint firstItem="rl5-OK-sOA" firstAttribute="top" secondItem="W3P-9m-HqK" secondAttribute="top" id="O4d-gn-ZFR"/>
+                            <constraint firstItem="ZUq-Od-3mv" firstAttribute="leading" secondItem="3bD-CA-wXW" secondAttribute="leading" id="WuP-rV-Rnp"/>
+                            <constraint firstItem="rl5-OK-sOA" firstAttribute="leading" secondItem="3bD-CA-wXW" secondAttribute="leading" id="fr9-lW-0Tj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3bD-CA-wXW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2qq-nO-Tuz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1948" y="-815.44227886056979"/>
+        </scene>
+        <!--Card Content Mission-->
+        <scene sceneID="f4y-6O-8op">
+            <objects>
+                <viewController storyboardIdentifier="CardContentMission" id="QUR-BD-uCc" userLabel="Card Content Mission" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UO8-Ei-V3J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VG-GR-WLs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="119" id="PSS-mO-dYs"/>
+                                    <constraint firstAttribute="width" constant="375" id="ruu-BX-7av"/>
+                                </constraints>
+                                <string key="text">The mission of this project is to bring food to children that are in need in Venezuela. Since with a simple donation of $2 a child can get three meals. This will really help the community and the children. Foundations in Venezuela are feeding 80 children a week with just $50.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delta3" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-s6-msi">
+                                <rect key="frame" x="0.0" y="133" width="375" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="IeM-Id-9c1"/>
+                                    <constraint firstAttribute="width" constant="375" id="xFD-PP-7G7"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vuj-s6-msi" firstAttribute="trailing" secondItem="m0b-AQ-6l5" secondAttribute="trailing" id="9Hx-bM-bZA"/>
+                            <constraint firstItem="6VG-GR-WLs" firstAttribute="top" secondItem="UO8-Ei-V3J" secondAttribute="top" id="9uB-Iv-RVE"/>
+                            <constraint firstItem="vuj-s6-msi" firstAttribute="top" secondItem="6VG-GR-WLs" secondAttribute="bottom" constant="14" id="V2G-lz-aNM"/>
+                            <constraint firstItem="6VG-GR-WLs" firstAttribute="leading" secondItem="m0b-AQ-6l5" secondAttribute="leading" id="bjl-Ey-xsg"/>
+                            <constraint firstItem="6VG-GR-WLs" firstAttribute="trailing" secondItem="m0b-AQ-6l5" secondAttribute="trailing" id="qSh-A7-7Va"/>
+                            <constraint firstItem="vuj-s6-msi" firstAttribute="leading" secondItem="m0b-AQ-6l5" secondAttribute="leading" id="yq3-8h-YWz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m0b-AQ-6l5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kVS-91-kUC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2610.4000000000001" y="-815.44227886056979"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Tools" width="512" height="512"/>
@@ -1960,11 +2048,11 @@
         <image name="logo" width="975" height="975"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Sba-Jr-ItJ"/>
-        <segue reference="iit-vo-loG"/>
+        <segue reference="QMz-nh-a2d"/>
+        <segue reference="g1a-ZO-Isr"/>
         <segue reference="eIS-VR-I4V"/>
-        <segue reference="jAR-1o-u4P"/>
+        <segue reference="smz-5l-MXI"/>
         <segue reference="a4L-Ne-LjO"/>
-        <segue reference="cyX-W6-5sF"/>
+        <segue reference="kOT-g7-u4R"/>
     </inferredMetricsTieBreakers>
 </document>

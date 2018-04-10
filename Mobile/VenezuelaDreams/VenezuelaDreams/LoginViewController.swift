@@ -106,9 +106,14 @@ class LoginViewController: UIViewController {
             toggleViewMode(animated: true)
         }else{
             
-            //TODO: signup by this data
-            //NSLog("Email:\(signupEmailInputView.textFieldView.text) Password:\(signupPasswordInputView.textFieldView.text), PasswordConfirm:\(signupPasswordConfirmInputView.textFieldView.text)")
-            handleRegister()
+            let alertController = UIAlertController(title: "Terms & Conditions", message: "By using the Venezuela Dreams platform, you agree to provide the necessary information needed for a donation. This is include credit card information and contact. This is securely stored in our database and strictly for record keeping purposes of your transactions, we will not share it", preferredStyle: .alert)
+            
+            alertController.addAction(UIAlertAction(title: "Agree", style: .default, handler: {action in
+                self.handleRegister()
+            }))
+            alertController.addAction(UIAlertAction(title: "Decline", style: .destructive, handler: nil))
+            
+            present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -170,7 +175,7 @@ class LoginViewController: UIViewController {
                     return
                 }
                 print("Saves user succesfully into db")
-                self.checkUserAdminStripeId()
+                self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
             })
         })
     }
@@ -213,7 +218,7 @@ class LoginViewController: UIViewController {
                     return
                 }
             } else {
-                self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
+                self.checkUserAdminStripeId()
             }
             
         })
@@ -230,8 +235,6 @@ class LoginViewController: UIViewController {
             if (admin){
                 self.performSegue(withIdentifier: "redirectAdmin", sender: self)
             } else {
-                let stripe_id = snapshot.childSnapshot(forPath: "stripe_id").value as! String
-                UserDefaults.standard.set(stripe_id, forKey: "stripe_id")
                 self.performSegue(withIdentifier: "redirectLoginSignup", sender: self)
             }
         })
@@ -416,5 +419,4 @@ class LoginViewController: UIViewController {
         self.performSegue(withIdentifier: "toForgot", sender: self)
 
     }
-    
 }

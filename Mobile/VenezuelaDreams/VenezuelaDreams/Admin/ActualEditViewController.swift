@@ -376,7 +376,7 @@ class ActualEditViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil);
+        self.performSegue(withIdentifier: "afterEdit", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AdminViewController: UIViewController {
 
@@ -45,10 +46,18 @@ class AdminViewController: UIViewController {
         proofButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
         proofButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
+        view.addSubview(logoutButton)
+        logoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        logoutButton.topAnchor.constraint(equalTo: proofButton.bottomAnchor, constant: 15).isActive = true
+        logoutButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
+        logoutButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
+        logoutButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        
         addChildButton.addTarget(self, action: #selector(self.addChildSegue(_:)), for: .touchUpInside)
         removeChildButton.addTarget(self, action: #selector(self.removeChildSegue(_:)), for: .touchUpInside)
         editChildButton.addTarget(self, action: #selector(self.editChildSegue(_:)), for: .touchUpInside)
         proofButton.addTarget(self, action: #selector(self.proofSegue(_:)), for: .touchUpInside)
+        logoutButton.addTarget(self, action: #selector(self.logoutTapped(_:)), for: .touchUpInside)
     }
     
     let addChildButton: UIButton = {
@@ -103,6 +112,19 @@ class AdminViewController: UIViewController {
         return bt
     }()
     
+    let logoutButton: UIButton = {
+        let bt = UIButton()
+        bt.setTitle("Logout", for: .normal)
+        bt.setTitleColor(UIColor.white, for: .normal)
+        bt.backgroundColor = UIColor(red:66.0/255.0, green:69.0/255.0, blue:112.0/255.0, alpha:255.0/255.0)
+        bt.layer.borderWidth = 1.0
+        bt.layer.cornerRadius = 5
+        bt.layer.borderColor = UIColor(red:14.0/255.0, green:211.0/255.0, blue:140.0/255.0, alpha:255.0/255.0).cgColor
+        bt.translatesAutoresizingMaskIntoConstraints = false
+        bt.clipsToBounds = true
+        return bt
+    }()
+    
     @objc func addChildSegue(_ sender : UIButton){
         self.performSegue(withIdentifier: "addChildSegue", sender: Any?.self)
     }
@@ -117,6 +139,16 @@ class AdminViewController: UIViewController {
     
     @objc func proofSegue(_ sender : UIButton){
         self.performSegue(withIdentifier: "proofSegue", sender: Any?.self)
+    }
+    
+    @objc func logoutTapped(_ sender : UIButton){
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            self.performSegue(withIdentifier: "adminLogout", sender: self)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
 
     override func didReceiveMemoryWarning() {

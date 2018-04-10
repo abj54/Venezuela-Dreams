@@ -36,6 +36,10 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         super.viewDidLoad()
         setUpForUser()
         getChildData(childIdTransfer: childToDonateToID!)
+        
+        if (UserDefaults.standard.bool(forKey: "anonymous")){
+            setUpEmailTextField()
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -78,6 +82,16 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
 
     }
 
+    func setUpEmailTextField(){
+        inputsView.addSubview(emailTextField)
+        emailTextField.leftAnchor.constraint(equalTo: inputsView.leftAnchor, constant: 16).isActive = true
+        emailTextField.rightAnchor.constraint(equalTo: inputsView.rightAnchor, constant: -16).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: amountTextField.bottomAnchor, constant: 8).isActive = true
+        emailTextField.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        emailTextField.delegate = self
+    }
+
+    
     @objc func paymentButtonTapped(_ sender: UIButton) {
         presentPaymentMethodsViewController()
     }
@@ -181,7 +195,6 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         let alertController = UIAlertController(title: "Thank you for your donation!", message: "Your contribution will help feed \(name)", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: {_ in CATransaction.setCompletionBlock({
             self.doSegue()
-            //self.sendChildId()
             })
         }))
         self.present(alertController, animated: true, completion: nil)
@@ -210,8 +223,20 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
             amount = "1000"
         } else if (index == 3){
             amount = "2000"
-        } else {
+        } else if (index == 4){
             amount = "5000"
+        } else {
+            var text = amountTextField.text!
+            let index_$ = text.index(of: "$")
+            text.remove(at: index_$!)
+            let index_dot = text.index(of: ".")
+            text.remove(at: index_dot!)
+            if (text.contains(",")){
+                let index_comma = text.index(of: ",")
+                text.remove(at: index_comma!)
+            }
+            amount = text
+            print("THIS IS THE AMOUNT: \(amount)")
         }
         paymentContext.paymentAmount = Int(amount)!
         paymentContext.requestPayment()
@@ -225,8 +250,9 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         dateFormatter.dateFormat = "MM-dd-YYYY"
         let curr_date = dateFormatter.string(from: date)
         let values = ["amount": amount, "source": source, "child_id": childToDonateToID, "transaction_date": curr_date]
+
         ///transactions/userId/{userId}/transactionId/{transactionId}
-        let usersReference = ref.child("transactions").child("userId").child(userId).child("transactionId").childByAutoId()
+        var usersReference = ref.child("transactions").child("userId").child(userId).child("transactionId").childByAutoId()
         transaction_id = usersReference.key
         usersReference.updateChildValues(values as Any as! [AnyHashable : Any], withCompletionBlock: { (err, ref) in
             if (err != nil){
@@ -235,27 +261,14 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
             }
             print("Saved token succesfnully")
         })
-    }
-    
-    func sendChildId(){
-        let ref = Database.database().reference(fromURL: "https://vzladreams.firebaseio.com/")
-        let userId = Auth.auth().currentUser!.uid
         
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-YYYY"
-        let curr_date = dateFormatter.string(from: date)
-        
-        let values = ["child_id": childToDonateToID, "transaction_date": curr_date]
-        ///transactions/userId/{userId}/transactionId/{transactionId}
-        let usersReference = ref.child("transactions").child("userId").child(userId).child("transactionId").child(self.transaction_id)
-        usersReference.updateChildValues(values as Any as! [AnyHashable : Any], withCompletionBlock: { (err, ref) in
-            if (err != nil){
-                print(err ?? "ERROR!!")
-                return
+        if (UserDefaults.standard.bool(forKey: "anonymous")){
+            var ref: DatabaseReference!
+            ref = Database.database().reference()
+            if(emailTextField?.text != ""){
+                ref.child("user/\(userID)/email").setValue(emailTextField?.text)
             }
-            print("Saved child_id succesfnully")
-        })
+        }
     }
     
     func getUserId() -> String{
@@ -311,8 +324,8 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
             }
         }
 
-        let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContent")
-        card.shouldPresent(cardContentVC, from: self, fullscreen: false)
+        //let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContent")
+        //card.shouldPresent(cardContentVC, from: self, fullscreen: false)
         
         //set origin of x coordinate for the card
         card.frame.origin.x = (self.view.bounds.width - self.paymentButton.bounds.width) / 2
@@ -385,6 +398,30 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         tf.isEnabled = false
         return tf
     }()
+    
+    let emailTextField: UITextField = {
+        let tf = UITextField()
+        tf.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.foregroundColor : UIColor.lightText])
+        tf.textColor = UIColor.white
+        tf.backgroundColor = UIColor(red:66.0/255.0, green:69.0/255.0, blue:112.0/255.0, alpha:255.0/255.0)
+        tf.layer.borderWidth = 1.0
+        tf.layer.cornerRadius = 5
+        tf.layer.borderColor = UIColor(red:14.0/255.0, green:211.0/255.0, blue:140.0/255.0, alpha:255.0/255.0).cgColor
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.clipsToBounds = true
+        tf.keyboardType = .emailAddress
+        tf.textAlignment = .center
+        return tf
+    }()
+    
+    func changeInfo() {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        if(emailTextField.text != ""){
+            ref.child("user/\(userID)/email").setValue(emailTextField.text)
+        }
+    }
     
     func doSegue(){
         self.performSegue(withIdentifier: "afterDonation", sender: self)

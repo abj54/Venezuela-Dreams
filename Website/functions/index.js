@@ -34,9 +34,14 @@ exports.createStripeCharge = functions.database.ref('/transactions/userId/{userI
     const amount = val.amount;
     const idempotency_key = event.params.transactionId;
       
-    let charge = {amount, currency, customer};
-    if (val.source !== null) charge.source = val.source;
-    if (val.token !== null) charge.source = val.token;
+    let charge = {amount, currency};
+    if (val.source !== null) {
+        charge.source = val.source;
+        charge.customer = customer;
+    }
+    if (val.token !== null) {
+        charge.source = val.token;
+    }
     return stripe.charges.create(charge, {idempotency_key});
   }).then((response) => {
     // If the result is successful, write it back to the database

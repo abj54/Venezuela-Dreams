@@ -52,7 +52,9 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
             }
             self.setUpScroll()
             self.loadPages()
-            self.saveStripeId()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                self.saveStripeId()
+            })
         })
         //print(FIRAuth.auth()?.currentUser!.uid as Any)
 
@@ -74,9 +76,18 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         userReference.observeSingleEvent(of: .value, with: { (snapshot) in
             if !snapshot.exists() { return }
             let stripe_id = snapshot.childSnapshot(forPath: "stripe_id").value as! String
+            let anon_value = snapshot.childSnapshot(forPath: "registration_type").value as! String
+            //ANON TRUE OR FALSE
+            
             print("before saving it: \(userID!)")
             print("BEFORE SAVING IT: \(stripe_id)")
             UserDefaults.standard.set(stripe_id, forKey: "stripe_id")
+            if (anon_value == "anonymous"){
+                UserDefaults.standard.set(true, forKey: "anonymous")
+            } else {
+                UserDefaults.standard.set(false, forKey: "anonymous")
+            }
+            print("IS ANONNYMOUS: \(UserDefaults.standard.bool(forKey: "anonymous"))")
         })
     }
     
