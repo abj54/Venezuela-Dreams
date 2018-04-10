@@ -265,8 +265,8 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
         if (UserDefaults.standard.bool(forKey: "anonymous")){
             var ref: DatabaseReference!
             ref = Database.database().reference()
-            if(emailTextField?.text != ""){
-                ref.child("user/\(userID)/email").setValue(emailTextField?.text)
+            if(emailTextField.text != ""){
+                ref.child("user/\(userId)/email").setValue(emailTextField.text)
             }
         }
     }
