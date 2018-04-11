@@ -147,7 +147,7 @@ class WelcomePageViewController: UIViewController, FBSDKLoginButtonDelegate, UIS
                     }
                 })
                 //do segue to main window
-                self.saveStripeId()
+                //self.saveStripeId()
             }
         }
     }

@@ -25,7 +25,9 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
     @IBOutlet weak var scrollView: UIScrollView!
     var refChild: DatabaseReference!
     var array_pages = [DatabaseChild]()
+    let activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView();
 
+    
     //First method that runs
     //Main method for View
     override func viewDidLoad() {
@@ -52,8 +54,10 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
             }
             self.setUpScroll()
             self.loadPages()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+            self.startLoading()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.5, execute: {
                 self.saveStripeId()
+                self.stopLoading()
             })
         })
         //print(FIRAuth.auth()?.currentUser!.uid as Any)
@@ -173,12 +177,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func goToWelcome(_ sender: Any) {
-        doSegue()
-    }
-    func doSegue(){
-        self.performSegue(withIdentifier: "goToWelcome", sender: self)
-    }
     
     func doSegueSettings(){
     self.performSegue(withIdentifier: "toSettings", sender: self)
@@ -188,6 +186,20 @@ class MainViewController: UIViewController,UIScrollViewDelegate  {
         doSegueSettings()
     }
     
-
+    func startLoading(){
+        activityIndicator.center = self.view.center;
+        activityIndicator.hidesWhenStopped = true;
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray;
+        view.addSubview(activityIndicator);
+        
+        activityIndicator.startAnimating();
+        //UIApplication.shared.beginIgnoringInteractionEvents();
+        
+    }
+    
+    func stopLoading(){
+        activityIndicator.stopAnimating();
+        //UIApplication.shared.endIgnoringInteractionEvents();
+    }
 
 }

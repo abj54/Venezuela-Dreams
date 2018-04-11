@@ -152,7 +152,7 @@ class EditChildViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil);
+        self.performSegue(withIdentifier: "returnToAdminEdit", sender: self)
     }
 
 }

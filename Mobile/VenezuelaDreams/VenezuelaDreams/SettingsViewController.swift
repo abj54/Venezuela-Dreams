@@ -267,7 +267,11 @@ class SettingsViewController: UITableViewController, UITextFieldDelegate, STPPay
                 // handle error - incorrect password entered is a possibility
                 return
             }
-            
+            let alert = UIAlertController(title: "Updated Password", message: "Your password has been changed.", preferredStyle: UIAlertControllerStyle.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
             // reauthentication succeeded!
             user?.updatePassword(to: self.newPassword.text!) { (errror) in
             }

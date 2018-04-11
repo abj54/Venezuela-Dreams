@@ -14,7 +14,7 @@
 		5026031C201EAE870070B5A7 /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026031B201EAE870070B5A7 /* PagesView.swift */; };
 		5036B903207A8F15000623C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036B902207A8F15000623C0 /* SettingsViewController.swift */; };
 		5036B905207A9650000623C0 /* ProofViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036B904207A9650000623C0 /* ProofViewController.swift */; };
-		5061060B207C6D9500627120 /* ShowMoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5061060A207C6D9500627120 /* ShowMoreDetailViewController.swift */; };
+		5050968E207C8CFE001098D4 /* ShowMoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050968D207C8CFE001098D4 /* ShowMoreDetailViewController.swift */; };
 		507D532F2077C3E500776892 /* MainAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D532E2077C3E500776892 /* MainAPIClient.swift */; };
 		508639EF201A9CE800582920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508639EE201A9CE800582920 /* AppDelegate.swift */; };
 		508639F1201A9CE800582920 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508639F0201A9CE800582920 /* WelcomePageViewController.swift */; };
@@ -85,7 +85,7 @@
 		5026031B201EAE870070B5A7 /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
 		5036B902207A8F15000623C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5036B904207A9650000623C0 /* ProofViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProofViewController.swift; sourceTree = "<group>"; };
-		5061060A207C6D9500627120 /* ShowMoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreDetailViewController.swift; sourceTree = "<group>"; };
+		5050968D207C8CFE001098D4 /* ShowMoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreDetailViewController.swift; sourceTree = "<group>"; };
 		507D532E2077C3E500776892 /* MainAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIClient.swift; sourceTree = "<group>"; };
 		508639EB201A9CE800582920 /* VenezuelaDreams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenezuelaDreams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508639EE201A9CE800582920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,12 +216,12 @@
 				507D532E2077C3E500776892 /* MainAPIClient.swift */,
 				500BC2D3207B1D4D0058D744 /* TransactionCell.swift */,
 				50A282A920547BE30003B9E6 /* DatabaseChild.swift */,
-				5061060A207C6D9500627120 /* ShowMoreDetailViewController.swift */,
 				508639F2201A9CE800582920 /* Main.storyboard */,
 				50E7B7BF206DB563008CF8FC /* Admin */,
 				509375E5207AC59D0078D1B5 /* TransactionTableViewController.swift */,
 				50F2150F2027A3390027BE44 /* Animator.swift */,
 				50C7F8BE2052357C003EDC73 /* DonationViewController.swift */,
+				5050968D207C8CFE001098D4 /* ShowMoreDetailViewController.swift */,
 				508639F0201A9CE800582920 /* WelcomePageViewController.swift */,
 				5036B902207A8F15000623C0 /* SettingsViewController.swift */,
 				50A282AD205635C90003B9E6 /* DonateButtonViewController.swift */,
@@ -611,6 +611,7 @@
 				50F215182027A33C0027BE44 /* LayoutHelper.swift in Sources */,
 				50C7F8C5205258AC003EDC73 /* SJGradientView.swift in Sources */,
 				50F215162027A33C0027BE44 /* CardHighlight.swift in Sources */,
+				5050968E207C8CFE001098D4 /* ShowMoreDetailViewController.swift in Sources */,
 				500BC2D4207B1D4D0058D744 /* TransactionCell.swift in Sources */,
 				50F215152027A33C0027BE44 /* Card.swift in Sources */,
 				508639F1201A9CE800582920 /* WelcomePageViewController.swift in Sources */,
@@ -619,7 +620,6 @@
 				50A282AA20547BE30003B9E6 /* DatabaseChild.swift in Sources */,
 				508C3984206D5297001A8F0B /* RemoveChildViewController.swift in Sources */,
 				5026031C201EAE870070B5A7 /* PagesView.swift in Sources */,
-				5061060B207C6D9500627120 /* ShowMoreDetailViewController.swift in Sources */,
 				50C4C80B2033BAA000969019 /* LoginViewController.swift in Sources */,
 				508DDE872079AB9C003748BB /* ActualEditViewController.swift in Sources */,
 				50F215192027A33C0027BE44 /* Animator.swift in Sources */,

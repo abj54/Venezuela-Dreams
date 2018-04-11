@@ -296,7 +296,6 @@ class AddChildViewController: UIViewController, UIImagePickerControllerDelegate,
     func stopLoading(){
         activityIndicator.stopAnimating();
         UIApplication.shared.endIgnoringInteractionEvents();
-        
     }
     
     @objc func datePickerValueChanged(sender:UIDatePicker) {

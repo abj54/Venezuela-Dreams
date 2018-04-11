@@ -15,7 +15,7 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
     
     private let customerContext: STPCustomerContext
     private let paymentContext: STPPaymentContext
-    
+
     required init?(coder aDecoder: NSCoder) {
         customerContext = STPCustomerContext(keyProvider: MainAPIClient.shared)
         paymentContext = STPPaymentContext(customerContext: customerContext)
@@ -425,6 +425,21 @@ class DonationViewController: UIViewController, UITextFieldDelegate , STPPayment
     
     func doSegue(){
         self.performSegue(withIdentifier: "afterDonation", sender: self)
+    }
+    
+    /**
+     * Called when 'return' key pressed. return NO to ignore.
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
